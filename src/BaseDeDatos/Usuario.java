@@ -2,6 +2,7 @@ package BaseDeDatos;
 
 import Estructura.TipoUsuario;
 import Estructura.Separator;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -100,6 +101,15 @@ public class Usuario {
         Usuario _usuario = new Usuario(_usuarioStr, _contrasena, _tipo);
         usuarios.add(_usuario);
         itemCount++;
+    }
+
+    public static boolean usuarioExists(String usuario) {
+        for (Usuario actual : usuarios) {
+            if (actual.getUsuario().equals(usuario)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static Usuario logear(String _usuario, String _contrasena) {
