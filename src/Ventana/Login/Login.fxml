@@ -21,7 +21,7 @@
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="9.0" onAction="#onCerrarAction" prefHeight="31.0" prefWidth="168.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
+                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="9.0" onAction="#cerrarClick" prefHeight="31.0" prefWidth="168.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -31,12 +31,12 @@
                         <Image url="@img/exiticon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton focusTraversable="false" layoutX="597.0" layoutY="9.0" onAction="#onRegistrarAction" ripplerFill="WHITE" style="-fx-background-color: #231937;" text="Registrarse" textFill="WHITE">
+                  <JFXButton focusTraversable="false" layoutX="597.0" layoutY="9.0" onAction="#registrarClick" ripplerFill="WHITE" style="-fx-background-color: #231937;" text="Registrarse" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="450.0" layoutY="14.0" text="¿No está registrado?" textFill="WHITE">
+                  <Label focusTraversable="false" layoutX="450.0" layoutY="14.0" text="¿No está registrado?" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -46,12 +46,12 @@
                         <Image url="@img/icon.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="274.0" layoutY="109.0" text="Human" textFill="WHITE">
+                  <Label focusTraversable="false" layoutX="274.0" layoutY="109.0" text="Human" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="368.0" layoutY="109.0" text="-Ware" textFill="#80e5ff">
+                  <Label focusTraversable="false" layoutX="370.0" layoutY="109.0" text="-Ware" textFill="#80e5ff">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -61,6 +61,11 @@
                         <Font size="15.0" />
                      </font>
                   </JFXTextField>
+                  <JFXPasswordField fx:id="contrasena" focusColor="#80e5ff" layoutX="265.0" layoutY="272.0" onAction="#contrasenaEnter" prefHeight="31.0" prefWidth="244.0" promptText="Contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXPasswordField>
                   <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="222.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/user.png" />
@@ -71,7 +76,7 @@
                         <Image url="@img/pass.png" />
                      </image>
                   </ImageView>
-                  <JFXButton layoutX="409.0" layoutY="353.0" onAction="#onIniciarAction" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Iniciar sesión">
+                  <JFXButton layoutX="409.0" layoutY="353.0" onAction="#iniciarSesion" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Iniciar sesión">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -81,11 +86,6 @@
                         <Font size="15.0" />
                      </font>
                   </JFXCheckBox>
-                  <JFXPasswordField fx:id="contrasena" focusColor="#80e5ff" layoutX="265.0" layoutY="272.0" onAction="#onContrasenaAction" prefHeight="31.0" prefWidth="244.0" promptText="Contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </JFXPasswordField>
                </children>
             </Pane>
          </children>

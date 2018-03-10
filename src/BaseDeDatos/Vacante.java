@@ -1,4 +1,4 @@
- package BaseDeDatos;
+package BaseDeDatos;
 
 import Estructura.Titulo;
 import Estructura.Habilidad;
@@ -12,21 +12,24 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
-public class Vacante {
+public class Vacante implements Comparable<Vacante> {
 
     private static ArrayList<Vacante> vacantes;
     private static int itemCount;
-    private static final String dbpath = "Vacante.txt";
-    private static final File dbfile = new File(dbpath);
+    private static int _pos;
+    private static final String BDPATH = "Vacante.txt";
+    private static final File DBFILE = new File(BDPATH);
 
     public static void init() {
         vacantes = new ArrayList<>();
         itemCount = 0;
-        if (!dbfile.exists()) {
+        _pos = 0;
+        if (!DBFILE.exists()) {
             try {
-                dbfile.createNewFile();
+                DBFILE.createNewFile();
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Error al crear el archivo de vacantes.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -36,18 +39,19 @@ public class Vacante {
     public static void load() {
         try {
             vacantes.clear();
-            BufferedReader lector = new BufferedReader(new FileReader(dbfile));
+            BufferedReader lector = new BufferedReader(new FileReader(DBFILE));
             String linea = lector.readLine().trim();
+            _pos = 0;
             while (linea != null && !linea.equals("")) {
-                String[] registro = linea.split(Separator.a);
+                String[] registro = linea.split(Separator.A);
                 int _id = Integer.parseInt(registro[0]);
                 String _nombre = registro[1];
                 String _descripcion = registro[2];
                 float _min = Float.parseFloat(registro[3]);
                 float _max = Float.parseFloat(registro[4]);
                 String _jornada = registro[5];
-                String[] _titulos = registro[6].split(Separator.b);
-                String[] _habilidades = registro[7].split(Separator.b);
+                String[] _titulos = registro[6].split(Separator.B);
+                String[] _habilidades = registro[7].split(Separator.B);
                 int _empresa = Integer.parseInt(registro[8]);
                 add(_id, _nombre, _descripcion, _min, _max, _jornada, _titulos, _habilidades, _empresa);
                 linea = lector.readLine();
@@ -58,9 +62,8 @@ public class Vacante {
         } catch (IOException error) {
             JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las vacantes. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (NullPointerException error) {
-            PrintWriter esc = null;
             try {
-                esc = new PrintWriter(new FileWriter(dbfile));
+                PrintWriter esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
@@ -71,27 +74,28 @@ public class Vacante {
 
     static void save() {
         try {
-            PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
+            Collections.sort(vacantes);
+            PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             for (Vacante vacante : vacantes) {
                 String titulosVacante = "";
                 String habilidadesVacante = "";
                 for (Titulo titulo : vacante.getTitulos()) {
-                    titulosVacante = titulosVacante + titulo.toString() + Separator.b;
+                    titulosVacante = titulosVacante + titulo.toString() + Separator.B;
                 }
                 for (Habilidad habilidad : vacante.getHabilidades()) {
-                    habilidadesVacante = habilidadesVacante + habilidad.toString() + Separator.b;
+                    habilidadesVacante = habilidadesVacante + habilidad.toString() + Separator.C + habilidad.getNivel() + Separator.B;
                 }
                 titulosVacante = titulosVacante.substring(0, titulosVacante.length() - 1);
                 habilidadesVacante = habilidadesVacante.substring(0, habilidadesVacante.length() - 1);
-                escritor.write(vacante.getId() + Separator.a
-                        + vacante.getNombre() + Separator.a
-                        + vacante.getDescripcion() + Separator.a
-                        + vacante.getMin() + Separator.a
-                        + vacante.getMax() + Separator.a
-                        + vacante.getJornada().toString() + Separator.a
-                        + titulosVacante + Separator.a
-                        + habilidadesVacante + Separator.a
-                        + vacante.getEmpresa().getId() + Separator.a
+                escritor.write(vacante.getId() + Separator.A
+                        + vacante.getNombre() + Separator.A
+                        + vacante.getDescripcion() + Separator.A
+                        + vacante.getMin() + Separator.A
+                        + vacante.getMax() + Separator.A
+                        + vacante.getJornada().toString() + Separator.A
+                        + titulosVacante + Separator.A
+                        + habilidadesVacante + Separator.A
+                        + vacante.getEmpresa().getId() + Separator.A
                         + "\n");
             }
             escritor.close();
@@ -102,15 +106,23 @@ public class Vacante {
 
     static void add(int _id, String _nombre, String _descripcion, float _min, float _max, String _jornada, String[] _titulos, String[] _habilidades, int _idEmpresa) {
         Empresa _empresa = Empresa.getEmpresaAt(Empresa.indexOf(_idEmpresa));
-        Vacante _vacante = new Vacante(_id, _nombre, _descripcion, _min, _max, _jornada, _empresa);
+        Vacante _vacante = new Vacante(_pos, _id, _nombre, _descripcion, _min, _max, _jornada, _empresa);
         for (String _titulo : _titulos) {
-            _vacante.addTitulo(Titulo.fromString(_titulo));
+            if (!_titulo.trim().equals("")) {
+                _vacante.addTitulo(Titulo.fromString(_titulo));
+            }
         }
         for (String _habilidad : _habilidades) {
-            _vacante.addHabilidad(Habilidad.fromString(_habilidad));
+            if (!_habilidad.trim().equals("")) {
+                String[] _hab = _habilidad.split(Separator.C);
+                Habilidad _h = Habilidad.fromString(_hab[0]);
+                _h.setNivel(Integer.parseInt(_hab[1]));
+                _vacante.addHabilidad(_h);
+            }
         }
         vacantes.add(_vacante);
         itemCount++;
+        _pos++;
     }
 
     public static ArrayList<Vacante> getVacantes() {
@@ -157,7 +169,8 @@ public class Vacante {
         return -1;
     }
 
-    public Vacante(int _id, String _nombre, String _descripcion, float _min, float _max, String _jornada, Empresa _empresa) {
+    public Vacante(int _pos, int _id, String _nombre, String _descripcion, float _min, float _max, String _jornada, Empresa _empresa) {
+        pos = _pos;
         id = _id;
         nombre = _nombre;
         descripcion = _descripcion;
@@ -175,6 +188,10 @@ public class Vacante {
 
     public void addHabilidad(Habilidad _habilidad) {
         habilidades.add(_habilidad);
+    }
+
+    public int getPos() {
+        return pos;
     }
 
     public int getId() {
@@ -238,6 +255,12 @@ public class Vacante {
         jornada = Jornada.fromString(_jornada);
     }
 
+    @Override
+    public int compareTo(Vacante vac) {
+        return nombre.compareTo(vac.getNombre());
+    }
+
+    private final int pos;
     private final int id;
     private String nombre;
     private String descripcion;

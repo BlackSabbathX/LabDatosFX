@@ -55,9 +55,7 @@ public class Dialog {
         layout.setBody(new Text(content));
         layout.setActions(aceptar);
         JFXDialog dialog = new JFXDialog(padre, layout, JFXDialog.DialogTransition.CENTER);
-        aceptar.setOnAction(event -> {
-            dialog.close();
-        });
+        aceptar.setOnAction(event -> dialog.close());
         dialog.show();
     }
 

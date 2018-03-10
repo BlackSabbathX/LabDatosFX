@@ -8,10 +8,118 @@ public enum Titulo {
             return "Ninguno";
         }
     },
+    AdministracionDeEmpresas("Administración de Empresas") {
+        @Override
+        public String toString() {
+            return "Administración de Empresas";
+        }
+    },
+    Arquitectura("Arquitectura") {
+        @Override
+        public String toString() {
+            return "Arquitectura";
+        }
+    },
+    CienciasPoliticas("Ciencias Políticas") {
+        @Override
+        public String toString() {
+            return "Ciencias Políticas";
+        }
+    },
+    ComercioInternacional("Comercio Internacional") {
+        @Override
+        public String toString() {
+            return "Comercio Internacional";
+        }
+    },
+    ComunicacionSocial("Comunicación Social") {
+        @Override
+        public String toString() {
+            return "Comunicación Social";
+        }
+    },
+    ContaduriaPublica("Contaduría Pública") {
+        @Override
+        public String toString() {
+            return "Contaduría Pública";
+        }
+    },
+    Derecho("Derecho") {
+        @Override
+        public String toString() {
+            return "Derecho";
+        }
+    },
+    DisenoGrafico("Diseño Gráfico") {
+        @Override
+        public String toString() {
+            return "Diseño Gráfico";
+        }
+    },
+    Economia("Economía") {
+        @Override
+        public String toString() {
+            return "Economía";
+        }
+    },
+    Enfermeria("Enfermería") {
+        @Override
+        public String toString() {
+            return "Enfermería";
+        }
+    },
+    Filosofia("Filosofía") {
+        @Override
+        public String toString() {
+            return "Filosofía";
+        }
+    },
+    Geologia("Geología") {
+        @Override
+        public String toString() {
+            return "Geología";
+        }
+    },
+    IngenieriaAgroindustrial("Ingeniería Agroindustrial") {
+        @Override
+        public String toString() {
+            return "Ingeniería Agroindustrial";
+        }
+    },
+    IngenieriaCivil("Ingeniería Civil") {
+        @Override
+        public String toString() {
+            return "Ingeniería Civil";
+        }
+    },
+    IngenieriaDeMinas("Ingeniería de Minas") {
+        @Override
+        public String toString() {
+            return "Ingeniería de Minas";
+        }
+    },
     IngenieriaDeSistemas("Ingeniería de Sistemas") {
         @Override
         public String toString() {
             return "Ingeniería de Sistemas";
+        }
+    },
+    IngenieriaDeTelecomunicaciones("Ingeniería de Telecomunicaciones") {
+        @Override
+        public String toString() {
+            return "Ingeniería de Telecomunicaciones";
+        }
+    },
+    IngenieriaElectrica("Ingeniería Electrica") {
+        @Override
+        public String toString() {
+            return "Ingeniería Electrica";
+        }
+    },
+    IngenieriaElectronica("Ingeniería Electrónica") {
+        @Override
+        public String toString() {
+            return "Ingeniería Electrónica";
         }
     },
     IngenieriaIndustrial("Ingeniería Industrial") {
@@ -32,64 +140,10 @@ public enum Titulo {
             return "Ingeniería Quimica";
         }
     },
-    IngenieriaCivil("Ingeniería Civil") {
+    Matematicas("Matemáticas") {
         @Override
         public String toString() {
-            return "Ingeniería Civil";
-        }
-    },
-    IngenieriaAgroindustrial("Ingeniería Agroindustrial") {
-        @Override
-        public String toString() {
-            return "Ingeniería Agroindustrial";
-        }
-    },
-    IngenieriaElectronica("Ingeniería Electrónica") {
-        @Override
-        public String toString() {
-            return "Ingeniería Electrónica";
-        }
-    },
-    IngenieriaElectrica("Ingeniería Electrica") {
-        @Override
-        public String toString() {
-            return "Ingeniería Electrica";
-        }
-    },
-    IngenieriaDeTelecomunicaciones("Ingeniería de Telecomunicaciones") {
-        @Override
-        public String toString() {
-            return "Ingeniería de Telecomunicaciones";
-        }
-    },
-    IngenieriaDeMinas("Ingeniería de Minas") {
-        @Override
-        public String toString() {
-            return "Ingeniería de Minas";
-        }
-    },
-    Derecho("Derecho") {
-        @Override
-        public String toString() {
-            return "Derecho";
-        }
-    },
-    CienciasPoliticas("Ciencias Políticas") {
-        @Override
-        public String toString() {
-            return "Ciencias Políticas";
-        }
-    },
-    Filosofia("Filosofía") {
-        @Override
-        public String toString() {
-            return "Filosofía";
-        }
-    },
-    Geologia("Geología") {
-        @Override
-        public String toString() {
-            return "Geología";
+            return "Matemáticas";
         }
     },
     Medicina("Medicina") {
@@ -98,70 +152,10 @@ public enum Titulo {
             return "Medicina";
         }
     },
-    Enfermeria("Enfermería") {
+    Musica("Música") {
         @Override
         public String toString() {
-            return "Enfermería";
-        }
-    },
-    QuimicaYFarmacia("Química y Farmacia") {
-        @Override
-        public String toString() {
-            return "Química y Farmacia";
-        }
-    },
-    RelacionesInternacionales("Relaciones Internacionales") {
-        @Override
-        public String toString() {
-            return "Relaciones Internacionales";
-        }
-    },
-    ComercioInternacional("Comercio Internacional") {
-        @Override
-        public String toString() {
-            return "Comercio Internacional";
-        }
-    },
-    Arquitectura("Arquitectura") {
-        @Override
-        public String toString() {
-            return "Arquitectura";
-        }
-    },
-    Economia("Economía") {
-        @Override
-        public String toString() {
-            return "Economía";
-        }
-    },
-    ContaduriaPublica("Contaduría Pública") {
-        @Override
-        public String toString() {
-            return "Contaduría Pública";
-        }
-    },
-    AdministracionDeEmpresas("Administración de Empresas") {
-        @Override
-        public String toString() {
-            return "Administración de Empresas";
-        }
-    },
-    Psicologia("Psicología") {
-        @Override
-        public String toString() {
-            return "Psicología";
-        }
-    },
-    DisenoGrafico("Diseño Gráfico") {
-        @Override
-        public String toString() {
-            return "Diseño Gráfico";
-        }
-    },
-    Matematicas("Matemáticas") {
-        @Override
-        public String toString() {
-            return "Matemáticas";
+            return "Música";
         }
     },
     Odontologia("Odontología") {
@@ -176,16 +170,22 @@ public enum Titulo {
             return "Pedagogía Infantil";
         }
     },
-    ComunicacionSocial("Comunicación Social") {
+    Psicologia("Psicología") {
         @Override
         public String toString() {
-            return "Comunicación Social";
+            return "Psicología";
         }
     },
-    Musica("Música") {
+    QuimicaYFarmacia("Química y Farmacia") {
         @Override
         public String toString() {
-            return "Música";
+            return "Química y Farmacia";
+        }
+    },
+    RelacionesInternacionales("Relaciones Internacionales") {
+        @Override
+        public String toString() {
+            return "Relaciones Internacionales";
         }
     };
 

@@ -3,11 +3,9 @@ package Ventana.Registro;
 import BaseDeDatos.Usuario;
 import Ventana.Dialog;
 import Ventana.Login.Login;
-import Ventana.PrincipalEvaluador.PrincipalEvaluador;
-import Ventana.PrincipalUsuario.PrincipalUsuario;
-import com.jfoenix.controls.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
@@ -15,7 +13,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -60,14 +57,6 @@ public class Registro implements Initializable {
         verificar();
     }
 
-    private void habilitarRegistro() {
-        if (pass && user && type) {
-            registrar.setDisable(false);
-        } else {
-            registrar.setDisable(true);
-        }
-    }
-
     private void verificar() {
         usuario.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue) {
@@ -88,7 +77,6 @@ public class Registro implements Initializable {
                     usuario.setUnFocusColor(Color.WHITE);
                 }
                 user = true;
-                habilitarRegistro();
             }
         });
         contrasena.focusedProperty().addListener((observable, oldValue, newValue) -> {
@@ -116,7 +104,6 @@ public class Registro implements Initializable {
                     return;
                 }
                 pass = true;
-                habilitarRegistro();
             }
         });
         contrasena1.focusedProperty().addListener((observable, oldValue, newValue) -> {
@@ -144,35 +131,52 @@ public class Registro implements Initializable {
                     return;
                 }
                 pass = true;
-                habilitarRegistro();
             }
         });
     }
 
-    public void onCambioTipo() {
+
+    @FXML
+    public void cambioTipo() {
         type = true;
     }
 
-    public void onCerrarAction() {
+    @FXML
+    public void cerrarClick() {
         toogleVisible();
     }
 
-    public void onVolverAction() {
+    @FXML
+    public void volverClick() {
         Login.toogleVisible();
         toogleVisible();
     }
 
-    public void onRegistrarAction() {
-        if (!registrar.isDisable()) {
-            String c = contrasena.getText().trim();
-            String c1 = contrasena1.getText().trim();
+    @FXML
+    public void registrarClick() {
+        String c = contrasena.getText().trim();
+        String c1 = contrasena1.getText().trim();
+        if (pass && user && type) {
+            String u = usuario.getText().trim();
             String t = tipo.getValue().toString();
-
+            Usuario.add(u, c, t);
+            Usuario.save();
+            cleanForm();
+            Dialog.showSimpleDialog(content, "Correcto", "Usuario creado exitosamente.", "Aceptar");
+        } else {
+            if (!c.equals(c1)) {
+                Dialog.showSimpleDialog(content, "Corrija", "Las contraseñas digitadas no son iguales.", "Aceptar");
+                return;
+            }
+            Dialog.showSimpleDialog(content, "Complete", "Formulario de registro incompleto.", "Aceptar");
         }
     }
 
-    @FXML
-    private JFXButton registrar;
+    private void cleanForm() {
+        contrasena.setText("");
+        contrasena1.setText("");
+    }
+
     @FXML
     private JFXTextField usuario;
     @FXML

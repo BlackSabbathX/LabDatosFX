@@ -9,17 +9,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class Empresa {
+public class Empresa implements Comparable<Empresa> {
 
     private static ArrayList<Empresa> empresas;
     private static int itemCount;
-    private static final String dbpath = "Empresa.txt";
-    private static final File dbfile = new File(dbpath);
+    private static int _pos;
+    private static final String DBPATH = "Empresa.txt";
+    private static final File DBFILE = new File(DBPATH);
 
     public static ArrayList<Empresa> getEmpresas() {
         return empresas;
@@ -28,9 +28,10 @@ public class Empresa {
     public static void init() {
         empresas = new ArrayList<>();
         itemCount = 0;
-        if (!dbfile.exists()) {
+        _pos = 0;
+        if (!DBFILE.exists()) {
             try {
-                dbfile.createNewFile();
+                DBFILE.createNewFile();
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Error al crear el archivo de empresas.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -40,10 +41,11 @@ public class Empresa {
     public static void load() {
         try {
             empresas.clear();
-            BufferedReader lector = new BufferedReader(new FileReader(dbfile));
+            BufferedReader lector = new BufferedReader(new FileReader(DBFILE));
             String linea = lector.readLine().trim();
+            _pos = 0;
             while (linea != null && !linea.equals("")) {
-                String[] registro = linea.split(Separator.a);
+                String[] registro = linea.split(Separator.A);
                 int _id = Integer.parseInt(registro[0]);
                 String _nombre = registro[1];
                 String _telefono = registro[2];
@@ -58,7 +60,7 @@ public class Empresa {
         } catch (NullPointerException error) {
             PrintWriter esc = null;
             try {
-                esc = new PrintWriter(new FileWriter(dbfile));
+                esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
@@ -69,10 +71,11 @@ public class Empresa {
 
     public static void save() {
         try {
-            PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
+            Collections.sort(empresas);
+            PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             for (Empresa empresa : empresas) {
-                escritor.write(empresa.getId() + Separator.a
-                        + empresa.getNombre() + Separator.a
+                escritor.write(empresa.getId() + Separator.A
+                        + empresa.getNombre() + Separator.A
                         + empresa.getTelefono() + "\n");
             }
             escritor.close();
@@ -82,8 +85,9 @@ public class Empresa {
     }
 
     public static void add(int _id, String _nombre, String _telefono) {
-        empresas.add(new Empresa(_id, _nombre, _telefono));
+        empresas.add(new Empresa(_pos, _id, _nombre, _telefono));
         itemCount++;
+        _pos++;
     }
 
     public static int generateId() {
@@ -138,7 +142,7 @@ public class Empresa {
         return null;
     }
 
-    static int indexOf(String _nombre) {
+    public static int indexOf(String _nombre) {
         int i = 0;
         for (Empresa empresa : empresas) {
             if (empresa.getNombre().equals(_nombre)) {
@@ -149,7 +153,7 @@ public class Empresa {
         return -1;
     }
 
-    static int indexOf(int _id) {
+    public static int indexOf(int _id) {
         int i = 0;
         for (Empresa empresa : empresas) {
             if (empresa.getId() == _id) {
@@ -160,10 +164,15 @@ public class Empresa {
         return -1;
     }
 
-    public Empresa(int _id, String _nombre, String _telefono) {
+    public Empresa(int _pos, int _id, String _nombre, String _telefono) {
+        pos = _pos;
         id = _id;
         nombre = _nombre;
         telefono = _telefono;
+    }
+
+    public int getPos() {
+        return pos;
     }
 
     public String getNombre() {
@@ -186,8 +195,14 @@ public class Empresa {
         telefono = _telefono;
     }
 
+    private final int pos;
     private String nombre;
     private String telefono;
     private final int id;
+
+    @Override
+    public int compareTo(Empresa emp) {
+        return nombre.compareTo(emp.getNombre());
+    }
 
 }

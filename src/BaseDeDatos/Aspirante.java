@@ -39,8 +39,9 @@ public class Aspirante {
             aspirantes.clear();
             BufferedReader lector = new BufferedReader(new FileReader(dbfile));
             String linea = lector.readLine().trim();
+            int _pos = 0;
             while (linea != null && !linea.equals("")) {
-                String[] registro = linea.split(Separator.a);
+                String[] registro = linea.split(Separator.A);
                 int _id = Integer.parseInt(registro[0]);
                 String _nombre = registro[1];
                 String _email = registro[2];
@@ -48,10 +49,11 @@ public class Aspirante {
                 float _min = Float.parseFloat(registro[4]);
                 String _foto = registro[5];
                 String _jornada = registro[6];
-                String[] _titulos = registro[7].split(Separator.b);
-                String[] _habilidades = registro[8].split(Separator.b);
-                add(_id, _nombre, _email, _telefono, _min, _foto, _jornada, _titulos, _habilidades);
+                String[] _titulos = registro[7].split(Separator.B);
+                String[] _habilidades = registro[8].split(Separator.B);
+                add(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada, _titulos, _habilidades);
                 linea = lector.readLine();
+                _pos++;
             }
             lector.close();
         } catch (FileNotFoundException error) {
@@ -77,22 +79,22 @@ public class Aspirante {
                 String titulosAspirante = "";
                 String habilidadesAspirante = "";
                 for (Titulo titulo : aspirante.getTitulos()) {
-                    titulosAspirante = titulosAspirante + titulo.toString() + Separator.b;
+                    titulosAspirante = titulosAspirante + titulo.toString() + Separator.B;
                 }
                 for (Habilidad habilidad : aspirante.getHabilidades()) {
-                    habilidadesAspirante = habilidadesAspirante + habilidad.toString() + Separator.b;
+                    habilidadesAspirante = habilidadesAspirante + habilidad.toString() + Separator.B;
                 }
                 titulosAspirante = titulosAspirante.substring(0, titulosAspirante.length() - 1);
                 habilidadesAspirante = habilidadesAspirante.substring(0, habilidadesAspirante.length() - 1);
-                escritor.write(aspirante.getId() + Separator.a
-                        + aspirante.getNombre() + Separator.a
-                        + aspirante.getEmail() + Separator.a
-                        + aspirante.getTelefono() + Separator.a
-                        + aspirante.getSalariomin() + Separator.a
-                        + aspirante.getFotoPath() + Separator.a
-                        + aspirante.getJornada().toString() + Separator.a
-                        + titulosAspirante + Separator.a
-                        + habilidadesAspirante + Separator.a
+                escritor.write(aspirante.getId() + Separator.A
+                        + aspirante.getNombre() + Separator.A
+                        + aspirante.getEmail() + Separator.A
+                        + aspirante.getTelefono() + Separator.A
+                        + aspirante.getSalariomin() + Separator.A
+                        + aspirante.getFotoPath() + Separator.A
+                        + aspirante.getJornada().toString() + Separator.A
+                        + titulosAspirante + Separator.A
+                        + habilidadesAspirante + Separator.A
                         + "\n");
             }
             escritor.close();
@@ -101,8 +103,8 @@ public class Aspirante {
         }
     }
 
-    static void add(int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, String[] _titulos, String[] _habilidades) {
-        Aspirante _aspirante = new Aspirante(_id, _nombre, _email, _telefono, _min, _foto, _jornada);
+    static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, String[] _titulos, String[] _habilidades) {
+        Aspirante _aspirante = new Aspirante(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada);
         for (String _titulo : _titulos) {
             _aspirante.addTitulo(Titulo.fromString(_titulo));
         }
@@ -153,7 +155,8 @@ public class Aspirante {
         return -1;
     }
 
-    public Aspirante(int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada) {
+    public Aspirante(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada) {
+        pos = _pos;
         id = _id;
         nombre = _nombre;
         email = _email;
@@ -175,6 +178,10 @@ public class Aspirante {
 
     public int getId() {
         return id;
+    }
+
+    public int getPos() {
+        return pos;
     }
 
     public String getNombre() {
@@ -237,6 +244,7 @@ public class Aspirante {
         jornada = _jornada;
     }
 
+    private final int pos;
     private final int id;
     private String nombre;
     private String email;

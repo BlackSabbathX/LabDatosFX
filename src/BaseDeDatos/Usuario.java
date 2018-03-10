@@ -58,7 +58,7 @@ public class Usuario {
             BufferedReader lector = new BufferedReader(new FileReader(dbfile));
             String linea = lector.readLine().trim();
             while (linea != null && !linea.equals("")) {
-                String[] registro = linea.split(Separator.a);
+                String[] registro = linea.split(Separator.A);
                 String _usuario = registro[0];
                 String _contrasena = registro[1];
                 String _tipo = registro[2];
@@ -86,9 +86,9 @@ public class Usuario {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
             usuarios.forEach((usuario) -> {
-                escritor.write(usuario.getUsuario() + Separator.a
-                        + usuario.getContrasena() + Separator.a
-                        + usuario.getTipo().toString() + Separator.a
+                escritor.write(usuario.getUsuario() + Separator.A
+                        + usuario.getContrasena() + Separator.A
+                        + usuario.getTipo().toString() + Separator.A
                         + "\n");
             });
             escritor.close();
@@ -103,9 +103,9 @@ public class Usuario {
         itemCount++;
     }
 
-    public static boolean usuarioExists(String usuario) {
+    public static boolean usuarioExists(String _usuario) {
         for (Usuario actual : usuarios) {
-            if (actual.getUsuario().equals(usuario)) {
+            if (actual.getUsuario().equals(_usuario)) {
                 return true;
             }
         }

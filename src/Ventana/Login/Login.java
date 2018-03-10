@@ -1,20 +1,20 @@
 package Ventana.Login;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import BaseDeDatos.Usuario;
 import Ventana.Dialog;
 import Ventana.PrincipalEvaluador.PrincipalEvaluador;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Registro.Registro;
-import com.jfoenix.controls.*;
-import javafx.event.ActionEvent;
+import com.jfoenix.controls.JFXCheckBox;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class Login implements Initializable {
 
@@ -33,16 +33,19 @@ public class Login implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
 
-    public void onCerrarAction() {
+    @FXML
+    public void cerrarClick() {
         toogleVisible();
     }
 
-    public void onRegistrarAction() {
+    @FXML
+    public void registrarClick() {
         Registro.toogleVisible();
         toogleVisible();
     }
 
-    public void onIniciarAction() {
+    @FXML
+    public void iniciarSesion() {
         if (usuario.getText().trim().equals("") || contrasena.getText().trim().equals("")) {
             Dialog.showSimpleDialog(content, "Complete", "Formulario de inicio de sesión incompleto. Llene todos los campos", "Aceptar");
             return;
@@ -67,8 +70,9 @@ public class Login implements Initializable {
         contrasena.setText("");
     }
 
-    public void onContrasenaAction() {
-        onIniciarAction();
+    @FXML
+    public void contrasenaEnter() {
+        iniciarSesion();
     }
 
     @FXML

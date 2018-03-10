@@ -8,34 +8,10 @@ public enum Habilidad {
             return "Ninguna";
         }
     },
-    Ingles("Inglés") {
-        @Override
-        public String toString() {
-            return "Inglés";
-        }
-    },
     Aleman("Alemán") {
         @Override
         public String toString() {
             return "Alemán";
-        }
-    },
-    Chino("Chino") {
-        @Override
-        public String toString() {
-            return "Chino";
-        }
-    },
-    Portugues("Portugues") {
-        @Override
-        public String toString() {
-            return "Portugues";
-        }
-    },
-    Frances("Francés") {
-        @Override
-        public String toString() {
-            return "Francés";
         }
     },
     Arabe("Árabe") {
@@ -50,16 +26,10 @@ public enum Habilidad {
             return "Bengalí";
         }
     },
-    Ruso("Ruso") {
+    Chino("Chino") {
         @Override
         public String toString() {
-            return "Ruso";
-        }
-    },
-    Japones("Japonés") {
-        @Override
-        public String toString() {
-            return "Japonés";
+            return "Chino";
         }
     },
     Excel("Excel") {
@@ -68,10 +38,28 @@ public enum Habilidad {
             return "Excel";
         }
     },
-    Word("Word") {
+    Frances("Francés") {
         @Override
         public String toString() {
-            return "Word";
+            return "Francés";
+        }
+    },
+    Ingles("Inglés") {
+        @Override
+        public String toString() {
+            return "Inglés";
+        }
+    },
+    Japones("Japonés") {
+        @Override
+        public String toString() {
+            return "Japonés";
+        }
+    },
+    Portugues("Portugues") {
+        @Override
+        public String toString() {
+            return "Portugues";
         }
     },
     Powerpoint("Powerpoint") {
@@ -79,12 +67,34 @@ public enum Habilidad {
         public String toString() {
             return "Powerpoint";
         }
+    },
+    Ruso("Ruso") {
+        @Override
+        public String toString() {
+            return "Ruso";
+        }
+    },
+    Word("Word") {
+        @Override
+        public String toString() {
+            return "Word";
+        }
     };
 
     private final String text;
+    private int nivel;
 
     Habilidad(String _text) {
         text = _text;
+        nivel = 1;
+    }
+
+    public void setNivel(int _nivel) {
+        nivel = _nivel;
+    }
+
+    public int getNivel() {
+        return nivel;
     }
 
     public static Habilidad fromString(String _text) {

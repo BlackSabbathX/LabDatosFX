@@ -22,7 +22,7 @@
          <children>
             <Pane prefHeight="554.0" prefWidth="342.0">
                <children>
-                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="9.0" onAction="#onVolverAction" prefHeight="31.0" prefWidth="139.0" ripplerFill="WHITE" text="Volver al inicio" textFill="WHITE">
+                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="9.0" onAction="#volverClick" prefHeight="31.0" prefWidth="139.0" ripplerFill="WHITE" text="Volver al inicio" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -37,12 +37,12 @@
                         <Image url="@img/icon.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="83.0" layoutY="139.0" text="Human" textFill="WHITE">
+                  <Label focusTraversable="false" layoutX="83.0" layoutY="139.0" text="Human" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="177.0" layoutY="139.0" text="-Ware" textFill="#80e5ff">
+                  <Label focusTraversable="false" layoutX="177.0" layoutY="139.0" text="-Ware" textFill="#80e5ff">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -52,6 +52,22 @@
                         <Font size="15.0" />
                      </font>
                   </JFXTextField>
+                  <JFXPasswordField fx:id="contrasena" focusColor="#80e5ff" layoutX="60.0" layoutY="298.0" prefHeight="31.0" prefWidth="268.0" promptText="Contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXPasswordField fx:id="contrasena1" focusColor="#80e5ff" layoutX="60.0" layoutY="341.0" prefHeight="31.0" prefWidth="268.0" promptText="Ingrese nuevamente la contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXComboBox fx:id="tipo" focusColor="#80e5ff" layoutX="60.0" layoutY="416.0" onAction="#cambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #ffffff;" unFocusColor="WHITE" />
+                  <JFXButton layoutX="234.0" layoutY="482.0" onAction="#registrarClick" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
                   <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="14.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/user.png" />
@@ -62,23 +78,7 @@
                         <Image url="@img/pass.png" />
                      </image>
                   </ImageView>
-                  <JFXPasswordField fx:id="contrasena" focusColor="#80e5ff" layoutX="60.0" layoutY="298.0" prefHeight="31.0" prefWidth="268.0" promptText="Contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </JFXPasswordField>
-                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="185.0" layoutY="9.0" onAction="#onCerrarAction" prefHeight="31.0" prefWidth="147.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXPasswordField fx:id="contrasena1" focusColor="#80e5ff" layoutX="60.0" layoutY="341.0" prefHeight="31.0" prefWidth="268.0" promptText="Ingrese nuevamente la contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </JFXPasswordField>
-                  <JFXComboBox fx:id="tipo" focusColor="#80e5ff" layoutX="60.0" layoutY="416.0" onAction="#onCambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #ffffff;" unFocusColor="WHITE" />
-                  <JFXButton fx:id="registrar" disable="true" layoutX="234.0" layoutY="482.0" onAction="#onRegistrarAction" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
+                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="185.0" layoutY="9.0" onAction="#cerrarClick" prefHeight="31.0" prefWidth="147.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
