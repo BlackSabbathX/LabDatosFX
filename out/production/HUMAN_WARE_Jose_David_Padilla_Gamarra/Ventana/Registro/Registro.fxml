@@ -22,7 +22,7 @@
          <children>
             <Pane prefHeight="554.0" prefWidth="342.0">
                <children>
-                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="9.0" onAction="#onVolverAction" prefHeight="31.0" prefWidth="139.0" ripplerFill="WHITE" text="Volver al inicio" textFill="WHITE">
+                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="9.0" onAction="#volverClick" prefHeight="31.0" prefWidth="139.0" ripplerFill="WHITE" text="Volver al inicio" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -62,8 +62,8 @@
                         <Font size="15.0" />
                      </font>
                   </JFXPasswordField>
-                  <JFXComboBox fx:id="tipo" focusColor="#80e5ff" layoutX="60.0" layoutY="416.0" onAction="#onCambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #ffffff;" unFocusColor="WHITE" />
-                  <JFXButton layoutX="234.0" layoutY="482.0" onAction="#onRegistrarAction" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
+                  <JFXComboBox fx:id="tipo" focusColor="#80e5ff" layoutX="60.0" layoutY="416.0" onAction="#cambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #ffffff;" unFocusColor="WHITE" />
+                  <JFXButton layoutX="234.0" layoutY="482.0" onAction="#registrarClick" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -78,7 +78,7 @@
                         <Image url="@img/pass.png" />
                      </image>
                   </ImageView>
-                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="185.0" layoutY="9.0" onAction="#onCerrarAction" prefHeight="31.0" prefWidth="147.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
+                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="185.0" layoutY="9.0" onAction="#cerrarClick" prefHeight="31.0" prefWidth="147.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

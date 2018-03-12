@@ -2,10 +2,16 @@ package Ventana.PrincipalUsuario;
 
 import BaseDeDatos.Empresa;
 import Ventana.Login.Login;
+import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import com.jfoenix.controls.JFXTabPane;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
@@ -16,7 +22,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -69,7 +77,6 @@ public class PrincipalUsuario implements Initializable {
         });
         menuE.getItems().addAll(ed, el, ag);
     }
-
 
     public void loadEmpresas() {
         numerosE.getChildren().removeAll();
@@ -133,7 +140,27 @@ public class PrincipalUsuario implements Initializable {
 
     @FXML
     void agregarClick() {
+        Task t = new Task() {
+            @Override
+            public void run() {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.fxml"));
+                    Parent root = loader.load();
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage(StageStyle.UNDECORATED);
+                    stage.setScene(scene);
+                    ((AgregarE) loader.getController()).setExit(stage);
+                    Platform.runLater(stage::show);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
+            @Override
+            protected Object call() throws Exception {
+                return null;
+            }
+        };
     }
 
     @FXML

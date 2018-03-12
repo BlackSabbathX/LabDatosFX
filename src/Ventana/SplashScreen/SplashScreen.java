@@ -1,14 +1,12 @@
 package Ventana.SplashScreen;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import Ventana.Dialog;
 import Ventana.Login.Login;
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class SplashScreen implements Initializable {
 
@@ -40,6 +38,7 @@ public class SplashScreen implements Initializable {
             } catch (InterruptedException e) {
             }
         }
+
     }
 
 }

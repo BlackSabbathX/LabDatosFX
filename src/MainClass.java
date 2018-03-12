@@ -1,5 +1,8 @@
 
-import BaseDeDatos.*;
+import BaseDeDatos.Aspirante;
+import BaseDeDatos.Empresa;
+import BaseDeDatos.Usuario;
+import BaseDeDatos.Vacante;
 import Ventana.Login.Login;
 import Ventana.PrincipalEvaluador.PrincipalEvaluador;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
@@ -16,6 +19,7 @@ public class MainClass extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
         FXMLLoader loaderSS = new FXMLLoader(getClass().getResource("/Ventana/SplashScreen/SplashScreen.fxml"));
 
         Parent rootSS = loaderSS.load();
@@ -64,6 +68,7 @@ public class MainClass extends Application {
         PrincipalUsuario.controlador = loaderPU.getController();
         PrincipalEvaluador.controlador = loaderPE.getController();
         Registro.controlador = loaderRE.getController();
+
     }
 
     public static void main(String[] args) {

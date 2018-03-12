@@ -2,83 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Estructura/Lista.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.fxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Empresa.txt" afterPath="$PROJECT_DIR$/Empresa.txt" />
       <change beforePath="$PROJECT_DIR$/Usuario.txt" afterPath="$PROJECT_DIR$/Usuario.txt" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Aspirante.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Aspirante.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Empresa.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Empresa.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Usuario.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Usuario.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Vacante.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Vacante.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$10.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$10.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$11.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$11.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$12.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$12.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$13.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$13.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$2.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$3.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$4.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$5.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$6.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$7.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$7.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$8.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$8.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$9.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad$9.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Habilidad.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Separator.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Separator.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$10.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$10.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$11.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$11.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$12.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$12.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$13.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$13.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$14.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$14.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$15.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$15.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$16.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$16.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$17.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$17.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$18.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$18.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$19.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$19.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$2.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$20.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$20.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$21.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$21.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$22.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$22.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$23.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$23.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$24.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$24.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$25.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$25.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$26.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$26.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$27.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$27.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$28.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$28.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$29.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$29.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$3.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$30.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$30.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$31.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$31.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$4.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$4.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$5.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$5.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$6.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$7.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$7.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$8.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$8.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$9.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo$9.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Estructura/Titulo.class" />
       <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/MainClass.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/MainClass.class" />
       <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Dialog.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Dialog.class" />
       <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Login/Login$1.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Login/Login$1.class" />
       <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Login/Login.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Login/Login.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Login/Login.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Login/Login.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.css" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.css" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario$1.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario$2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario$3.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.class" />
       <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro$1$1.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro$1$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro$1.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro.fxml" />
       <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen$Splash.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen$Splash.class" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Empresa.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Empresa.java" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/Habilidad.java" afterPath="$PROJECT_DIR$/src/Estructura/Habilidad.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/Separator.java" afterPath="$PROJECT_DIR$/src/Estructura/Separator.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/Titulo.java" afterPath="$PROJECT_DIR$/src/Estructura/Titulo.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen.class" />
+      <change beforePath="$PROJECT_DIR$/src/MainClass.java" afterPath="$PROJECT_DIR$/src/MainClass.java" />
       <change beforePath="$PROJECT_DIR$/src/Ventana/Dialog.java" afterPath="$PROJECT_DIR$/src/Ventana/Dialog.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/Login.css" afterPath="$PROJECT_DIR$/src/Ventana/Login/Login.css" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/Login.fxml" afterPath="$PROJECT_DIR$/src/Ventana/Login/Login.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/Login.java" afterPath="$PROJECT_DIR$/src/Ventana/Login/Login.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.css" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.css" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" />
       <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml" afterPath="$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" afterPath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
+      <change beforePath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" afterPath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -147,31 +100,98 @@
       <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="207">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
-                <element signature="e#2690#2691#0" expanded="true" />
-                <element signature="e#2718#2719#0" expanded="true" />
+                <element signature="e#2784#2785#0" expanded="true" />
+                <element signature="e#2812#2813#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrincipalUsuario.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrincipalUsuario.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+            <state relative-caret-position="-430">
+              <caret line="155" column="17" lean-forward="true" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4134#4135#0" expanded="true" />
-                <element signature="e#4165#4166#0" expanded="true" />
+                <element signature="e#4404#4405#0" expanded="true" />
+                <element signature="e#4435#4436#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Lista.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Estructura/Lista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgregarE.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="966">
+              <caret line="42" column="71" lean-forward="false" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrincipalUsuario.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgregarE.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EliminarE.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#414#415#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -202,15 +222,27 @@
         <option value="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/Login/Login.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/Registro/Login.fxml" />
-        <option value="$PROJECT_DIR$/src/MainClass.java" />
-        <option value="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" />
         <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml" />
-        <option value="$PROJECT_DIR$/src/Ventana/Dialog.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.css" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
         <option value="$PROJECT_DIR$/src/Ventana/Login/Login.java" />
         <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Agregar.fxml" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Agregar.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/AgregarE.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/EditarE/EditarE.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/EliminarE.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml" />
+        <option value="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/Dialog.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.fxml" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.java" />
+        <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
+        <option value="$PROJECT_DIR$/src/Estructura/Lista.java" />
       </list>
     </option>
   </component>
@@ -221,7 +253,9 @@
     <option name="width" value="1386" />
     <option name="height" value="788" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -240,6 +274,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -252,6 +288,12 @@
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Estructura" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
@@ -271,7 +313,17 @@
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
-              <item name="Registro" type="462c0819:PsiDirectoryNode" />
+              <item name="PrincipalUsuario" type="462c0819:PsiDirectoryNode" />
+              <item name="Agregar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ventana" type="462c0819:PsiDirectoryNode" />
+              <item name="PrincipalUsuario" type="462c0819:PsiDirectoryNode" />
+              <item name="Agregar" type="462c0819:PsiDirectoryNode" />
+              <item name="Empresa" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
@@ -282,8 +334,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,15 +354,18 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\Eliminar\Empresa" />
+      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\Editar\Empresa" />
+      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\Agregar\Empresa" />
+      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\SplashScreen\img" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\Eliminar" />
+      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\Editar" />
+      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\EditarE" />
       <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra" />
       <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Estructura" />
-      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\BaseDeDatos" />
-      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\Registro" />
-      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\SplashScreen\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -474,7 +527,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -508,7 +560,7 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -536,8 +588,8 @@
         <state relative-caret-position="1035">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#2690#2691#0" expanded="true" />
-            <element signature="e#2718#2719#0" expanded="true" />
+            <element signature="e#2784#2785#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -546,14 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1518">
           <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding>
-            <element signature="e#1206#1598#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#4836#4837#0" expanded="true" />
-            <element signature="e#4863#4864#0" expanded="true" />
-            <element signature="e#4906#4907#0" expanded="true" />
-            <element signature="e#4937#4938#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -561,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2553">
           <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,9 +613,8 @@
         <state relative-caret-position="1380">
           <caret line="60" column="34" lean-forward="false" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4134#4135#0" expanded="true" />
-            <element signature="e#4165#4166#0" expanded="true" />
+            <element signature="e#4404#4405#0" expanded="true" />
+            <element signature="e#4435#4436#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -582,8 +624,8 @@
         <state relative-caret-position="1495">
           <caret line="65" column="56" lean-forward="false" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
           <folding>
-            <element signature="e#2690#2691#0" expanded="true" />
-            <element signature="e#2718#2719#0" expanded="true" />
+            <element signature="e#2784#2785#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -592,14 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="897">
           <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-          <folding>
-            <element signature="e#1206#1598#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#4836#4837#0" expanded="true" />
-            <element signature="e#4863#4864#0" expanded="true" />
-            <element signature="e#4906#4907#0" expanded="true" />
-            <element signature="e#4937#4938#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -642,13 +676,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Imagen/bckLogin.jpg" />
     <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Usuario.txt">
@@ -659,14 +693,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/Login/Login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.css">
@@ -676,30 +709,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="63" column="37" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="57" column="53" lean-forward="true" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="-138">
+          <caret line="63" column="37" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -710,33 +726,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="e#2690#2691#0" expanded="true" />
-            <element signature="e#2718#2719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Estructura/Separator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2300">
           <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,14 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding>
-            <element signature="e#1206#1598#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#4836#4837#0" expanded="true" />
-            <element signature="e#4863#4864#0" expanded="true" />
-            <element signature="e#4906#4907#0" expanded="true" />
-            <element signature="e#4937#4938#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -797,19 +780,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/A.java" />
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/Dialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="42" column="71" lean-forward="false" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#2784#2785#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+        <state relative-caret-position="-430">
+          <caret line="155" column="17" lean-forward="true" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4134#4135#0" expanded="true" />
-            <element signature="e#4165#4166#0" expanded="true" />
+            <element signature="e#4404#4405#0" expanded="true" />
+            <element signature="e#4435#4436#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Estructura/Lista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
