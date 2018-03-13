@@ -1,6 +1,9 @@
 package Estructura;
 
-public class Lista<T extends Comparable<T>> {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> {
 
     private Nodo<T> ptr;
     private Nodo<T> actual;
@@ -16,15 +19,10 @@ public class Lista<T extends Comparable<T>> {
         return count;
     }
 
-    public boolean hasNext() {
-        if (actual == null) {
-            return false;
-        } else if (actual.link == null) {
-            return false;
-        } else {
-            actual = actual.link;
-            return true;
-        }
+    public void clear() {
+        ptr = null;
+        count = 0;
+        reset();
     }
 
     public T getActual() {
@@ -90,6 +88,57 @@ public class Lista<T extends Comparable<T>> {
         return null;
     }
 
+    public void remove(int i) {
+        Nodo<T> actual = ptr;
+        int pos = 0;
+        if (ptr == null) {
+            return;
+        }
+        if (i == 0) {
+            ptr = ptr.link;
+            count--;
+            return;
+        }
+        while (actual != null) {
+            if (pos == i - 1) {
+                actual.link = actual.link.link;
+                count--;
+                return;
+            }
+            pos++;
+            actual = actual.link;
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return this;
+    }
+
+    public boolean hasNext() {
+        if (actual == null) {
+            reset();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public T next() {
+        if (this.hasNext()) {
+            T dato = actual.dato;
+            actual = actual.link;
+            return dato;
+        }
+        reset();
+        throw new NoSuchElementException();
+    }
+
+    public void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+
     private class Nodo<G> {
         private G dato;
         private Nodo<G> link;
@@ -104,5 +153,4 @@ public class Lista<T extends Comparable<T>> {
             link = null;
         }
     }
-
 }

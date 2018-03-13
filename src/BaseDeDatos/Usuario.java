@@ -1,48 +1,48 @@
 package BaseDeDatos;
 
+import Estructura.Lista;
 import Estructura.Separator;
 import Estructura.TipoUsuario;
+import Ventana.Dialog;
 
-import javax.swing.*;
 import java.io.*;
-import java.util.ArrayList;
 
-public class Usuario {
+public class Usuario implements Comparable<Usuario> {
 
-    private static ArrayList<Usuario> usuarios;
-    private static int itemCount;
+    private static Lista<Usuario> usuarios;
     private static final String dbpath = "Usuario.txt";
     private static final File dbfile = new File(dbpath);
 
     public static void init() {
-        usuarios = new ArrayList<>();
-        itemCount = 0;
+        usuarios = new Lista<>();
         if (!dbfile.exists()) {
             try {
                 dbfile.createNewFile();
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al crear el archivo de aspirantes.", "Error", JOptionPane.ERROR_MESSAGE);
+                Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de usuarios.", "Aceptar");
             }
         }
     }
 
     public static int nEvaluadores() {
         int n = 0;
-        for (Usuario usuario : usuarios) {
-            if (usuario.getTipo() == TipoUsuario.Evaluador) {
+        usuarios.reset();
+        do {
+            if (usuarios.getActual().getTipo() == TipoUsuario.Evaluador) {
                 n++;
             }
-        }
+        } while (usuarios.hasNext());
         return n;
     }
 
     public static int nUsuarios() {
         int n = 0;
-        for (Usuario usuario : usuarios) {
-            if (usuario.getTipo() == TipoUsuario.Usuario) {
+        usuarios.reset();
+        do {
+            if (usuarios.getActual().getTipo() == TipoUsuario.Usuario) {
                 n++;
             }
-        }
+        } while (usuarios.hasNext());
         return n;
     }
 
@@ -60,10 +60,8 @@ public class Usuario {
                 linea = lector.readLine();
             }
             lector.close();
-        } catch (FileNotFoundException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de los aspirantes. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de los aspirantes. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
         } catch (NullPointerException error) {
             PrintWriter esc = null;
             try {
@@ -71,7 +69,7 @@ public class Usuario {
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
             }
         }
     }
@@ -79,48 +77,45 @@ public class Usuario {
     public static void save() {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
-            usuarios.forEach((usuario) -> {
-                escritor.write(usuario.getUsuario() + Separator.A
-                        + usuario.getContrasena() + Separator.A
-                        + usuario.getTipo().toString() + Separator.A
+            usuarios.reset();
+            do {
+                escritor.write(usuarios.getActual().getUsuario() + Separator.A
+                        + usuarios.getActual().getContrasena() + Separator.A
+                        + usuarios.getActual().getTipo().toString() + Separator.A
                         + "\n");
-            });
+            } while (usuarios.hasNext());
             escritor.close();
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de los usuarios. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Dialog.showSimpleDialog(null, "Error", "Error al grabar la base de datos de los usuarios.", "Aceptar");
         }
     }
 
     public static void add(String _usuarioStr, String _contrasena, String _tipo) {
         Usuario _usuario = new Usuario(_usuarioStr, _contrasena, _tipo);
-        usuarios.add(_usuario);
-        itemCount++;
+        usuarios.insertar(_usuario);
     }
 
     public static boolean usuarioExists(String _usuario) {
-        for (Usuario actual : usuarios) {
-            if (actual.getUsuario().equals(_usuario)) {
+        usuarios.reset();
+        do {
+            if (usuarios.getActual().getUsuario().equals(_usuario)) {
                 return true;
             }
-        }
+        } while (usuarios.hasNext());
         return false;
     }
 
     public static Usuario logear(String _usuario, String _contrasena) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.getUsuario().equals(_usuario)) {
-                if (usuario.contrasenaCorrecta(_contrasena)) {
-                    return usuario;
+        do {
+            if (usuarios.getActual().getUsuario().equals(_usuario)) {
+                if (usuarios.getActual().contrasenaCorrecta(_contrasena)) {
+                    return usuarios.getActual();
                 } else {
                     break;
                 }
             }
-        }
+        } while (usuarios.hasNext());
         return null;
-    }
-
-    public static int getItemCount() {
-        return itemCount;
     }
 
     private Usuario(String _usuario, String _contrasena, String _tipo) {
@@ -155,4 +150,8 @@ public class Usuario {
     private String contrasena;
     private final TipoUsuario tipo;
 
+    @Override
+    public int compareTo(Usuario o) {
+        return usuario.compareTo(o.usuario);
+    }
 }

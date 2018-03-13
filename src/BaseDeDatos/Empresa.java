@@ -1,39 +1,31 @@
 package BaseDeDatos;
 
+import Estructura.Lista;
 import Estructura.Separator;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import javax.swing.JOptionPane;
+import Ventana.Dialog;
+
+import java.io.*;
 import java.util.Random;
 
 public class Empresa implements Comparable<Empresa> {
 
-    private static ArrayList<Empresa> empresas;
-    private static int itemCount;
+    private static Lista<Empresa> empresas;
     private static int _pos;
     private static final String DBPATH = "Empresa.txt";
     private static final File DBFILE = new File(DBPATH);
 
-    public static ArrayList<Empresa> getEmpresas() {
+    public static Lista<Empresa> getEmpresas() {
         return empresas;
     }
 
     public static void init() {
-        empresas = new ArrayList<>();
-        itemCount = 0;
+        empresas = new Lista<>();
         _pos = 0;
         if (!DBFILE.exists()) {
             try {
                 DBFILE.createNewFile();
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al crear el archivo de empresas.", "Error", JOptionPane.ERROR_MESSAGE);
+                Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de empresas.", "Aceptar");
             }
         }
     }
@@ -54,9 +46,9 @@ public class Empresa implements Comparable<Empresa> {
             }
             lector.close();
         } catch (FileNotFoundException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
         } catch (NullPointerException error) {
             PrintWriter esc = null;
             try {
@@ -64,29 +56,28 @@ public class Empresa implements Comparable<Empresa> {
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
             }
         }
     }
 
     public static void save() {
         try {
-            Collections.sort(empresas);
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
-            for (Empresa empresa : empresas) {
-                escritor.write(empresa.getId() + Separator.A
-                        + empresa.getNombre() + Separator.A
-                        + empresa.getTelefono() + "\n");
-            }
+            empresas.reset();
+            do {
+                escritor.write(empresas.getActual().getId() + Separator.A
+                        + empresas.getActual().getNombre() + Separator.A
+                        + empresas.getActual().getTelefono() + "\n");
+            } while (empresas.hasNext());
             escritor.close();
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
         }
     }
 
     public static void add(int _id, String _nombre, String _telefono) {
-        empresas.add(new Empresa(_pos, _id, _nombre, _telefono));
-        itemCount++;
+        empresas.insertarOrdenado(new Empresa(_pos, _id, _nombre, _telefono));
         _pos++;
     }
 
@@ -97,46 +88,41 @@ public class Empresa implements Comparable<Empresa> {
         do {
             _id = random.nextInt(1000);
             isIn = false;
-            for (Empresa empresa : empresas) {
-                if (empresa.getId() == _id) {
+            empresas.reset();
+            do {
+                if (empresas.getActual().getId() == _id) {
                     isIn = true;
                     break;
                 }
-            }
+            } while (empresas.hasNext());
         } while (isIn);
         return _id;
     }
 
     static void removeAt(int i) {
-        if (i >= 0 && i < itemCount) {
+        if (i >= 0 && i < empresas.getItemCount()) {
             empresas.remove(i);
-            itemCount--;
         }
     }
 
-    public static void remove(Empresa _empresa) {
-        empresas.remove(_empresa);
-        itemCount--;
-    }
-
     static void editNombre(int i, String _nombre) {
-        if (i >= 0 && i < itemCount) {
+        if (i >= 0 && i < empresas.getItemCount()) {
             empresas.get(i).setNombre(_nombre);
         }
     }
 
     static void editTelefono(int i, String _telefono) {
-        if (i >= 0 && i < itemCount) {
+        if (i >= 0 && i < empresas.getItemCount()) {
             empresas.get(i).setTelefono(_telefono);
         }
     }
 
     public static int getItemCount() {
-        return itemCount;
+        return empresas.getItemCount();
     }
 
     public static Empresa getEmpresaAt(int i) {
-        if (i >= 0 && i < itemCount) {
+        if (i >= 0 && i < empresas.getItemCount()) {
             return empresas.get(i);
         }
         return null;
@@ -144,23 +130,25 @@ public class Empresa implements Comparable<Empresa> {
 
     public static int indexOf(String _nombre) {
         int i = 0;
-        for (Empresa empresa : empresas) {
-            if (empresa.getNombre().equals(_nombre)) {
+        empresas.reset();
+        do {
+            if (empresas.getActual().getNombre().equals(_nombre)) {
                 return i;
             }
             i++;
-        }
+        } while (empresas.hasNext());
         return -1;
     }
 
     public static int indexOf(int _id) {
         int i = 0;
-        for (Empresa empresa : empresas) {
-            if (empresa.getId() == _id) {
+        empresas.reset();
+        do {
+            if (empresas.getActual().getId() == _id) {
                 return i;
             }
             i++;
-        }
+        } while (empresas.hasNext());
         return -1;
     }
 

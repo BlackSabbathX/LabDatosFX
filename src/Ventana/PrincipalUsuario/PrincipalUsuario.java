@@ -1,6 +1,7 @@
 package Ventana.PrincipalUsuario;
 
 import BaseDeDatos.Empresa;
+import Estructura.Lista;
 import Ventana.Login.Login;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import com.jfoenix.controls.JFXTabPane;
@@ -86,12 +87,14 @@ public class PrincipalUsuario implements Initializable {
         boolean par = false;
         Color color1 = Color.WHITE;
         Color color2 = Color.rgb(190, 190, 255);
-        for (Empresa empresa : Empresa.getEmpresas()) {
-            Label numero = new Label(String.valueOf(empresa.getPos() + 1));
-            Label id = new Label(String.valueOf(empresa.getId()));
-            Label nombre = new Label(empresa.getNombre());
-            Label telefono = new Label(empresa.getTelefono());
-            final int pos = empresa.getPos();
+        Lista<Empresa> empresas = Empresa.getEmpresas();
+        empresas.reset();
+        do {
+            Label numero = new Label(String.valueOf(empresas.getActual().getPos() + 1));
+            Label id = new Label(String.valueOf(empresas.getActual().getId()));
+            Label nombre = new Label(empresas.getActual().getNombre());
+            Label telefono = new Label(empresas.getActual().getTelefono());
+            final int pos = empresas.getActual().getPos();
             EventHandler listener = (EventHandler<MouseEvent>) e -> {
                 if (e.getButton() == MouseButton.SECONDARY) {
                     posE = pos;
@@ -123,7 +126,7 @@ public class PrincipalUsuario implements Initializable {
             idesE.getChildren().add(id);
             nombresE.getChildren().add(nombre);
             telefonosE.getChildren().add(telefono);
-        }
+        } while (empresas.hasNext());
     }
 
 

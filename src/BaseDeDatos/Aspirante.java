@@ -1,35 +1,25 @@
 package BaseDeDatos;
 
-import Estructura.Titulo;
-import Estructura.Habilidad;
-import Estructura.Separator;
-import Estructura.Jornada;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import Estructura.*;
+import Ventana.Dialog;
+
+import java.io.*;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
-public class Aspirante {
+public class Aspirante implements Comparable<Aspirante> {
 
-    private static ArrayList<Aspirante> aspirantes;
-    private static int itemCount;
+    private static Lista<Aspirante> aspirantes;
+    //private static int itemCount;
     private static final String dbpath = "Aspirante.txt";
     private static final File dbfile = new File(dbpath);
 
     public static void init() {
-        aspirantes = new ArrayList<>();
-        itemCount = 0;
+        aspirantes = new Lista<>();
         if (!dbfile.exists()) {
             try {
                 dbfile.createNewFile();
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al crear el archivo de aspirantes.", "Error", JOptionPane.ERROR_MESSAGE);
+                Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de aspirantes.", "Aceptar");
             }
         }
     }
@@ -56,10 +46,8 @@ public class Aspirante {
                 _pos++;
             }
             lector.close();
-        } catch (FileNotFoundException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de los aspirantes. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de los aspirantes. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
         } catch (NullPointerException error) {
             PrintWriter esc = null;
             try {
@@ -67,7 +55,7 @@ public class Aspirante {
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
             }
         }
     }
@@ -75,31 +63,32 @@ public class Aspirante {
     static void save() {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
-            for (Aspirante aspirante : aspirantes) {
+            aspirantes.reset();
+            do {
                 String titulosAspirante = "";
                 String habilidadesAspirante = "";
-                for (Titulo titulo : aspirante.getTitulos()) {
+                for (Titulo titulo : aspirantes.getActual().getTitulos()) {
                     titulosAspirante = titulosAspirante + titulo.toString() + Separator.B;
                 }
-                for (Habilidad habilidad : aspirante.getHabilidades()) {
+                for (Habilidad habilidad : aspirantes.getActual().getHabilidades()) {
                     habilidadesAspirante = habilidadesAspirante + habilidad.toString() + Separator.B;
                 }
                 titulosAspirante = titulosAspirante.substring(0, titulosAspirante.length() - 1);
                 habilidadesAspirante = habilidadesAspirante.substring(0, habilidadesAspirante.length() - 1);
-                escritor.write(aspirante.getId() + Separator.A
-                        + aspirante.getNombre() + Separator.A
-                        + aspirante.getEmail() + Separator.A
-                        + aspirante.getTelefono() + Separator.A
-                        + aspirante.getSalariomin() + Separator.A
-                        + aspirante.getFotoPath() + Separator.A
-                        + aspirante.getJornada().toString() + Separator.A
+                escritor.write(aspirantes.getActual().getId() + Separator.A
+                        + aspirantes.getActual().getNombre() + Separator.A
+                        + aspirantes.getActual().getEmail() + Separator.A
+                        + aspirantes.getActual().getTelefono() + Separator.A
+                        + aspirantes.getActual().getSalariomin() + Separator.A
+                        + aspirantes.getActual().getFoto() + Separator.A
+                        + aspirantes.getActual().getJornada().toString() + Separator.A
                         + titulosAspirante + Separator.A
                         + habilidadesAspirante + Separator.A
                         + "\n");
-            }
+            } while (aspirantes.hasNext());
             escritor.close();
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
         }
     }
 
@@ -111,23 +100,21 @@ public class Aspirante {
         for (String _habilidad : _habilidades) {
             _aspirante.addHabilidad(Habilidad.fromString(_habilidad));
         }
-        aspirantes.add(_aspirante);
-        itemCount++;
+        aspirantes.insertarOrdenado(_aspirante);
     }
 
     static void removeAt(int i) {
-        if (i >= 0 && i < itemCount) {
+        if (i >= 0 && i < aspirantes.getItemCount()) {
             aspirantes.remove(i);
-            itemCount--;
         }
     }
 
     static int getItemCount() {
-        return itemCount;
+        return aspirantes.getItemCount();
     }
 
     static Aspirante getAspiranteAt(int i) {
-        if (i >= 0 && i < itemCount) {
+        if (i >= 0 && i < aspirantes.getItemCount()) {
             return aspirantes.get(i);
         }
         return null;
@@ -135,23 +122,25 @@ public class Aspirante {
 
     static int indexOf(String _nombre) {
         int i = 0;
-        for (Aspirante aspirante : aspirantes) {
-            if (aspirante.getNombre().equals(_nombre)) {
+        aspirantes.reset();
+        do {
+            if (aspirantes.getActual().getNombre().equals(_nombre)) {
                 return i;
             }
             i++;
-        }
+        } while (aspirantes.hasNext());
         return -1;
     }
 
     static int indexOf(int _id) {
         int i = 0;
-        for (Aspirante aspirante : aspirantes) {
-            if (aspirante.getId() == _id) {
+        aspirantes.reset();
+        do {
+            if (aspirantes.getActual().getId() == _id) {
                 return i;
             }
             i++;
-        }
+        } while (aspirantes.hasNext());
         return -1;
     }
 
@@ -162,7 +151,7 @@ public class Aspirante {
         email = _email;
         telefono = _telefono;
         salariomin = _min;
-        foto = new ImageIcon(_foto);
+        //foto = new ImageIcon(_foto);
         jornada = Jornada.fromString(_jornada);
         titulos = new ArrayList<>();
         habilidades = new ArrayList<>();
@@ -200,12 +189,8 @@ public class Aspirante {
         return salariomin;
     }
 
-    public ImageIcon getFoto() {
+    public String getFoto() {
         return foto;
-    }
-
-    public String getFotoPath() {
-        return foto.getDescription();
     }
 
     public Jornada getJornada() {
@@ -237,7 +222,7 @@ public class Aspirante {
     }
 
     public void setFoto(String _foto) {
-        foto = new ImageIcon(_foto);
+        foto = _foto;
     }
 
     public void setJornada(Jornada _jornada) {
@@ -250,9 +235,13 @@ public class Aspirante {
     private String email;
     private String telefono;
     private float salariomin;
-    private ImageIcon foto;
+    private String foto;
     private Jornada jornada;
     private ArrayList<Titulo> titulos;
     private ArrayList<Habilidad> habilidades;
 
+    @Override
+    public int compareTo(Aspirante o) {
+        return nombre.compareTo(o.nombre);
+    }
 }
