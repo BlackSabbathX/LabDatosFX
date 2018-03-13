@@ -2,55 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/TestLista.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="$PROJECT_DIR$/.idea/description.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfoenix_9_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_9_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/HUMAN_WARE_Jose_David_Padilla_Gamarra.iml" afterPath="$PROJECT_DIR$/HUMAN_WARE_Jose_David_Padilla_Gamarra.iml" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Usuario.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Usuario.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.css" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.css" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.css" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.css" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro.css" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/Registro/Registro.css" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen.css" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen.css" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/SplashScreen/SplashScreen.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Empresa.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Empresa.java" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/Habilidad.java" afterPath="$PROJECT_DIR$/src/Estructura/Habilidad.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/Jornada.java" afterPath="$PROJECT_DIR$/src/Estructura/Jornada.java" />
       <change beforePath="$PROJECT_DIR$/src/Estructura/Lista.java" afterPath="$PROJECT_DIR$/src/Estructura/Lista.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/Separator.java" afterPath="$PROJECT_DIR$/src/Estructura/Separator.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/TipoUsuario.java" afterPath="$PROJECT_DIR$/src/Estructura/TipoUsuario.java" />
-      <change beforePath="$PROJECT_DIR$/src/Estructura/Titulo.java" afterPath="$PROJECT_DIR$/src/Estructura/Titulo.java" />
-      <change beforePath="$PROJECT_DIR$/src/MainClass.java" afterPath="$PROJECT_DIR$/src/MainClass.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Dialog.java" afterPath="$PROJECT_DIR$/src/Ventana/Dialog.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Login/Login.java" afterPath="$PROJECT_DIR$/src/Ventana/Login/Login.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.css" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.css" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.css" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.css" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/Registro.css" afterPath="$PROJECT_DIR$/src/Ventana/Registro/Registro.css" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" afterPath="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.css" afterPath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.css" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.fxml" afterPath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" afterPath="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestLista.java" afterPath="$PROJECT_DIR$/src/test/TestLista.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -132,8 +85,8 @@
       <file leaf-file-name="Lista.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Estructura/Lista.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="728">
+              <caret line="55" column="93" lean-forward="false" selection-start-line="55" selection-start-column="93" selection-end-line="55" selection-end-column="93" />
               <folding>
                 <element signature="e#265#266#0" expanded="true" />
                 <element signature="e#293#294#0" expanded="true" />
@@ -159,11 +112,11 @@
       <file leaf-file-name="TestLista.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/TestLista.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding>
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#1019#1020#0" expanded="true" />
+                <element signature="e#1778#1779#0" expanded="true" />
+                <element signature="e#1835#1836#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -292,8 +245,8 @@
         <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
         <option value="$PROJECT_DIR$/test/testLista.java" />
-        <option value="$PROJECT_DIR$/src/Estructura/Lista.java" />
         <option value="$PROJECT_DIR$/src/test/TestLista.java" />
+        <option value="$PROJECT_DIR$/src/Estructura/Lista.java" />
       </list>
     </option>
   </component>
@@ -577,7 +530,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4345719" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -923,14 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2600">
-          <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/testLista.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -939,10 +884,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Estructura/Lista.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="728">
+          <caret line="55" column="93" lean-forward="false" selection-start-line="55" selection-start-column="93" selection-end-line="55" selection-end-column="93" />
           <folding>
             <element signature="e#265#266#0" expanded="true" />
             <element signature="e#293#294#0" expanded="true" />
@@ -956,11 +909,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestLista.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="260">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding>
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
+            <element signature="e#1835#1836#0" expanded="true" />
           </folding>
         </state>
       </provider>

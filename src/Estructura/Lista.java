@@ -46,9 +46,17 @@ public class Lista<T extends Comparable<T>> {
             }
         } else {
             Nodo<T> actual = ptr;
+            if (dato.compareTo(actual.dato) <= 0) {
+                ptr = new Nodo<>(dato, ptr);
+                count++;
+                reset();
+                return;
+            }
             do {
-                if (dato.compareTo(actual.dato) >= -1 && dato.compareTo(actual.link.dato) <= 1) {
+                if (dato.compareTo(actual.dato) >= 0 && dato.compareTo(actual.link.dato) <= 0) {
                     actual.link = new Nodo<>(dato, actual.link);
+                    count++;
+                    reset();
                     return;
                 }
                 actual = actual.link;
@@ -56,7 +64,7 @@ public class Lista<T extends Comparable<T>> {
             actual.link = new Nodo<>(dato);
         }
         count++;
-        actual = ptr;
+        reset();
     }
 
     public void insertar(T dato) {
@@ -66,7 +74,7 @@ public class Lista<T extends Comparable<T>> {
             ptr = new Nodo<>(dato, ptr);
         }
         count++;
-        actual = ptr;
+        reset();
     }
 
     public T get(int i) {
