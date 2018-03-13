@@ -7,7 +7,6 @@ import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +16,6 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -42,13 +40,17 @@ public class PrincipalUsuario implements Initializable {
         }
     }
 
+    public static void loadAll(){
+        controlador.loadEmpresas();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         agregarMenu();
         posE = 0;
         posV = 0;
         posA = 0;
-        loadEmpresas();
+//        loadEmpresas();
     }
 
     private void agregarMenu() {
@@ -88,23 +90,36 @@ public class PrincipalUsuario implements Initializable {
         Color color1 = Color.WHITE;
         Color color2 = Color.rgb(190, 190, 255);
         Lista<Empresa> empresas = Empresa.getEmpresas();
-        empresas.reset();
-        do {
-            Label numero = new Label(String.valueOf(empresas.getActual().getPos() + 1));
-            Label id = new Label(String.valueOf(empresas.getActual().getId()));
-            Label nombre = new Label(empresas.getActual().getNombre());
-            Label telefono = new Label(empresas.getActual().getTelefono());
-            final int pos = empresas.getActual().getPos();
-            EventHandler listener = (EventHandler<MouseEvent>) e -> {
+        for (Empresa empresa : empresas) {
+            Label numero = new Label(String.valueOf(empresa.getPos() + 1));
+            Label id = new Label(String.valueOf(empresa.getId()));
+            Label nombre = new Label(empresa.getNombre());
+            Label telefono = new Label(empresa.getTelefono());
+            final int pos = empresa.getPos();
+            numero.setOnMouseClicked(e -> {
                 if (e.getButton() == MouseButton.SECONDARY) {
                     posE = pos;
                     menuE.show(numero, e.getScreenX(), e.getScreenY());
                 }
-            };
-            numero.setOnMouseClicked(listener);
-            id.setOnMouseClicked(listener);
-            nombre.setOnMouseClicked(listener);
-            telefono.setOnMouseClicked(listener);
+            });
+            id.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posE = pos;
+                    menuE.show(id, e.getScreenX(), e.getScreenY());
+                }
+            });
+            nombre.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posE = pos;
+                    menuE.show(nombre, e.getScreenX(), e.getScreenY());
+                }
+            });
+            telefono.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posE = pos;
+                    menuE.show(telefono, e.getScreenX(), e.getScreenY());
+                }
+            });
             Font font = new Font("System", 14);
             numero.setFont(font);
             id.setFont(font);
@@ -126,7 +141,7 @@ public class PrincipalUsuario implements Initializable {
             idesE.getChildren().add(id);
             nombresE.getChildren().add(nombre);
             telefonosE.getChildren().add(telefono);
-        } while (empresas.hasNext());
+        }
     }
 
 

@@ -45,8 +45,6 @@ public class Empresa implements Comparable<Empresa> {
                 linea = lector.readLine();
             }
             lector.close();
-        } catch (FileNotFoundException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
         } catch (IOException error) {
             Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
         } catch (NullPointerException error) {
@@ -64,12 +62,9 @@ public class Empresa implements Comparable<Empresa> {
     public static void save() {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
-            empresas.reset();
-            do {
-                escritor.write(empresas.getActual().getId() + Separator.A
-                        + empresas.getActual().getNombre() + Separator.A
-                        + empresas.getActual().getTelefono() + "\n");
-            } while (empresas.hasNext());
+            empresas.forEach(empresa -> escritor.write(empresa.getId() + Separator.A
+                    + empresa.getNombre() + Separator.A
+                    + empresa.getTelefono() + "\n"));
             escritor.close();
         } catch (IOException error) {
             Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
@@ -88,13 +83,12 @@ public class Empresa implements Comparable<Empresa> {
         do {
             _id = random.nextInt(1000);
             isIn = false;
-            empresas.reset();
-            do {
-                if (empresas.getActual().getId() == _id) {
+            for (Empresa empresa : empresas) {
+                if (empresa.getId() == _id) {
                     isIn = true;
                     break;
                 }
-            } while (empresas.hasNext());
+            }
         } while (isIn);
         return _id;
     }
@@ -130,25 +124,23 @@ public class Empresa implements Comparable<Empresa> {
 
     public static int indexOf(String _nombre) {
         int i = 0;
-        empresas.reset();
-        do {
-            if (empresas.getActual().getNombre().equals(_nombre)) {
+        for (Empresa empresa : empresas) {
+            if (empresa.getNombre().equals(_nombre)) {
                 return i;
             }
             i++;
-        } while (empresas.hasNext());
+        }
         return -1;
     }
 
     public static int indexOf(int _id) {
         int i = 0;
-        empresas.reset();
-        do {
-            if (empresas.getActual().getId() == _id) {
+        for (Empresa empresa : empresas) {
+            if (empresa.getId() == _id) {
                 return i;
             }
             i++;
-        } while (empresas.hasNext());
+        }
         return -1;
     }
 

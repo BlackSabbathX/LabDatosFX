@@ -25,10 +25,6 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         reset();
     }
 
-    public T getActual() {
-        return actual.dato;
-    }
-
     public void reset() {
         actual = ptr;
     }
@@ -115,6 +111,7 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         return this;
     }
 
+    @Override
     public boolean hasNext() {
         if (actual == null) {
             reset();
@@ -124,6 +121,7 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         }
     }
 
+    @Override
     public T next() {
         if (this.hasNext()) {
             T dato = actual.dato;
@@ -134,10 +132,10 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         throw new NoSuchElementException();
     }
 
+    @Override
     public void remove() {
         throw new UnsupportedOperationException();
     }
-
 
     private class Nodo<G> {
         private G dato;

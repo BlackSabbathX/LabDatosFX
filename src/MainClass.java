@@ -9,6 +9,7 @@ import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Registro.Registro;
 import Ventana.SplashScreen.SplashScreen;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -28,16 +29,6 @@ public class MainClass extends Application {
         SplashScreen.splashScreen.setScene(sceneSS);
         SplashScreen.toogleVisible();
         SplashScreen.controlador = loaderSS.getController();
-
-        Empresa.init();
-        Vacante.init();
-        Aspirante.init();
-        Usuario.init();
-
-        Empresa.load();
-        Vacante.load();
-        Aspirante.load();
-        Usuario.load();
 
         FXMLLoader loaderLG = new FXMLLoader(getClass().getResource("/Ventana/Login/Login.fxml"));
         FXMLLoader loaderPU = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/PrincipalUsuario.fxml"));
@@ -69,6 +60,17 @@ public class MainClass extends Application {
         PrincipalEvaluador.controlador = loaderPE.getController();
         Registro.controlador = loaderRE.getController();
 
+        new Thread(() -> {
+            Empresa.init();
+            Vacante.init();
+            Aspirante.init();
+            Usuario.init();
+            Empresa.load();
+            Vacante.load();
+            Aspirante.load();
+            Usuario.load();
+            Platform.runLater(PrincipalUsuario::loadAll);
+        }).start();
     }
 
     public static void main(String[] args) {

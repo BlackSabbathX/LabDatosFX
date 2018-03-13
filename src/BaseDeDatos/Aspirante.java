@@ -4,12 +4,10 @@ import Estructura.*;
 import Ventana.Dialog;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class Aspirante implements Comparable<Aspirante> {
 
     private static Lista<Aspirante> aspirantes;
-    //private static int itemCount;
     private static final String dbpath = "Aspirante.txt";
     private static final File dbfile = new File(dbpath);
 
@@ -49,7 +47,7 @@ public class Aspirante implements Comparable<Aspirante> {
         } catch (IOException error) {
             Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
         } catch (NullPointerException error) {
-            PrintWriter esc = null;
+            PrintWriter esc;
             try {
                 esc = new PrintWriter(new FileWriter(dbfile));
                 esc.write(" ");
@@ -63,29 +61,28 @@ public class Aspirante implements Comparable<Aspirante> {
     static void save() {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
-            aspirantes.reset();
-            do {
+            aspirantes.forEach(aspirante -> {
                 String titulosAspirante = "";
                 String habilidadesAspirante = "";
-                for (Titulo titulo : aspirantes.getActual().getTitulos()) {
+                for (Titulo titulo : aspirante.getTitulos()) {
                     titulosAspirante = titulosAspirante + titulo.toString() + Separator.B;
                 }
-                for (Habilidad habilidad : aspirantes.getActual().getHabilidades()) {
+                for (Habilidad habilidad : aspirante.getHabilidades()) {
                     habilidadesAspirante = habilidadesAspirante + habilidad.toString() + Separator.B;
                 }
                 titulosAspirante = titulosAspirante.substring(0, titulosAspirante.length() - 1);
                 habilidadesAspirante = habilidadesAspirante.substring(0, habilidadesAspirante.length() - 1);
-                escritor.write(aspirantes.getActual().getId() + Separator.A
-                        + aspirantes.getActual().getNombre() + Separator.A
-                        + aspirantes.getActual().getEmail() + Separator.A
-                        + aspirantes.getActual().getTelefono() + Separator.A
-                        + aspirantes.getActual().getSalariomin() + Separator.A
-                        + aspirantes.getActual().getFoto() + Separator.A
-                        + aspirantes.getActual().getJornada().toString() + Separator.A
+                escritor.write(aspirante.getId() + Separator.A
+                        + aspirante.getNombre() + Separator.A
+                        + aspirante.getEmail() + Separator.A
+                        + aspirante.getTelefono() + Separator.A
+                        + aspirante.getSalariomin() + Separator.A
+                        + aspirante.getFoto() + Separator.A
+                        + aspirante.getJornada().toString() + Separator.A
                         + titulosAspirante + Separator.A
                         + habilidadesAspirante + Separator.A
                         + "\n");
-            } while (aspirantes.hasNext());
+            });
             escritor.close();
         } catch (IOException error) {
             Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
@@ -122,25 +119,23 @@ public class Aspirante implements Comparable<Aspirante> {
 
     static int indexOf(String _nombre) {
         int i = 0;
-        aspirantes.reset();
-        do {
-            if (aspirantes.getActual().getNombre().equals(_nombre)) {
+        for (Aspirante aspirante : aspirantes) {
+            if (aspirante.getNombre().equals(_nombre)) {
                 return i;
             }
             i++;
-        } while (aspirantes.hasNext());
+        }
         return -1;
     }
 
     static int indexOf(int _id) {
         int i = 0;
-        aspirantes.reset();
-        do {
-            if (aspirantes.getActual().getId() == _id) {
+        for (Aspirante aspirante : aspirantes) {
+            if (aspirante.getId() == _id) {
                 return i;
             }
             i++;
-        } while (aspirantes.hasNext());
+        }
         return -1;
     }
 
@@ -151,18 +146,17 @@ public class Aspirante implements Comparable<Aspirante> {
         email = _email;
         telefono = _telefono;
         salariomin = _min;
-        //foto = new ImageIcon(_foto);
-        jornada = Jornada.fromString(_jornada);
-        titulos = new ArrayList<>();
-        habilidades = new ArrayList<>();
+        foto = _foto;
+        titulos = new Lista<>();
+        habilidades = new Lista<>();
     }
 
     public void addTitulo(Titulo _titulo) {
-        titulos.add(_titulo);
+        titulos.insertar(_titulo);
     }
 
     public void addHabilidad(Habilidad _habilidad) {
-        habilidades.add(_habilidad);
+        habilidades.insertar(_habilidad);
     }
 
     public int getId() {
@@ -197,11 +191,11 @@ public class Aspirante implements Comparable<Aspirante> {
         return jornada;
     }
 
-    public ArrayList<Titulo> getTitulos() {
+    public Lista<Titulo> getTitulos() {
         return titulos;
     }
 
-    public ArrayList<Habilidad> getHabilidades() {
+    public Lista<Habilidad> getHabilidades() {
         return habilidades;
     }
 
@@ -237,8 +231,8 @@ public class Aspirante implements Comparable<Aspirante> {
     private float salariomin;
     private String foto;
     private Jornada jornada;
-    private ArrayList<Titulo> titulos;
-    private ArrayList<Habilidad> habilidades;
+    private Lista<Titulo> titulos;
+    private Lista<Habilidad> habilidades;
 
     @Override
     public int compareTo(Aspirante o) {

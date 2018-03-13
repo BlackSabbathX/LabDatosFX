@@ -5,7 +5,6 @@ import Ventana.Dialog;
 
 import javax.swing.*;
 import java.io.*;
-import java.util.ArrayList;
 
 public class Vacante implements Comparable<Vacante> {
 
@@ -63,29 +62,28 @@ public class Vacante implements Comparable<Vacante> {
     static void save() {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
-            vacantes.reset();
-            do {
+            vacantes.forEach(vacante -> {
                 String titulosVacante = "";
                 String habilidadesVacante = "";
-                for (Titulo titulo : vacantes.getActual().getTitulos()) {
+                for (Titulo titulo : vacante.getTitulos()) {
                     titulosVacante = titulosVacante + titulo.toString() + Separator.B;
                 }
-                for (Habilidad habilidad : vacantes.getActual().getHabilidades()) {
+                for (Habilidad habilidad : vacante.getHabilidades()) {
                     habilidadesVacante = habilidadesVacante + habilidad.toString() + Separator.C + habilidad.getNivel() + Separator.B;
                 }
                 titulosVacante = titulosVacante.substring(0, titulosVacante.length() - 1);
                 habilidadesVacante = habilidadesVacante.substring(0, habilidadesVacante.length() - 1);
-                escritor.write(vacantes.getActual().getId() + Separator.A
-                        + vacantes.getActual().getNombre() + Separator.A
-                        + vacantes.getActual().getDescripcion() + Separator.A
-                        + vacantes.getActual().getMin() + Separator.A
-                        + vacantes.getActual().getMax() + Separator.A
-                        + vacantes.getActual().getJornada().toString() + Separator.A
+                escritor.write(vacante.getId() + Separator.A
+                        + vacante.getNombre() + Separator.A
+                        + vacante.getDescripcion() + Separator.A
+                        + vacante.getMin() + Separator.A
+                        + vacante.getMax() + Separator.A
+                        + vacante.getJornada().toString() + Separator.A
                         + titulosVacante + Separator.A
                         + habilidadesVacante + Separator.A
-                        + vacantes.getActual().getEmpresa().getId() + Separator.A
+                        + vacante.getEmpresa().getId() + Separator.A
                         + "\n");
-            } while (vacantes.hasNext());
+            });
             escritor.close();
         } catch (IOException error) {
             JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -135,25 +133,23 @@ public class Vacante implements Comparable<Vacante> {
 
     static int indexOf(String _nombre) {
         int i = 0;
-        vacantes.reset();
-        do {
-            if (vacantes.getActual().getNombre().equals(_nombre)) {
+        for (Vacante vacante : vacantes) {
+            if (vacante.getNombre().equals(_nombre)) {
                 return i;
             }
             i++;
-        } while (vacantes.hasNext());
+        }
         return -1;
     }
 
     static int indexOf(int _id) {
         int i = 0;
-        vacantes.reset();
-        do {
-            if (vacantes.getActual().getId() == _id) {
+        for (Vacante vacante : vacantes) {
+            if (vacante.getId() == _id) {
                 return i;
             }
             i++;
-        } while (vacantes.hasNext());
+        }
         return -1;
     }
 
@@ -165,17 +161,17 @@ public class Vacante implements Comparable<Vacante> {
         salariomin = _min;
         salariomax = _max;
         jornada = Jornada.fromString(_jornada);
-        titulos = new ArrayList<>();
-        habilidades = new ArrayList<>();
+        titulos = new Lista<>();
+        habilidades = new Lista<>();
         empresa = _empresa;
     }
 
     public void addTitulo(Titulo _titulo) {
-        titulos.add(_titulo);
+        titulos.insertar(_titulo);
     }
 
     public void addHabilidad(Habilidad _habilidad) {
-        habilidades.add(_habilidad);
+        habilidades.insertar(_habilidad);
     }
 
     public int getPos() {
@@ -207,11 +203,11 @@ public class Vacante implements Comparable<Vacante> {
         return jornada;
     }
 
-    public ArrayList<Titulo> getTitulos() {
+    public Lista<Titulo> getTitulos() {
         return titulos;
     }
 
-    public ArrayList<Habilidad> getHabilidades() {
+    public Lista<Habilidad> getHabilidades() {
         return habilidades;
     }
 
@@ -255,8 +251,8 @@ public class Vacante implements Comparable<Vacante> {
     private float salariomin;
     private float salariomax;
     private Jornada jornada;
-    private ArrayList<Titulo> titulos;
-    private ArrayList<Habilidad> habilidades;
+    private Lista<Titulo> titulos;
+    private Lista<Habilidad> habilidades;
     private final Empresa empresa;
 
 }

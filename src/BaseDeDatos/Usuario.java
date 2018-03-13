@@ -26,23 +26,21 @@ public class Usuario implements Comparable<Usuario> {
 
     public static int nEvaluadores() {
         int n = 0;
-        usuarios.reset();
-        do {
-            if (usuarios.getActual().getTipo() == TipoUsuario.Evaluador) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getTipo() == TipoUsuario.Evaluador) {
                 n++;
             }
-        } while (usuarios.hasNext());
+        }
         return n;
     }
 
     public static int nUsuarios() {
         int n = 0;
-        usuarios.reset();
-        do {
-            if (usuarios.getActual().getTipo() == TipoUsuario.Usuario) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getTipo() == TipoUsuario.Usuario) {
                 n++;
             }
-        } while (usuarios.hasNext());
+        }
         return n;
     }
 
@@ -77,13 +75,11 @@ public class Usuario implements Comparable<Usuario> {
     public static void save() {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
-            usuarios.reset();
-            do {
-                escritor.write(usuarios.getActual().getUsuario() + Separator.A
-                        + usuarios.getActual().getContrasena() + Separator.A
-                        + usuarios.getActual().getTipo().toString() + Separator.A
-                        + "\n");
-            } while (usuarios.hasNext());
+            usuarios.forEach(usuario -> escritor.write(usuario.getUsuario() + Separator.A
+                    + usuario.getContrasena() + Separator.A
+                    + usuario.getTipo().toString() + Separator.A
+                    + "\n")
+            );
             escritor.close();
         } catch (IOException error) {
             Dialog.showSimpleDialog(null, "Error", "Error al grabar la base de datos de los usuarios.", "Aceptar");
@@ -96,25 +92,24 @@ public class Usuario implements Comparable<Usuario> {
     }
 
     public static boolean usuarioExists(String _usuario) {
-        usuarios.reset();
-        do {
-            if (usuarios.getActual().getUsuario().equals(_usuario)) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getUsuario().equals(_usuario)) {
                 return true;
             }
-        } while (usuarios.hasNext());
+        }
         return false;
     }
 
     public static Usuario logear(String _usuario, String _contrasena) {
-        do {
-            if (usuarios.getActual().getUsuario().equals(_usuario)) {
-                if (usuarios.getActual().contrasenaCorrecta(_contrasena)) {
-                    return usuarios.getActual();
+        for (Usuario usuario : usuarios) {
+            if (usuario.getUsuario().equals(_usuario)) {
+                if (usuario.contrasenaCorrecta(_contrasena)) {
+                    return usuario;
                 } else {
                     break;
                 }
             }
-        } while (usuarios.hasNext());
+        }
         return null;
     }
 
