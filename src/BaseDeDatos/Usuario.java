@@ -1,17 +1,11 @@
 package BaseDeDatos;
 
-import Estructura.TipoUsuario;
 import Estructura.Separator;
+import Estructura.TipoUsuario;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import javax.swing.*;
+import java.io.*;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 public class Usuario {
 
