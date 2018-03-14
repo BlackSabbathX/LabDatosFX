@@ -1,15 +1,10 @@
 
-import BaseDeDatos.Aspirante;
-import BaseDeDatos.Empresa;
-import BaseDeDatos.Usuario;
-import BaseDeDatos.Vacante;
 import Ventana.Login.Login;
 import Ventana.PrincipalEvaluador.PrincipalEvaluador;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import Ventana.Registro.Registro;
 import Ventana.SplashScreen.SplashScreen;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,14 +15,12 @@ public class MainClass extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
         FXMLLoader loaderSS = new FXMLLoader(getClass().getResource("/Ventana/SplashScreen/SplashScreen.fxml"));
 
         Parent rootSS = loaderSS.load();
         Scene sceneSS = new Scene(rootSS);
         SplashScreen.splashScreen = new Stage(StageStyle.UNDECORATED);
         SplashScreen.splashScreen.setScene(sceneSS);
-        SplashScreen.toogleVisible();
         SplashScreen.controlador = loaderSS.getController();
 
         FXMLLoader loaderLG = new FXMLLoader(getClass().getResource("/Ventana/Login/Login.fxml"));
@@ -60,17 +53,8 @@ public class MainClass extends Application {
         PrincipalEvaluador.controlador = loaderPE.getController();
         Registro.controlador = loaderRE.getController();
 
-        new Thread(() -> {
-            Empresa.init();
-            Vacante.init();
-            Aspirante.init();
-            Usuario.init();
-            Empresa.load();
-            Vacante.load();
-            Aspirante.load();
-            Usuario.load();
-            Platform.runLater(PrincipalUsuario::loadAll);
-        }).start();
+        SplashScreen.toogleVisible();
+        SplashScreen.controlador.startApp();
     }
 
     public static void main(String[] args) {

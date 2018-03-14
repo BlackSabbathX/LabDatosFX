@@ -1,6 +1,11 @@
 package Ventana.SplashScreen;
 
+import BaseDeDatos.Aspirante;
+import BaseDeDatos.Empresa;
+import BaseDeDatos.Usuario;
+import BaseDeDatos.Vacante;
 import Ventana.Login.Login;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
@@ -23,22 +28,28 @@ public class SplashScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        new Splash().start();
     }
 
-    class Splash extends Thread {
-        @Override
-        public void run() {
+    public void startApp() {
+        new Thread(() -> {
+            Empresa.init();
+            Vacante.init();
+            Aspirante.init();
+            Usuario.init();
+            Empresa.load();
+            Vacante.load();
+            Aspirante.load();
+            Usuario.load();
+            PrincipalUsuario.loadAll();
             try {
-                Thread.sleep(40);
+                Thread.sleep(4000);
                 Platform.runLater(() -> {
                     Login.toogleVisible();
                     toogleVisible();
                 });
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
-        }
-
+        }).start();
     }
 
 }

@@ -50,7 +50,6 @@ public class PrincipalUsuario implements Initializable {
         posE = 0;
         posV = 0;
         posA = 0;
-//        loadEmpresas();
     }
 
     private void agregarMenu() {

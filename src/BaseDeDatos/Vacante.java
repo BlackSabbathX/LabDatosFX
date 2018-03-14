@@ -2,8 +2,8 @@ package BaseDeDatos;
 
 import Estructura.*;
 import Ventana.Dialog;
+import javafx.application.Platform;
 
-import javax.swing.*;
 import java.io.*;
 
 public class Vacante implements Comparable<Vacante> {
@@ -20,7 +20,7 @@ public class Vacante implements Comparable<Vacante> {
             try {
                 DBFILE.createNewFile();
             } catch (IOException ex) {
-                Dialog.showSimpleDialog(null, "Error al crear el archivo de vacantes.", "Error", "Aceptar");
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error al crear el archivo de vacantes.", "Error", "Aceptar"));
             }
         }
     }
@@ -47,14 +47,14 @@ public class Vacante implements Comparable<Vacante> {
             }
             lector.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar");
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar"));
         } catch (NullPointerException error) {
             try {
                 PrintWriter esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar"));
             }
         }
     }
@@ -86,7 +86,7 @@ public class Vacante implements Comparable<Vacante> {
             });
             escritor.close();
         } catch (IOException error) {
-            JOptionPane.showMessageDialog(null, "Error al cargar la base de datos de las empresas. " + error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar"));
         }
     }
 

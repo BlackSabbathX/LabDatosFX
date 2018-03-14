@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.*?>
-<?import java.net.URL?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="517.0" prefWidth="342.0" style="-fx-background-color: #2D2341;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.Registro.Registro">
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="517.0" prefWidth="342.0" style="-fx-background-color: #2D2341;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.Registro.Registro">
     <stylesheets>
         <URL value="@Registro.css" />
     </stylesheets>
    <children>
-      <StackPane fx:id="content" prefHeight="527.0" prefWidth="342.0">
+      <StackPane fx:id="content" prefHeight="518.0" prefWidth="342.0">
          <children>
-            <Pane prefHeight="554.0" prefWidth="342.0">
+            <Pane prefHeight="513.0" prefWidth="342.0">
                <children>
-                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="9.0" onAction="#volverClick" prefHeight="31.0" prefWidth="139.0" ripplerFill="WHITE" text="Volver al inicio" textFill="WHITE">
+                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="9.0" layoutY="9.0" onAction="#volverClick" prefHeight="31.0" prefWidth="139.0" ripplerFill="WHITE" text="Volver al inicio" textFill="WHITE">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </JFXButton>
                   <ImageView fitHeight="20.0" fitWidth="25.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -37,35 +37,35 @@
                         <Image url="@img/icon.png" />
                      </image>
                   </ImageView>
-                  <Label focusTraversable="false" layoutX="83.0" layoutY="139.0" text="Human" textFill="WHITE">
+                  <Label focusTraversable="false" layoutX="85.0" layoutY="135.0" text="Human" textFill="WHITE">
                      <font>
-                        <Font size="30.0" />
+                        <Font name="Segoe UI Light" size="30.0" />
                      </font>
                   </Label>
                   <Label focusTraversable="false" layoutX="177.0" layoutY="139.0" text="-Ware" textFill="#80e5ff">
                      <font>
-                        <Font size="30.0" />
+                        <Font name="Segoe UI" size="30.0" />
                      </font>
                   </Label>
                   <JFXTextField fx:id="usuario" focusColor="#80e5ff" layoutX="60.0" layoutY="217.0" prefHeight="31.0" prefWidth="268.0" promptText="Usuario" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </JFXTextField>
                   <JFXPasswordField fx:id="contrasena" focusColor="#80e5ff" layoutX="60.0" layoutY="298.0" prefHeight="31.0" prefWidth="268.0" promptText="Contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </JFXPasswordField>
                   <JFXPasswordField fx:id="contrasena1" focusColor="#80e5ff" layoutX="60.0" layoutY="341.0" prefHeight="31.0" prefWidth="268.0" promptText="Ingrese nuevamente la contraseña" style="-fx-text-fill: #ffffff;" unFocusColor="WHITE">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </JFXPasswordField>
-                  <JFXComboBox fx:id="tipo" focusColor="#80e5ff" layoutX="60.0" layoutY="416.0" onAction="#cambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #ffffff;" unFocusColor="WHITE" />
-                  <JFXButton layoutX="234.0" layoutY="482.0" onAction="#registrarClick" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
+                  <JFXComboBox fx:id="tipo" focusColor="#80e5ff" layoutX="60.0" layoutY="416.0" onAction="#cambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #ffffff; -fx-font-family: &quot;Segoe UI&quot;;" unFocusColor="WHITE" />
+                  <JFXButton layoutX="235.0" layoutY="474.0" onAction="#registrarClick" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </JFXButton>
                   <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="14.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
@@ -78,9 +78,9 @@
                         <Image url="@img/pass.png" />
                      </image>
                   </ImageView>
-                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="185.0" layoutY="9.0" onAction="#cerrarClick" prefHeight="31.0" prefWidth="147.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
+                  <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="186.0" layoutY="9.0" onAction="#cerrarClick" prefHeight="31.0" prefWidth="147.0" ripplerFill="WHITE" text="Cerrar la aplicación" textFill="WHITE">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </JFXButton>
                </children>

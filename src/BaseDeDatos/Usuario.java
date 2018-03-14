@@ -4,6 +4,7 @@ import Estructura.Lista;
 import Estructura.Separator;
 import Estructura.TipoUsuario;
 import Ventana.Dialog;
+import javafx.application.Platform;
 
 import java.io.*;
 
@@ -19,7 +20,7 @@ public class Usuario implements Comparable<Usuario> {
             try {
                 dbfile.createNewFile();
             } catch (IOException ex) {
-                Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de usuarios.", "Aceptar");
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de usuarios.", "Aceptar"));
             }
         }
     }
@@ -59,15 +60,15 @@ public class Usuario implements Comparable<Usuario> {
             }
             lector.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar"));
         } catch (NullPointerException error) {
-            PrintWriter esc = null;
+            PrintWriter esc;
             try {
                 esc = new PrintWriter(new FileWriter(dbfile));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar"));
             }
         }
     }
@@ -82,7 +83,7 @@ public class Usuario implements Comparable<Usuario> {
             );
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al grabar la base de datos de los usuarios.", "Aceptar");
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al grabar la base de datos de los usuarios.", "Aceptar"));
         }
     }
 

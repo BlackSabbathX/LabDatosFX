@@ -3,6 +3,7 @@ package BaseDeDatos;
 import Estructura.Lista;
 import Estructura.Separator;
 import Ventana.Dialog;
+import javafx.application.Platform;
 
 import java.io.*;
 import java.util.Random;
@@ -25,7 +26,7 @@ public class Empresa implements Comparable<Empresa> {
             try {
                 DBFILE.createNewFile();
             } catch (IOException ex) {
-                Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de empresas.", "Aceptar");
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de empresas.", "Aceptar"));
             }
         }
     }
@@ -46,15 +47,15 @@ public class Empresa implements Comparable<Empresa> {
             }
             lector.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar"));
         } catch (NullPointerException error) {
-            PrintWriter esc = null;
+            PrintWriter esc;
             try {
                 esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar"));
             }
         }
     }
@@ -67,7 +68,7 @@ public class Empresa implements Comparable<Empresa> {
                     + empresa.getTelefono() + "\n"));
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar"));
         }
     }
 

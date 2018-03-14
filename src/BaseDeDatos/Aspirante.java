@@ -2,6 +2,7 @@ package BaseDeDatos;
 
 import Estructura.*;
 import Ventana.Dialog;
+import javafx.application.Platform;
 
 import java.io.*;
 
@@ -17,7 +18,7 @@ public class Aspirante implements Comparable<Aspirante> {
             try {
                 dbfile.createNewFile();
             } catch (IOException ex) {
-                Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de aspirantes.", "Aceptar");
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de aspirantes.", "Aceptar"));
             }
         }
     }
@@ -45,7 +46,7 @@ public class Aspirante implements Comparable<Aspirante> {
             }
             lector.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar"));
         } catch (NullPointerException error) {
             PrintWriter esc;
             try {
@@ -53,7 +54,7 @@ public class Aspirante implements Comparable<Aspirante> {
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
+                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar"));
             }
         }
     }
@@ -85,7 +86,7 @@ public class Aspirante implements Comparable<Aspirante> {
             });
             escritor.close();
         } catch (IOException error) {
-            Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
+            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar"));
         }
     }
 
