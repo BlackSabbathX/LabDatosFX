@@ -1,19 +1,13 @@
 
 .jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab:selected:top .jfx-rippler .tab-container .tab-label .text {
 	-fx-font-size: 17px;
-	-fx-font-weight: Bold;
-}
-
-.jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab:selected:top .jfx-rippler .tab-container .tab-label {
-	-fx-font-weight: Bold;
-}
-
-.jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab:selected:top .jfx-rippler .tab-container .tab-label  {
+	-fx-font-family: "Segoe UI";
 	-fx-font-weight: Bold;
 }
 
 .jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab:top .jfx-rippler .tab-container .tab-label .text {
 	-fx-font-size: 17px;
+	-fx-font-family: "Segoe UI";
 	-fx-font-weight: Bold;
 }
 

@@ -1,6 +1,9 @@
 package Ventana.PrincipalUsuario.Agregar.Empresa;
 
-import javafx.event.ActionEvent;
+import BaseDeDatos.Empresa;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
+import com.jfoenix.controls.JFXTextField;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
 
@@ -9,27 +12,43 @@ import java.util.ResourceBundle;
 
 public class AgregarE implements Initializable {
 
-    public void setExit(Stage stage) {
+    public static Stage agregar;
+    public static AgregarE controlador;
 
+    public static void toogleVisible() {
+        if (agregar.isShowing()) {
+            agregar.hide();
+        } else {
+            agregar.show();
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
-    public void cerrarSesion(ActionEvent actionEvent) {
+    private void clear() {
+        nombre.setText("");
+        telefono.setText("");
     }
 
-    public void cerrarAplicacion(ActionEvent actionEvent) {
+    @FXML
+    public void cancelar() {
+        clear();
+        toogleVisible();
     }
 
-    public void agregarClick(ActionEvent actionEvent) {
+    @FXML
+    public void agregar() {
+        Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim());
+        PrincipalUsuario.loadAll();
+        new Thread(Empresa::save).start();
+        clear();
+        toogleVisible();
     }
 
-    public void editarClick(ActionEvent actionEvent) {
-    }
-
-    public void eliminarClick(ActionEvent actionEvent) {
-    }
+    @FXML
+    private JFXTextField telefono;
+    @FXML
+    private JFXTextField nombre;
 }

@@ -10,7 +10,7 @@ public class Dialog {
 
     private static boolean okay;
 
-    public static boolean showConfirmationDialog(StackPane padre, String title, String content, String ok, String _cerrar) {
+    public static boolean showConfirmationDialog(StackPane padre, String title, String content, String ok, String _cerrar) throws InterruptedException {
         okay = true;
         JFXDialogLayout layout = new JFXDialogLayout();
         JFXButton aceptar = new JFXButton(ok);

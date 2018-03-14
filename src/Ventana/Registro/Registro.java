@@ -46,7 +46,9 @@ public class Registro implements Initializable {
                         super.updateItem(item, empty);
                         if (item != null) {
                             setText(item);
-                            setTextFill(Color.BLACK);
+                            setStyle("" +
+                                    "-fx-font-family: \"Segoe UI\";" +
+                                    "-fx-text-fill: #111111");
                         }
                     }
                 };

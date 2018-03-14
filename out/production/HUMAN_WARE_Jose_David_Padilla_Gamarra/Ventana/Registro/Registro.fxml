@@ -18,9 +18,9 @@
         <URL value="@Registro.css" />
     </stylesheets>
    <children>
-      <StackPane fx:id="content" prefHeight="527.0" prefWidth="342.0">
+      <StackPane fx:id="content" prefHeight="518.0" prefWidth="342.0">
          <children>
-            <Pane prefHeight="554.0" prefWidth="342.0">
+            <Pane prefHeight="513.0" prefWidth="342.0">
                <children>
                   <JFXButton alignment="CENTER_RIGHT" focusTraversable="false" layoutX="9.0" layoutY="9.0" onAction="#volverClick" prefHeight="31.0" prefWidth="139.0" ripplerFill="WHITE" text="Volver al inicio" textFill="WHITE">
                      <font>
@@ -63,7 +63,7 @@
                      </font>
                   </JFXPasswordField>
                   <JFXComboBox fx:id="tipo" focusColor="#80e5ff" layoutX="60.0" layoutY="416.0" onAction="#cambioTipo" prefHeight="31.0" prefWidth="268.0" promptText="Tipo de cuenta" style="-fx-font-size: 15; -fx-text-fill: #ffffff; -fx-font-family: &quot;Segoe UI&quot;;" unFocusColor="WHITE" />
-                  <JFXButton layoutX="235.0" layoutY="480.0" onAction="#registrarClick" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
+                  <JFXButton layoutX="235.0" layoutY="474.0" onAction="#registrarClick" ripplerFill="#80e5ff" style="-fx-background-color: #80e5ff;" text="Registrarse">
                      <font>
                         <Font name="Segoe UI" size="15.0" />
                      </font>
