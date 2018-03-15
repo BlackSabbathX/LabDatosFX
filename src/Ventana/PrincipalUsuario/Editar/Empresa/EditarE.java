@@ -1,5 +1,6 @@
 package Ventana.PrincipalUsuario.Editar.Empresa;
 
+import BaseDeDatos.Empresa;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -28,6 +29,10 @@ public class EditarE implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        loadEmpresa();
+    }
+
+    private void loadEmpresa(){
         empresa.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override
             public ListCell<String> call(ListView<String> p) {
@@ -45,8 +50,18 @@ public class EditarE implements Initializable {
                 };
             }
         });
-        empresa.getItems().add("Hola");
-        empresa.getItems().add("Chao");
+        Empresa.getEmpresas().forEach(emp -> empresa.getItems().add(emp.getNombre()));
+        if(empresa.getItems().size()>0){
+            empresa.getSelectionModel().select(0);
+        }
+    }
+
+    @FXML
+    public void cancelar() {
+    }
+
+    @FXML
+    public void agregar() {
     }
 
     @FXML
@@ -57,10 +72,4 @@ public class EditarE implements Initializable {
 
     @FXML
     private JFXTextField nombre;
-
-    public void cancelar() {
-    }
-
-    public void agregar() {
-    }
 }
