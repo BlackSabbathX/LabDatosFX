@@ -42,7 +42,8 @@ public class Empresa implements Comparable<Empresa> {
                 int _id = Integer.parseInt(registro[0]);
                 String _nombre = registro[1];
                 String _telefono = registro[2];
-                add(_id, _nombre, _telefono);
+                empresas.llenar(new Empresa(_pos, _id, _nombre, _telefono));
+                _pos++;
                 linea = lector.readLine();
             }
             lector.close();
@@ -72,8 +73,11 @@ public class Empresa implements Comparable<Empresa> {
         }
     }
 
-    public static void add(int _id, String _nombre, String _telefono) {
-        empresas.insertarOrdenado(new Empresa(_pos, _id, _nombre, _telefono));
+    public static void add(int _id, String _nombre, String _telefono, boolean ordenado) {
+        if (ordenado)
+            empresas.insertarOrdenado(new Empresa(_pos, _id, _nombre, _telefono));
+        else
+            empresas.insertar(new Empresa(_pos, _id, _nombre, _telefono));
         _pos++;
     }
 

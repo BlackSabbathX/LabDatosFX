@@ -29,10 +29,14 @@ public class EditarE implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadEmpresa();
+        empresa.setOnAction(event -> {
+            Empresa e = Empresa.getEmpresaAt(empresa.getSelectionModel().getSelectedIndex());
+            nombre.setText(e.getNombre());
+            telefono.setText(e.getTelefono());
+        });
     }
 
-    private void loadEmpresa(){
+    public void loadEmpresa() {
         empresa.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override
             public ListCell<String> call(ListView<String> p) {
@@ -50,14 +54,19 @@ public class EditarE implements Initializable {
                 };
             }
         });
-        Empresa.getEmpresas().forEach(emp -> empresa.getItems().add(emp.getNombre()));
-        if(empresa.getItems().size()>0){
-            empresa.getSelectionModel().select(0);
+        Empresa.getEmpresas().forEach(emp -> empresa.getItems().add(0, emp.getNombre()));
+    }
+
+    public void setItem(int n) {
+        if (empresa.getItems().size() > n) {
+            empresa.getSelectionModel().select(n);
+            empresa.getOnAction().handle(null);
         }
     }
 
     @FXML
     public void cancelar() {
+        toogleVisible();
     }
 
     @FXML
@@ -66,10 +75,8 @@ public class EditarE implements Initializable {
 
     @FXML
     private JFXTextField telefono;
-
     @FXML
     private JFXComboBox<String> empresa;
-
     @FXML
     private JFXTextField nombre;
 }

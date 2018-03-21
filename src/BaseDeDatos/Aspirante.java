@@ -40,7 +40,7 @@ public class Aspirante implements Comparable<Aspirante> {
                 String _jornada = registro[6];
                 String[] _titulos = registro[7].split(Separator.B);
                 String[] _habilidades = registro[8].split(Separator.B);
-                add(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada, _titulos, _habilidades);
+                add(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada, _titulos, _habilidades, false);
                 linea = lector.readLine();
                 _pos++;
             }
@@ -90,7 +90,7 @@ public class Aspirante implements Comparable<Aspirante> {
         }
     }
 
-    static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, String[] _titulos, String[] _habilidades) {
+    static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, String[] _titulos, String[] _habilidades, boolean ordenado) {
         Aspirante _aspirante = new Aspirante(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada);
         for (String _titulo : _titulos) {
             _aspirante.addTitulo(Titulo.fromString(_titulo));
@@ -98,7 +98,10 @@ public class Aspirante implements Comparable<Aspirante> {
         for (String _habilidad : _habilidades) {
             _aspirante.addHabilidad(Habilidad.fromString(_habilidad));
         }
-        aspirantes.insertarOrdenado(_aspirante);
+        if (ordenado)
+            aspirantes.insertarOrdenado(_aspirante);
+        else
+            aspirantes.insertar(_aspirante);
     }
 
     static void removeAt(int i) {

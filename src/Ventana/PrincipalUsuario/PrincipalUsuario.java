@@ -60,7 +60,10 @@ public class PrincipalUsuario implements Initializable {
         ed.setStyle(style);
         el.setStyle(style);
         ag.setStyle(style);
-        ed.setOnAction(e -> editarClick());
+        ed.setOnAction(e -> {
+            editarClick();
+            EditarE.controlador.setItem(posE);
+        });
         el.setOnAction(e -> eliminarClick());
         ag.setOnAction(e -> {
         });
@@ -72,7 +75,7 @@ public class PrincipalUsuario implements Initializable {
         idesE.getChildren().clear();
         nombresE.getChildren().clear();
         telefonosE.getChildren().clear();
-        boolean par = false;
+        boolean par = true;
         Color color1 = Color.WHITE;
         Color color2 = Color.rgb(190, 190, 255);
         Lista<Empresa> empresas = Empresa.getEmpresas();

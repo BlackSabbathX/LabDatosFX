@@ -5,6 +5,7 @@ import BaseDeDatos.Empresa;
 import BaseDeDatos.Usuario;
 import BaseDeDatos.Vacante;
 import Ventana.Login.Login;
+import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
@@ -44,6 +45,8 @@ public class SplashScreen implements Initializable {
             try {
                 Thread.sleep(4000);
                 Platform.runLater(() -> {
+                    EditarE.controlador.loadEmpresa();
+                    EditarE.controlador.setItem(0);
                     Login.toogleVisible();
                     toogleVisible();
                 });

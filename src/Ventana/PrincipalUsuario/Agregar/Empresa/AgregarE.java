@@ -40,7 +40,7 @@ public class AgregarE implements Initializable {
 
     @FXML
     public void agregar() {
-        Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim());
+        Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim(), true);
         PrincipalUsuario.loadAll();
         new Thread(Empresa::save).start();
         clear();
