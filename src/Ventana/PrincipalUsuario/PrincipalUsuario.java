@@ -5,6 +5,7 @@ import BaseDeDatos.Vacante;
 import Estructura.Lista;
 import Ventana.Login.Login;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
+import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
 import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
 import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
 import com.jfoenix.controls.JFXTabPane;
@@ -77,6 +78,9 @@ public class PrincipalUsuario implements Initializable {
             EliminarE.controlador.setItem(posE);
         });
         agE.setOnAction(e -> {
+            pestanas.getSelectionModel().select(1);
+            agregarClick();
+            AgregarV.controlador.setItemE(posE);
         });
         elV.setOnAction(e -> {
             eliminarClick();
@@ -229,7 +233,7 @@ public class PrincipalUsuario implements Initializable {
                 AgregarE.toogleVisible();
                 break;
             case 1:
-
+                AgregarV.toogleVisible();
                 break;
             case 2:
                 break;

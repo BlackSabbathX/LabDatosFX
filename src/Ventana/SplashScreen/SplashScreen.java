@@ -46,10 +46,8 @@ public class SplashScreen implements Initializable {
             try {
                 Thread.sleep(4);
                 Platform.runLater(() -> {
-                    EditarE.controlador.loadEmpresa();
-                    EditarE.controlador.setItem(0);
-                    EliminarE.controlador.loadEmpresa();
-                    EliminarE.controlador.setItem(0);
+                    EditarE.controlador.loadEmpresas();
+                    EliminarE.controlador.loadEmpresas();
                     Login.toogleVisible();
                     toogleVisible();
                 });

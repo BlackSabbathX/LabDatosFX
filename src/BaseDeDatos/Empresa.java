@@ -3,6 +3,10 @@ package BaseDeDatos;
 import Estructura.Lista;
 import Estructura.Separator;
 import Ventana.Dialog;
+import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
+import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
+import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
 import javafx.application.Platform;
 
 import java.io.*;
@@ -58,6 +62,10 @@ public class Empresa implements Comparable<Empresa> {
                 Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar"));
             }
         }
+        PrincipalUsuario.controlador.loadEmpresas();
+        EditarE.controlador.loadEmpresas();
+        EliminarE.controlador.loadEmpresas();
+        AgregarV.controlador.loadEmpresas();
     }
 
     public static void save() {

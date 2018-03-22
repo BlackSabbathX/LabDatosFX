@@ -1,7 +1,6 @@
 package Ventana.PrincipalUsuario.Agregar.Empresa;
 
 import BaseDeDatos.Empresa;
-import Ventana.PrincipalUsuario.PrincipalUsuario;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,8 +42,6 @@ public class AgregarE implements Initializable {
         Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim(), true);
         Empresa.save();
         Empresa.load();
-        PrincipalUsuario.controlador.loadEmpresas();
-        new Thread(Empresa::save).start();
         clear();
         toogleVisible();
     }

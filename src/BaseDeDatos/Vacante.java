@@ -60,7 +60,7 @@ public class Vacante implements Comparable<Vacante> {
         }
     }
 
-    static void save() {
+    public static void save() {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             vacantes.forEach(vacante -> {
