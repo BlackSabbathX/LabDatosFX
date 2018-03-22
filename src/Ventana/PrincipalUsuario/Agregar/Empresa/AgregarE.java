@@ -41,7 +41,9 @@ public class AgregarE implements Initializable {
     @FXML
     public void agregar() {
         Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim(), true);
-        PrincipalUsuario.loadAll();
+        Empresa.save();
+        Empresa.load();
+        PrincipalUsuario.controlador.loadEmpresas();
         new Thread(Empresa::save).start();
         clear();
         toogleVisible();

@@ -5,6 +5,7 @@ import Ventana.Dialog;
 import javafx.application.Platform;
 
 import java.io.*;
+import java.util.Random;
 
 public class Vacante implements Comparable<Vacante> {
 
@@ -108,6 +109,23 @@ public class Vacante implements Comparable<Vacante> {
         }
         vacantes.insertarOrdenado(_vacante);
         _pos++;
+    }
+
+    public static int generateId() {
+        Random random = new Random();
+        int _id;
+        boolean isIn;
+        do {
+            _id = random.nextInt(1000);
+            isIn = false;
+            for (Vacante vacante : vacantes) {
+                if (vacante.getId() == _id) {
+                    isIn = true;
+                    break;
+                }
+            }
+        } while (isIn);
+        return _id;
     }
 
     public static Lista<Vacante> getVacantes() {

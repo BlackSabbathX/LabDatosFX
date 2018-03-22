@@ -7,7 +7,6 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
 
     private Nodo<T> ptr;
     private Nodo<T> actual;
-    private Nodo<T> templl;
     private int count;
 
     public Lista() {
@@ -70,20 +69,6 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         }
         count++;
         reset();
-    }
-
-    public void empezarL() {
-        templl = ptr;
-    }
-
-    public void llenar(T dato) {
-        if (ptr == null) {
-            ptr = new Nodo<>(dato);
-            templl = ptr;
-        } else {
-            templl.link = new Nodo<>(dato);
-            templl = templl.link;
-        }
     }
 
     public T get(int i) {

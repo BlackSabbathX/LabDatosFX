@@ -5,6 +5,7 @@ import Estructura.Lista;
 import Ventana.Login.Login;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
+import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -64,7 +65,10 @@ public class PrincipalUsuario implements Initializable {
             editarClick();
             EditarE.controlador.setItem(posE);
         });
-        el.setOnAction(e -> eliminarClick());
+        el.setOnAction(e -> {
+            eliminarClick();
+            EliminarE.controlador.setItem(posE);
+        });
         ag.setOnAction(e -> {
         });
         menuE.getItems().addAll(ed, el, ag);
@@ -160,26 +164,36 @@ public class PrincipalUsuario implements Initializable {
 
     @FXML
     void editarClick() {
-        EditarE.toogleVisible();
+        switch (pestanas.getSelectionModel().getSelectedIndex()) {
+            case 0:
+                EditarE.toogleVisible();
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
     }
 
     @FXML
     void eliminarClick() {
-
+        switch (pestanas.getSelectionModel().getSelectedIndex()) {
+            case 0:
+                EliminarE.toogleVisible();
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
     }
 
     @FXML
-    private VBox numerosE;
+    private VBox numerosE, nombresE, idesE, telefonosE;
     @FXML
     private JFXTabPane pestanas;
     @FXML
-    private VBox nombresE;
-    @FXML
-    private VBox idesE;
-    @FXML
     private StackPane content;
-    @FXML
-    private VBox telefonosE;
     private ContextMenu menuE;
     private int posE, posV, posA;
 

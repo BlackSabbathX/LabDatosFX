@@ -1,6 +1,7 @@
 package Ventana.PrincipalUsuario.Editar.Empresa;
 
 import BaseDeDatos.Empresa;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ public class EditarE implements Initializable {
         if (editar.isShowing()) {
             editar.hide();
         } else {
+            if (Empresa.getItemCount() == 0) return;
             editar.show();
         }
     }
@@ -54,10 +56,11 @@ public class EditarE implements Initializable {
                 };
             }
         });
-        Empresa.getEmpresas().forEach(emp -> empresa.getItems().add(0, emp.getNombre()));
+        Empresa.getEmpresas().forEach(emp -> empresa.getItems().add(emp.getNombre()));
     }
 
     public void setItem(int n) {
+        if (Empresa.getItemCount() == 0) return;
         if (empresa.getItems().size() > n) {
             empresa.getSelectionModel().select(n);
             empresa.getOnAction().handle(null);
@@ -70,7 +73,15 @@ public class EditarE implements Initializable {
     }
 
     @FXML
-    public void agregar() {
+    public void editar() {
+        Empresa edit = Empresa.getEmpresaAt(empresa.getSelectionModel().getSelectedIndex());
+        if (edit == null) return;
+        edit.setNombre(nombre.getText().trim());
+        edit.setTelefono(telefono.getText().trim());
+        Empresa.save();
+        Empresa.load();
+        PrincipalUsuario.controlador.loadEmpresas();
+        toogleVisible();
     }
 
     @FXML

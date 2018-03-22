@@ -5,6 +5,7 @@ import Ventana.Dialog;
 import javafx.application.Platform;
 
 import java.io.*;
+import java.util.Random;
 
 public class Aspirante implements Comparable<Aspirante> {
 
@@ -90,7 +91,7 @@ public class Aspirante implements Comparable<Aspirante> {
         }
     }
 
-    static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, String[] _titulos, String[] _habilidades, boolean ordenado) {
+    public static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, String[] _titulos, String[] _habilidades, boolean ordenado) {
         Aspirante _aspirante = new Aspirante(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada);
         for (String _titulo : _titulos) {
             _aspirante.addTitulo(Titulo.fromString(_titulo));
@@ -102,6 +103,23 @@ public class Aspirante implements Comparable<Aspirante> {
             aspirantes.insertarOrdenado(_aspirante);
         else
             aspirantes.insertar(_aspirante);
+    }
+
+    public static int generateId() {
+        Random random = new Random();
+        int _id;
+        boolean isIn;
+        do {
+            _id = random.nextInt(1000);
+            isIn = false;
+            for (Aspirante aspirante : aspirantes) {
+                if (aspirante.getId() == _id) {
+                    isIn = true;
+                    break;
+                }
+            }
+        } while (isIn);
+        return _id;
     }
 
     static void removeAt(int i) {

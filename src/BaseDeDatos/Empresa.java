@@ -42,8 +42,7 @@ public class Empresa implements Comparable<Empresa> {
                 int _id = Integer.parseInt(registro[0]);
                 String _nombre = registro[1];
                 String _telefono = registro[2];
-                empresas.llenar(new Empresa(_pos, _id, _nombre, _telefono));
-                _pos++;
+                add(_id, _nombre, _telefono, true);
                 linea = lector.readLine();
             }
             lector.close();
@@ -98,7 +97,7 @@ public class Empresa implements Comparable<Empresa> {
         return _id;
     }
 
-    static void removeAt(int i) {
+    public static void removeAt(int i) {
         if (i >= 0 && i < empresas.getItemCount()) {
             empresas.remove(i);
         }
