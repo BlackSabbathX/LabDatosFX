@@ -2,6 +2,7 @@
 import Ventana.Login.Login;
 import Ventana.PrincipalEvaluador.PrincipalEvaluador;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
+import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
 import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
 import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
@@ -33,6 +34,7 @@ public class MainClass extends Application {
         FXMLLoader loaderAE = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.fxml"));
         FXMLLoader loaderEE = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.fxml"));
         FXMLLoader loaderRME = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Eliminar/Empresa/EliminarE.fxml"));
+        FXMLLoader loaderAV = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Agregar/Vacante/AgregarV.fxml"));
 
         Parent rootLG = loaderLG.load();
         Parent rootPU = loaderPU.load();
@@ -41,6 +43,7 @@ public class MainClass extends Application {
         Parent rootAE = loaderAE.load();
         Parent rootEE = loaderEE.load();
         Parent rootRME = loaderRME.load();
+        Parent rootAV = loaderAV.load();
 
         Scene sceneLG = new Scene(rootLG);
         Scene scenePU = new Scene(rootPU);
@@ -49,6 +52,7 @@ public class MainClass extends Application {
         Scene sceneAE = new Scene(rootAE);
         Scene sceneEE = new Scene(rootEE);
         Scene sceneRME = new Scene(rootRME);
+        Scene sceneAV = new Scene(rootAV);
 
         Login.login = new Stage(StageStyle.UNDECORATED);
         PrincipalUsuario.usuario = new Stage(StageStyle.UNDECORATED);
@@ -57,6 +61,7 @@ public class MainClass extends Application {
         AgregarE.agregar = new Stage(StageStyle.UNDECORATED);
         EditarE.editar = new Stage(StageStyle.UNDECORATED);
         EliminarE.eliminar = new Stage(StageStyle.UNDECORATED);
+        AgregarV.agregar = new Stage(StageStyle.UNDECORATED);
 
         Login.login.setScene(sceneLG);
         PrincipalUsuario.usuario.setScene(scenePU);
@@ -65,6 +70,7 @@ public class MainClass extends Application {
         AgregarE.agregar.setScene(sceneAE);
         EditarE.editar.setScene(sceneEE);
         EliminarE.eliminar.setScene(sceneRME);
+        AgregarV.agregar.setScene(sceneAV);
 
         Login.controlador = loaderLG.getController();
         PrincipalUsuario.controlador = loaderPU.getController();
@@ -73,6 +79,7 @@ public class MainClass extends Application {
         AgregarE.controlador = loaderAE.getController();
         EditarE.controlador = loaderEE.getController();
         EliminarE.controlador = loaderRME.getController();
+        AgregarV.controlador = loaderAV.getController();
 
         AgregarE.agregar.focusedProperty().addListener((observable, ov, nv) -> {
             if (!nv) {
@@ -87,6 +94,11 @@ public class MainClass extends Application {
         EliminarE.eliminar.focusedProperty().addListener((observable, ov, nv) -> {
             if (!nv) {
                 EliminarE.toogleVisible();
+            }
+        });
+        AgregarV.agregar.focusedProperty().addListener((observable, ov, nv) -> {
+            if (!nv) {
+                AgregarV.toogleVisible();
             }
         });
 

@@ -1,6 +1,7 @@
 package Ventana.PrincipalUsuario;
 
 import BaseDeDatos.Empresa;
+import BaseDeDatos.Vacante;
 import Estructura.Lista;
 import Ventana.Login.Login;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
@@ -37,6 +38,7 @@ public class PrincipalUsuario implements Initializable {
 
     public static void loadAll() {
         controlador.loadEmpresas();
+        controlador.loadVacantes();
     }
 
     @Override
@@ -48,30 +50,40 @@ public class PrincipalUsuario implements Initializable {
     }
 
     private void agregarMenu() {
-        menuE = new ContextMenu();
-        menuE.setStyle("" +
+        String styleM = "" +
                 "-fx-background-color: #34495e;" +
                 "-fx-text-fill: white;" +
-                "");
-        MenuItem ag = new MenuItem("Agregar vacante"), ed = new MenuItem("Editar"), el = new MenuItem("Eliminar");
-        String style = "" +
+                "";
+        String styleA = "" +
                 "-fx-text-fill: white;" +
                 "-fx-font-size: 13px;" +
                 "-fx-font-family: \"Segoe UI\"";
-        ed.setStyle(style);
-        el.setStyle(style);
-        ag.setStyle(style);
-        ed.setOnAction(e -> {
+        menuE = new ContextMenu();
+        menuV = new ContextMenu();
+        menuE.setStyle(styleM);
+        menuV.setStyle(styleM);
+        MenuItem agE = new MenuItem("Agregar vacante"), edE = new MenuItem("Editar"), elE = new MenuItem("Eliminar");
+        MenuItem elV = new MenuItem("Eliminar vacante");
+        edE.setStyle(styleA);
+        elE.setStyle(styleA);
+        agE.setStyle(styleA);
+        elV.setStyle(styleA);
+        edE.setOnAction(e -> {
             editarClick();
             EditarE.controlador.setItem(posE);
         });
-        el.setOnAction(e -> {
+        elE.setOnAction(e -> {
             eliminarClick();
             EliminarE.controlador.setItem(posE);
         });
-        ag.setOnAction(e -> {
+        agE.setOnAction(e -> {
         });
-        menuE.getItems().addAll(ed, el, ag);
+        elV.setOnAction(e -> {
+            eliminarClick();
+            //////////////////////////
+        });
+        menuE.getItems().addAll(edE, elE, agE);
+        menuV.getItems().addAll(elV);
     }
 
     public void loadEmpresas() {
@@ -137,6 +149,67 @@ public class PrincipalUsuario implements Initializable {
         }
     }
 
+    public void loadVacantes() {
+        numerosV.getChildren().clear();
+        nombresV.getChildren().clear();
+        empresasV.getChildren().clear();
+        rangosV.getChildren().clear();
+        boolean par = true;
+        Color color1 = Color.WHITE;
+        Color color2 = Color.rgb(190, 190, 255);
+        for (Vacante vacante : Vacante.getVacantes()) {
+            Label numero = new Label(String.valueOf(vacante.getPos() + 1));
+            Label nombre = new Label(String.valueOf(vacante.getNombre()));
+            Label empresa = new Label(vacante.getEmpresa().getNombre());
+            Label rango = new Label(vacante.getMin() + " - " + vacante.getMax());
+            final int pos = vacante.getPos();
+            numero.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posV = pos;
+                    menuV.show(numero, e.getScreenX(), e.getScreenY());
+                }
+            });
+            nombre.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posV = pos;
+                    menuV.show(nombre, e.getScreenX(), e.getScreenY());
+                }
+            });
+            empresa.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posV = pos;
+                    menuE.show(empresa, e.getScreenX(), e.getScreenY());
+                }
+            });
+            rango.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posV = pos;
+                    menuE.show(rango, e.getScreenX(), e.getScreenY());
+                }
+            });
+            Font font = new Font("Segoe UI", 15);
+            numero.setFont(font);
+            nombre.setFont(font);
+            empresa.setFont(font);
+            rango.setFont(font);
+            if (par) {
+                numero.setTextFill(color1);
+                nombre.setTextFill(color1);
+                empresa.setTextFill(color1);
+                rango.setTextFill(color1);
+            } else {
+                numero.setTextFill(color2);
+                nombre.setTextFill(color2);
+                empresa.setTextFill(color2);
+                rango.setTextFill(color2);
+            }
+            par = !par;
+            numerosV.getChildren().add(numero);
+            nombresV.getChildren().add(nombre);
+            empresasV.getChildren().add(empresa);
+            rangosV.getChildren().add(rango);
+        }
+    }
 
     @FXML
     void cerrarSesion() {
@@ -156,6 +229,7 @@ public class PrincipalUsuario implements Initializable {
                 AgregarE.toogleVisible();
                 break;
             case 1:
+
                 break;
             case 2:
                 break;
@@ -189,12 +263,26 @@ public class PrincipalUsuario implements Initializable {
     }
 
     @FXML
-    private VBox numerosE, nombresE, idesE, telefonosE;
+    private VBox numerosE;
+    @FXML
+    private VBox nombresE;
+    @FXML
+    private VBox idesE;
+    @FXML
+    private VBox telefonosE;
+    @FXML
+    private VBox numerosV;
+    @FXML
+    private VBox nombresV;
+    @FXML
+    private VBox empresasV;
+    @FXML
+    private VBox rangosV;
     @FXML
     private JFXTabPane pestanas;
     @FXML
     private StackPane content;
-    private ContextMenu menuE;
+    private ContextMenu menuE, menuV;
     private int posE, posV, posA;
 
 }
