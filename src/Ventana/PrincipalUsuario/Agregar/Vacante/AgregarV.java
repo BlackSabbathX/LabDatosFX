@@ -204,6 +204,7 @@ public class AgregarV implements Initializable {
         jornada.getItems().addAll("Completa", "Parcial");
         loadTitHab();
         titulo.setOnAction(event -> {
+            if (titulo.getSelectionModel().getSelectedItem() == null) return;
             if (titulo.getSelectionModel().getSelectedIndex() == 0) return;
             if (titulo.getSelectionModel().getSelectedItem().contains("***")) return;
             String nv = titulo.getSelectionModel().getSelectedItem();
@@ -214,6 +215,7 @@ public class AgregarV implements Initializable {
             titulo.getItems().set(titulo.getSelectionModel().getSelectedIndex(), "***" + nv + "***");
         });
         habilidad.setOnAction(event -> {
+            if (habilidad.getSelectionModel().getSelectedItem() == null) return;
             if (habilidad.getSelectionModel().getSelectedIndex() == 0) return;
             if (habilidad.getSelectionModel().getSelectedItem().contains("***")) return;
             String nv = habilidad.getSelectionModel().getSelectedItem();
@@ -241,7 +243,6 @@ public class AgregarV implements Initializable {
         titulo.getSelectionModel().select(0);
         titulos.getChildren().clear();
         habilidades.getChildren().clear();
-
     }
 
     public void setItemE(int n) {
@@ -271,7 +272,7 @@ public class AgregarV implements Initializable {
 
     @FXML
     public void agregar() {
-        ///////////
+        Vacante.add(Vacante.generateId(), nombre.getText().trim(), descripcion.getText().trim(), Float.parseFloat(minimo.getText()), Float.parseFloat(maximo.getText()), jornada.getSelectionModel().getSelectedItem(), _titulos, _habilidades, Empresa.getEmpresaAt(empresa.getSelectionModel().getSelectedIndex()).getId());
         Vacante.save();
         Vacante.load();
         PrincipalUsuario.controlador.loadVacantes();

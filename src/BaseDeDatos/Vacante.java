@@ -43,7 +43,7 @@ public class Vacante implements Comparable<Vacante> {
                 String[] _titulos = registro[6].split(Separator.B);
                 String[] _habilidades = registro[7].split(Separator.B);
                 int _empresa = Integer.parseInt(registro[8]);
-                add(_id, _nombre, _descripcion, _min, _max, _jornada, _titulos, _habilidades, _empresa);
+                add(_id, _nombre, _descripcion, _min, _max, _jornada, new Lista<>(_titulos), new Lista<>(_habilidades), _empresa);
                 linea = lector.readLine();
             }
             lector.close();
@@ -91,7 +91,7 @@ public class Vacante implements Comparable<Vacante> {
         }
     }
 
-    static void add(int _id, String _nombre, String _descripcion, float _min, float _max, String _jornada, String[] _titulos, String[] _habilidades, int _idEmpresa) {
+    public static void add(int _id, String _nombre, String _descripcion, float _min, float _max, String _jornada, Lista<String> _titulos, Lista<String> _habilidades, int _idEmpresa) {
         Empresa _empresa = Empresa.getEmpresaAt(Empresa.indexOf(_idEmpresa));
         Vacante _vacante = new Vacante(_pos, _id, _nombre, _descripcion, _min, _max, _jornada, _empresa);
         for (String _titulo : _titulos) {
@@ -101,9 +101,7 @@ public class Vacante implements Comparable<Vacante> {
         }
         for (String _habilidad : _habilidades) {
             if (!_habilidad.trim().equals("")) {
-                String[] _hab = _habilidad.split(Separator.C);
-                Habilidad _h = Habilidad.fromString(_hab[0]);
-                _h.setNivel(Integer.parseInt(_hab[1]));
+                Habilidad _h = Habilidad.fromString(_habilidad);
                 _vacante.addHabilidad(_h);
             }
         }

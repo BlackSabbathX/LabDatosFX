@@ -1,14 +1,14 @@
 
 .jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab:selected:top .jfx-rippler .tab-container .tab-label .text {
-	-fx-font-size: 17px;
-	-fx-font-family: "Segoe UI";
-	-fx-font-weight: Bold;
+    -fx-font-size: 17px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: Bold;
 }
 
 .jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab:top .jfx-rippler .tab-container .tab-label .text {
-	-fx-font-size: 17px;
-	-fx-font-family: "Segoe UI";
-	-fx-font-weight: Bold;
+    -fx-font-size: 17px;
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: Bold;
 }
 
 .jfx-tab-pane:top .depth-container .tab-header-area .tab-header-background {
@@ -20,7 +20,7 @@
 }
 
 .jfx-tab-pane .tab-selected-line {
-    -fx-stroke:  #34495e;
-	-fx-background-color: #ffffff;
+    -fx-stroke: #34495e;
+    -fx-background-color: #ffffff;
     -fx-stroke-width: 40pt;
 }

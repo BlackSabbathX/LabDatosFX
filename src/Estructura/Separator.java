@@ -6,7 +6,6 @@
 package Estructura;
 
 /**
- *
  * @author PC
  */
 public class Separator {
