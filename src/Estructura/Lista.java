@@ -15,6 +15,15 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         count = 0;
     }
 
+    public Lista(T[] array) {
+        ptr = null;
+        actual = null;
+        count = 0;
+        for (T t : array) {
+            insertarOrdenado(t);
+        }
+    }
+
     public int getItemCount() {
         return count;
     }
@@ -71,18 +80,59 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         reset();
     }
 
+    public int indexOf(T dato) {
+        Nodo<T> _actual = ptr;
+        int pos = 0;
+        while (_actual != null) {
+            if (_actual.dato.equals(dato)) {
+                return pos;
+            }
+            pos++;
+            _actual = _actual.link;
+        }
+        return -1;
+    }
+
     public T get(int i) {
+        Nodo<T> _actual = ptr;
+        int pos = 0;
+        while (_actual != null) {
+            if (pos == i) {
+                return _actual.dato;
+            }
+            pos++;
+            _actual = _actual.link;
+        }
+        return null;
+    }
+
+    public void set(int i, T dato) {
         Nodo<T> actual = ptr;
         int pos = 0;
         while (actual != null) {
             if (pos == i) {
-                return actual.dato;
+                actual.dato = dato;
             }
             pos++;
             actual = actual.link;
         }
-        return null;
     }
+
+//    public void remove(T dato) {
+//        Nodo<T> actual = ptr;
+//        if (ptr == null) {
+//            return;
+//        }
+//        while (actual != null) {
+//            if (actual.link == null) return;
+//            if (actual.link.dato.equals(dato)) {
+//                actual.link = actual.link.link;
+//                count--;
+//                return;
+//            }
+//            actual = actual.link;
+//        }
+//    }
 
     public void remove(int i) {
         Nodo<T> actual = ptr;

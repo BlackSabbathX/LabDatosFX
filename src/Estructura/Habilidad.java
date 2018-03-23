@@ -97,9 +97,11 @@ public enum Habilidad {
         return nivel;
     }
 
-    public static Habilidad fromString(String _text) {
+    public static Habilidad fromString(String _text_) {
+        String[] _text = _text_.split(" ");
         for (Habilidad habilidad : Habilidad.values()) {
-            if (habilidad.text.equalsIgnoreCase(_text)) {
+            if (habilidad.text.equalsIgnoreCase(_text[0])) {
+                habilidad.setNivel(Integer.parseInt(_text[1]));
                 return habilidad;
             }
         }

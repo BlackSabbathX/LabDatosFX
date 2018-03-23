@@ -49,22 +49,43 @@
                                 </JFXButton>
                             </children>
                         </Pane>
-                  <JFXTextArea fx:id="descripcion" focusColor="#2c3e50" layoutX="310.0" layoutY="70.0" prefHeight="108.0" prefWidth="261.0" promptText="Descripción" style="-fx-text-fill: #2c3e50;" unFocusColor="#2c3e50">
-                     <font>
-                        <Font name="Segoe UI" size="14.0" />
-                     </font></JFXTextArea>
-                  <JFXComboBox fx:id="empresa" focusColor="#2c3e50" layoutX="15.0" layoutY="117.0" prefHeight="25.0" prefWidth="261.0" promptText="Empresa" style="-fx-prompt-text-alignment: CENTER;" unFocusColor="#2c3e50" />
-                  <JFXComboBox fx:id="jornada" focusColor="#2c3e50" layoutX="15.0" layoutY="157.0" prefHeight="25.0" prefWidth="261.0" promptText="Jornada" style="-fx-prompt-text-alignment: CENTER;" unFocusColor="#2c3e50" />
-                  <JFXTextField fx:id="maximo" alignment="CENTER" focusColor="#2c3e50" layoutX="310.0" layoutY="215.0" prefHeight="28.0" prefWidth="261.0" promptText="Salario máximo" style="-fx-text-fill: #2c3e50;" unFocusColor="#2c3e50">
-                     <font>
-                        <Font name="Segoe UI" size="14.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXTextField fx:id="minimo" alignment="CENTER" focusColor="#2c3e50" layoutX="16.0" layoutY="215.0" prefHeight="28.0" prefWidth="261.0" promptText="Salario minimo" style="-fx-text-fill: #2c3e50;" unFocusColor="#2c3e50">
-                     <font>
-                        <Font name="Segoe UI" size="14.0" />
-                     </font>
-                  </JFXTextField>
+                        <JFXTextArea fx:id="descripcion" focusColor="#2c3e50" layoutX="310.0" layoutY="70.0" prefHeight="108.0" prefWidth="261.0" promptText="Descripción" style="-fx-text-fill: #2c3e50; -fx-text-alignment: CENTER;" unFocusColor="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </JFXTextArea>
+                        <JFXComboBox fx:id="empresa" focusColor="#2c3e50" layoutX="15.0" layoutY="117.0" prefHeight="25.0" prefWidth="261.0" promptText="Empresa" style="-fx-prompt-text-alignment: CENTER;" unFocusColor="#2c3e50" />
+                        <JFXComboBox fx:id="jornada" focusColor="#2c3e50" layoutX="15.0" layoutY="157.0" prefHeight="25.0" prefWidth="261.0" promptText="Jornada" style="-fx-prompt-text-alignment: CENTER;" unFocusColor="#2c3e50" />
+                        <JFXTextField fx:id="maximo" alignment="CENTER" focusColor="#2c3e50" layoutX="310.0" layoutY="215.0" prefHeight="28.0" prefWidth="261.0" promptText="Salario máximo" style="-fx-text-fill: #2c3e50;" unFocusColor="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="minimo" alignment="CENTER" focusColor="#2c3e50" layoutX="16.0" layoutY="215.0" prefHeight="28.0" prefWidth="261.0" promptText="Salario minimo" style="-fx-text-fill: #2c3e50;" unFocusColor="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </JFXTextField>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="301.0" prefHeight="108.0" prefWidth="261.0" style="-fx-background-color: #fff;" vbarPolicy="ALWAYS">
+                            <content>
+                                <!--<Pane prefHeight="106.0" prefWidth="259.0" style="-fx-background-color: #fff;">-->
+                                    <!--<children>-->
+                                        <VBox fx:id="titulos" prefHeight="14.0" prefWidth="261.0" />
+                                    <!--</children>-->
+                                <!--</Pane>-->
+                            </content>
+                        </ScrollPane>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="310.0" layoutY="301.0" prefHeight="108.0" prefWidth="261.0" style="-fx-background-color: #fff;" vbarPolicy="ALWAYS">
+                            <content>
+                                <!--<Pane prefHeight="106.0" prefWidth="259.0" style="-fx-background-color: #fff;">-->
+                                    <!--<children>-->
+                                        <VBox fx:id="habilidades" prefHeight="14.0" prefWidth="261.0" />
+                                    <!--</children>-->
+                                <!--</Pane>-->
+                            </content>
+                        </ScrollPane>
+                        <JFXComboBox fx:id="titulo" focusColor="#2c3e50" layoutX="14.0" layoutY="264.0" prefHeight="25.0" prefWidth="261.0" promptText="Titulo" style="-fx-prompt-text-alignment: CENTER;" unFocusColor="#2c3e50" />
+                        <JFXComboBox fx:id="habilidad" focusColor="#2c3e50" layoutX="310.0" layoutY="264.0" prefHeight="27.0" prefWidth="261.0" promptText="Habilidad" style="-fx-prompt-text-alignment: CENTER;" unFocusColor="#2c3e50" />
                     </children>
                 </Pane>
             </children>

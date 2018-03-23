@@ -39,8 +39,8 @@ public class Aspirante implements Comparable<Aspirante> {
                 float _min = Float.parseFloat(registro[4]);
                 String _foto = registro[5];
                 String _jornada = registro[6];
-                String[] _titulos = registro[7].split(Separator.B);
-                String[] _habilidades = registro[8].split(Separator.B);
+                Lista<String> _titulos = new Lista<>(registro[7].split(Separator.B));
+                Lista<String> _habilidades = new Lista<>(registro[8].split(Separator.B));
                 add(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada, _titulos, _habilidades, false);
                 linea = lector.readLine();
                 _pos++;
@@ -70,7 +70,7 @@ public class Aspirante implements Comparable<Aspirante> {
                     titulosAspirante = titulosAspirante + titulo.toString() + Separator.B;
                 }
                 for (Habilidad habilidad : aspirante.getHabilidades()) {
-                    habilidadesAspirante = habilidadesAspirante + habilidad.toString() + Separator.B;
+                    habilidadesAspirante += habilidad.toString() + Separator.B;
                 }
                 titulosAspirante = titulosAspirante.substring(0, titulosAspirante.length() - 1);
                 habilidadesAspirante = habilidadesAspirante.substring(0, habilidadesAspirante.length() - 1);
@@ -91,7 +91,7 @@ public class Aspirante implements Comparable<Aspirante> {
         }
     }
 
-    public static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, String[] _titulos, String[] _habilidades, boolean ordenado) {
+    public static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, Lista<String> _titulos, Lista<String> _habilidades, boolean ordenado) {
         Aspirante _aspirante = new Aspirante(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada);
         for (String _titulo : _titulos) {
             _aspirante.addTitulo(Titulo.fromString(_titulo));

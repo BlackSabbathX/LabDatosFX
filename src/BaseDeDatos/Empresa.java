@@ -194,7 +194,7 @@ public class Empresa implements Comparable<Empresa> {
 
     @Override
     public int compareTo(Empresa emp) {
-        return nombre.compareTo(emp.getNombre());
+        return nombre.toUpperCase().compareTo(emp.getNombre().toUpperCase());
     }
 
 }
