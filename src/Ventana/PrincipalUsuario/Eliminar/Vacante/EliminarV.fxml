@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+
+<AnchorPane prefHeight="137.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PrincipalUsuario.Eliminar.Vacante.EliminarV">
+    <stylesheets>
+        <URL value="@EliminarV.css" />
+    </stylesheets>
+    <children>
+        <StackPane fx:id="content" prefHeight="322.0" prefWidth="302.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <Pane prefHeight="221.0" prefWidth="302.0">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="48.0" prefWidth="302.0" text="Eliminar Vacante" textFill="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI Bold" size="19.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="nombre" alignment="CENTER" editable="false" focusColor="#2c3e50" layoutX="21.0" layoutY="164.0" prefHeight="28.0" prefWidth="261.0" promptText="Nombre" style="-fx-text-fill: #2c3e50;" unFocusColor="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="empresa" alignment="CENTER" editable="false" focusColor="#2c3e50" layoutX="21.0" layoutY="216.0" prefHeight="28.0" prefWidth="261.0" promptText="Empresa" style="-fx-text-fill: #2c3e50;" unFocusColor="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </JFXTextField>
+                        <Pane layoutY="283.0" prefHeight="39.0" prefWidth="302.0" style="-fx-background-color: #2c3e50;">
+                            <children>
+                                <JFXButton layoutX="14.0" layoutY="7.0" onAction="#cancelar" style="-fx-background-color: #ffffff;" text="Cancelar" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="Segoe UI" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <JFXButton layoutX="220.0" layoutY="7.0" onAction="#editar" prefHeight="27.0" prefWidth="67.0" style="-fx-background-color: #ffffff;" text="Eliminar" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="Segoe UI" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                            </children>
+                        </Pane>
+                        <JFXComboBox fx:id="vacante" focusColor="#2c3e50" layoutX="21.0" layoutY="66.0" prefHeight="25.0" prefWidth="261.0" promptText="Vacante" style="-fx-prompt-text-alignment: CENTER;" unFocusColor="#2c3e50" />
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="105.0" prefHeight="48.0" prefWidth="302.0" text="Información de la vacante" textFill="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI" size="19.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

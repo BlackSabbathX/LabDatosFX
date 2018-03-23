@@ -11,7 +11,6 @@ package Estructura;
 public class Separator {
 
     public static final String A = "~";
-    public static final String B = "^";
-    public static final String C = ";";
+    public static final String B = ";";
 
 }

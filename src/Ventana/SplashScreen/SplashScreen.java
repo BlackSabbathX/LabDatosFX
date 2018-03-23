@@ -5,11 +5,11 @@ import BaseDeDatos.Empresa;
 import BaseDeDatos.Usuario;
 import BaseDeDatos.Vacante;
 import Ventana.Login.Login;
-import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
-import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -33,21 +33,19 @@ public class SplashScreen implements Initializable {
     }
 
     public void startApp() {
+        Empresa.init(content);
+        Vacante.init(content);
+        Aspirante.init(content);
+        Usuario.init(content);
+        Empresa.load(content);
+        Vacante.load(content);
+        Aspirante.load(content);
+        Usuario.load(content);
+        PrincipalUsuario.loadAll();
         new Thread(() -> {
-            Empresa.init();
-            Vacante.init();
-            Aspirante.init();
-            Usuario.init();
-            Empresa.load();
-            Vacante.load();
-            Aspirante.load();
-            Usuario.load();
-            PrincipalUsuario.loadAll();
             try {
                 Thread.sleep(4);
                 Platform.runLater(() -> {
-                    EditarE.controlador.loadEmpresas();
-                    EliminarE.controlador.loadEmpresas();
                     Login.toogleVisible();
                     toogleVisible();
                 });
@@ -55,5 +53,8 @@ public class SplashScreen implements Initializable {
             }
         }).start();
     }
+
+    @FXML
+    private StackPane content;
 
 }

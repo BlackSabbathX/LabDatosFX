@@ -7,7 +7,7 @@ import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
 import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
 import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
-import javafx.application.Platform;
+import javafx.scene.layout.StackPane;
 
 import java.io.*;
 import java.util.Random;
@@ -23,19 +23,19 @@ public class Empresa implements Comparable<Empresa> {
         return empresas;
     }
 
-    public static void init() {
+    public static void init(StackPane content) {
         empresas = new Lista<>();
         _pos = 0;
         if (!DBFILE.exists()) {
             try {
                 DBFILE.createNewFile();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de empresas.", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error", "Error al crear el archivo de empresas.", "Aceptar");
             }
         }
     }
 
-    public static void load() {
+    public static void load(StackPane content) {
         try {
             empresas.clear();
             BufferedReader lector = new BufferedReader(new FileReader(DBFILE));
@@ -46,12 +46,12 @@ public class Empresa implements Comparable<Empresa> {
                 int _id = Integer.parseInt(registro[0]);
                 String _nombre = registro[1];
                 String _telefono = registro[2];
-                add(_id, _nombre, _telefono, true);
+                add(_id, _nombre, _telefono);
                 linea = lector.readLine();
             }
             lector.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
         } catch (NullPointerException error) {
             PrintWriter esc;
             try {
@@ -59,7 +59,7 @@ public class Empresa implements Comparable<Empresa> {
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
             }
         }
         PrincipalUsuario.controlador.loadEmpresas();
@@ -68,7 +68,7 @@ public class Empresa implements Comparable<Empresa> {
         AgregarV.controlador.loadEmpresas();
     }
 
-    public static void save() {
+    public static void save(StackPane content) {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             empresas.forEach(empresa -> escritor.write(empresa.getId() + Separator.A
@@ -76,15 +76,12 @@ public class Empresa implements Comparable<Empresa> {
                     + empresa.getTelefono() + "\n"));
             escritor.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar el archivo de empresas.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al cargar el archivo de empresas.", "Aceptar");
         }
     }
 
-    public static void add(int _id, String _nombre, String _telefono, boolean ordenado) {
-        if (ordenado)
-            empresas.insertarOrdenado(new Empresa(_pos, _id, _nombre, _telefono));
-        else
-            empresas.insertar(new Empresa(_pos, _id, _nombre, _telefono));
+    public static void add(int _id, String _nombre, String _telefono) {
+        empresas.insertarOrdenado(new Empresa(_pos, _id, _nombre, _telefono));
         _pos++;
     }
 
@@ -98,6 +95,7 @@ public class Empresa implements Comparable<Empresa> {
             for (Empresa empresa : empresas) {
                 if (empresa.getId() == _id) {
                     isIn = true;
+                    empresas.reset();
                     break;
                 }
             }
@@ -138,6 +136,7 @@ public class Empresa implements Comparable<Empresa> {
         int i = 0;
         for (Empresa empresa : empresas) {
             if (empresa.getNombre().equals(_nombre)) {
+                empresas.reset();
                 return i;
             }
             i++;
@@ -146,12 +145,12 @@ public class Empresa implements Comparable<Empresa> {
     }
 
     public static int indexOf(int _id) {
-        int i = 0;
         for (Empresa empresa : empresas) {
             if (empresa.getId() == _id) {
-                return i;
+                int p = empresa.getPos();
+                empresas.reset();
+                return p;
             }
-            i++;
         }
         return -1;
     }

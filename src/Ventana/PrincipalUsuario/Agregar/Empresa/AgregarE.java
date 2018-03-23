@@ -4,6 +4,7 @@ import BaseDeDatos.Empresa;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -39,9 +40,9 @@ public class AgregarE implements Initializable {
 
     @FXML
     public void agregar() {
-        Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim(), true);
-        Empresa.save();
-        Empresa.load();
+        Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim());
+        Empresa.save(content);
+        Empresa.load(content);
         clear();
         toogleVisible();
     }
@@ -50,4 +51,6 @@ public class AgregarE implements Initializable {
     private JFXTextField telefono;
     @FXML
     private JFXTextField nombre;
+    @FXML
+    private StackPane content;
 }

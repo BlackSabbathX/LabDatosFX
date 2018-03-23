@@ -1,12 +1,14 @@
 package Ventana.PrincipalUsuario.Eliminar.Empresa;
 
 import BaseDeDatos.Empresa;
+import BaseDeDatos.Vacante;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -76,9 +78,12 @@ public class EliminarE implements Initializable {
 
     @FXML
     public void editar() {
+        Vacante.removeByEmpresa(Empresa.getEmpresaAt(empresa.getSelectionModel().getSelectedIndex()).getId());
         Empresa.removeAt(empresa.getSelectionModel().getSelectedIndex());
-        Empresa.save();
-        Empresa.load();
+        Empresa.save(content);
+        Empresa.load(content);
+        Vacante.save(content);
+        Vacante.load(content);
         toogleVisible();
     }
 
@@ -88,4 +93,6 @@ public class EliminarE implements Initializable {
     private JFXComboBox<String> empresa;
     @FXML
     private JFXTextField nombre;
+    @FXML
+    private StackPane content;
 }

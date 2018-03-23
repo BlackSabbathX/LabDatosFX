@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -272,9 +273,11 @@ public class AgregarV implements Initializable {
 
     @FXML
     public void agregar() {
+        if (_titulos.getItemCount() == 0) _titulos.insertar("Ninguno");
+        if (_habilidades.getItemCount() == 0) _habilidades.insertar("Ninguna 1");
         Vacante.add(Vacante.generateId(), nombre.getText().trim(), descripcion.getText().trim(), Float.parseFloat(minimo.getText()), Float.parseFloat(maximo.getText()), jornada.getSelectionModel().getSelectedItem(), _titulos, _habilidades, Empresa.getEmpresaAt(empresa.getSelectionModel().getSelectedIndex()).getId());
-        Vacante.save();
-        Vacante.load();
+        Vacante.save(content);
+        Vacante.load(content);
         PrincipalUsuario.controlador.loadVacantes();
         clear();
         toogleVisible();
@@ -300,6 +303,8 @@ public class AgregarV implements Initializable {
     private VBox titulos;
     @FXML
     private VBox habilidades;
+    @FXML
+    private StackPane content;
     private Lista<String> _titulos;
     private Lista<String> _habilidades;
     private ContextMenu menu;

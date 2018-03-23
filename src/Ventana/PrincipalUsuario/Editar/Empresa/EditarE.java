@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -80,8 +81,8 @@ public class EditarE implements Initializable {
         if (edit == null) return;
         edit.setNombre(nombre.getText().trim());
         edit.setTelefono(telefono.getText().trim());
-        Empresa.save();
-        Empresa.load();
+        Empresa.save(content);
+        Empresa.load(content);
         toogleVisible();
         loadEmpresas();
     }
@@ -92,4 +93,6 @@ public class EditarE implements Initializable {
     private JFXComboBox<String> empresa;
     @FXML
     private JFXTextField nombre;
+    @FXML
+    private StackPane content;
 }

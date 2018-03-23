@@ -1,5 +1,6 @@
 package Ventana.PrincipalUsuario;
 
+import BaseDeDatos.Aspirante;
 import BaseDeDatos.Empresa;
 import BaseDeDatos.Vacante;
 import Estructura.Lista;
@@ -8,6 +9,8 @@ import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
 import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
 import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
+import Ventana.PrincipalUsuario.Eliminar.Vacante.EliminarV;
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,6 +25,8 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class PrincipalUsuario implements Initializable {
@@ -33,6 +38,7 @@ public class PrincipalUsuario implements Initializable {
         if (usuario.isShowing()) {
             usuario.hide();
         } else {
+            controlador.loadEmpresas();
             usuario.show();
         }
     }
@@ -40,6 +46,7 @@ public class PrincipalUsuario implements Initializable {
     public static void loadAll() {
         controlador.loadEmpresas();
         controlador.loadVacantes();
+        controlador.loadAspirantes();
     }
 
     @Override
@@ -61,14 +68,18 @@ public class PrincipalUsuario implements Initializable {
                 "-fx-font-family: \"Segoe UI\"";
         menuE = new ContextMenu();
         menuV = new ContextMenu();
+        menuA = new ContextMenu();
         menuE.setStyle(styleM);
         menuV.setStyle(styleM);
+        menuA.setStyle(styleM);
         MenuItem agE = new MenuItem("Agregar vacante"), edE = new MenuItem("Editar"), elE = new MenuItem("Eliminar");
-        MenuItem elV = new MenuItem("Eliminar vacante");
+        MenuItem elV = new MenuItem("Eliminar");
+        MenuItem elA = new MenuItem("Eliminar");
         edE.setStyle(styleA);
         elE.setStyle(styleA);
         agE.setStyle(styleA);
         elV.setStyle(styleA);
+        elA.setStyle(styleA);
         edE.setOnAction(e -> {
             editarClick();
             EditarE.controlador.setItem(posE);
@@ -84,10 +95,15 @@ public class PrincipalUsuario implements Initializable {
         });
         elV.setOnAction(e -> {
             eliminarClick();
+            EliminarV.controlador.setItem(posV);
+        });
+        elA.setOnAction(e -> {
+            eliminarClick();
             //////////////////////////
         });
         menuE.getItems().addAll(edE, elE, agE);
         menuV.getItems().addAll(elV);
+        menuA.getItems().addAll(elA);
     }
 
     public void loadEmpresas() {
@@ -165,7 +181,8 @@ public class PrincipalUsuario implements Initializable {
             Label numero = new Label(String.valueOf(vacante.getPos() + 1));
             Label nombre = new Label(String.valueOf(vacante.getNombre()));
             Label empresa = new Label(vacante.getEmpresa().getNombre());
-            Label rango = new Label(vacante.getMin() + " - " + vacante.getMax());
+            NumberFormat f = NumberFormat.getCurrencyInstance(new Locale("es", "CO"));
+            Label rango = new Label(f.format(vacante.getMin()) + " - " + f.format(vacante.getMax()));
             final int pos = vacante.getPos();
             numero.setOnMouseClicked(e -> {
                 if (e.getButton() == MouseButton.SECONDARY) {
@@ -215,6 +232,77 @@ public class PrincipalUsuario implements Initializable {
         }
     }
 
+    public void loadAspirantes() {
+        numerosA.getChildren().clear();
+        nombresA.getChildren().clear();
+        emailsA.getChildren().clear();
+        telefonosA.getChildren().clear();
+        fotosA.getChildren().clear();
+        boolean par = true;
+        Color color1 = Color.WHITE;
+        Color color2 = Color.rgb(190, 190, 255);
+        for (Aspirante aspirante : Aspirante.getAspirantes()) {
+            Label numero = new Label(String.valueOf(aspirante.getPos() + 1));
+            Label nombre = new Label(String.valueOf(aspirante.getNombre()));
+            Label email = new Label(aspirante.getEmail());
+            Label telefono = new Label(aspirante.getTelefono());
+            JFXButton foto = new JFXButton("Foto");
+            final int pos = aspirante.getPos();
+            numero.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posA = pos;
+                    menuA.show(numero, e.getScreenX(), e.getScreenY());
+                }
+            });
+            nombre.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posA = pos;
+                    menuA.show(nombre, e.getScreenX(), e.getScreenY());
+                }
+            });
+            email.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posA = pos;
+                    menuA.show(email, e.getScreenX(), e.getScreenY());
+                }
+            });
+            telefono.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posA = pos;
+                    menuA.show(telefono, e.getScreenX(), e.getScreenY());
+                }
+            });
+            foto.setOnAction(event -> {
+                ////////////////////
+            });
+            Font font = new Font("Segoe UI", 15);
+            numero.setFont(font);
+            nombre.setFont(font);
+            email.setFont(font);
+            telefono.setFont(font);
+            foto.setFont(font);
+            if (par) {
+                numero.setTextFill(color1);
+                nombre.setTextFill(color1);
+                email.setTextFill(color1);
+                telefono.setTextFill(color1);
+                foto.setTextFill(color1);
+            } else {
+                numero.setTextFill(color2);
+                nombre.setTextFill(color2);
+                email.setTextFill(color2);
+                telefono.setTextFill(color2);
+                foto.setTextFill(color2);
+            }
+            par = !par;
+            numerosA.getChildren().add(numero);
+            nombresA.getChildren().add(nombre);
+            emailsA.getChildren().add(email);
+            telefonosA.getChildren().add(telefono);
+            fotosA.getChildren().add(foto);
+        }
+    }
+
     @FXML
     void cerrarSesion() {
         Login.toogleVisible();
@@ -260,6 +348,7 @@ public class PrincipalUsuario implements Initializable {
                 EliminarE.toogleVisible();
                 break;
             case 1:
+                EliminarV.toogleVisible();
                 break;
             case 2:
                 break;
@@ -283,10 +372,20 @@ public class PrincipalUsuario implements Initializable {
     @FXML
     private VBox rangosV;
     @FXML
+    private VBox numerosA;
+    @FXML
+    private VBox nombresA;
+    @FXML
+    private VBox emailsA;
+    @FXML
+    private VBox telefonosA;
+    @FXML
+    private VBox fotosA;
+    @FXML
     private JFXTabPane pestanas;
     @FXML
     private StackPane content;
-    private ContextMenu menuE, menuV;
+    private ContextMenu menuE, menuV, menuA;
     private int posE, posV, posA;
 
 }

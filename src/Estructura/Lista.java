@@ -137,12 +137,11 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
     public void remove(int i) {
         Nodo<T> actual = ptr;
         int pos = 0;
-        if (ptr == null) {
-            return;
-        }
+        if (ptr == null) return;
         if (i == 0) {
             ptr = ptr.link;
             count--;
+            reset();
             return;
         }
         while (actual != null) {

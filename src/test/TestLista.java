@@ -6,7 +6,6 @@ public class TestLista {
 
     public static void main(String[] args) {
         Lista<Persona> lista = new Lista<>();
-        System.out.println(lista.getItemCount());
         long in = System.currentTimeMillis();
 
         lista.insertarOrdenado(new Persona("Jose David Padilla", 19));

@@ -2,7 +2,9 @@ package BaseDeDatos;
 
 import Estructura.*;
 import Ventana.Dialog;
-import javafx.application.Platform;
+import Ventana.PrincipalUsuario.Eliminar.Vacante.EliminarV;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
+import javafx.scene.layout.StackPane;
 
 import java.io.*;
 import java.util.Random;
@@ -14,19 +16,19 @@ public class Vacante implements Comparable<Vacante> {
     private static final String BDPATH = "Vacante.txt";
     private static final File DBFILE = new File(BDPATH);
 
-    public static void init() {
+    public static void init(StackPane content) {
         vacantes = new Lista<>();
         _pos = 0;
         if (!DBFILE.exists()) {
             try {
                 DBFILE.createNewFile();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error al crear el archivo de vacantes.", "Error", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error al crear el archivo de vacantes.", "Error", "Aceptar");
             }
         }
     }
 
-    public static void load() {
+    public static void load(StackPane content) {
         try {
             vacantes.clear();
             BufferedReader lector = new BufferedReader(new FileReader(DBFILE));
@@ -40,40 +42,42 @@ public class Vacante implements Comparable<Vacante> {
                 float _min = Float.parseFloat(registro[3]);
                 float _max = Float.parseFloat(registro[4]);
                 String _jornada = registro[5];
-                String[] _titulos = registro[6].split(Separator.B);
-                String[] _habilidades = registro[7].split(Separator.B);
+                Lista<String> _titulos = new Lista<>(registro[6].split(Separator.B));
+                Lista<String> _habilidades = new Lista<>(registro[7].split(Separator.B));
                 int _empresa = Integer.parseInt(registro[8]);
-                add(_id, _nombre, _descripcion, _min, _max, _jornada, new Lista<>(_titulos), new Lista<>(_habilidades), _empresa);
+                add(_id, _nombre, _descripcion, _min, _max, _jornada, _titulos, _habilidades, _empresa);
                 linea = lector.readLine();
             }
             lector.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar");
         } catch (NullPointerException error) {
             try {
                 PrintWriter esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar");
             }
         }
+        PrincipalUsuario.controlador.loadVacantes();
+        EliminarV.controlador.loadVacantes();
     }
 
-    public static void save() {
+    public static void save(StackPane content) {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             vacantes.forEach(vacante -> {
-                String titulosVacante = "";
-                String habilidadesVacante = "";
+                StringBuilder titulosVacante = new StringBuilder();
+                StringBuilder habilidadesVacante = new StringBuilder();
                 for (Titulo titulo : vacante.getTitulos()) {
-                    titulosVacante = titulosVacante + titulo.toString() + Separator.B;
+                    titulosVacante.append(titulo.toString()).append(Separator.B);
                 }
                 for (Habilidad habilidad : vacante.getHabilidades()) {
-                    habilidadesVacante = habilidadesVacante + habilidad.toString() + Separator.C + habilidad.getNivel() + Separator.B;
+                    habilidadesVacante.append(habilidad.toString()).append(" ").append(habilidad.getNivel()).append(Separator.B);
                 }
-                titulosVacante = titulosVacante.substring(0, titulosVacante.length() - 1);
-                habilidadesVacante = habilidadesVacante.substring(0, habilidadesVacante.length() - 1);
+                titulosVacante = new StringBuilder(titulosVacante.substring(0, titulosVacante.length() - 1));
+                habilidadesVacante = new StringBuilder(habilidadesVacante.substring(0, habilidadesVacante.length() - 1));
                 escritor.write(vacante.getId() + Separator.A
                         + vacante.getNombre() + Separator.A
                         + vacante.getDescripcion() + Separator.A
@@ -87,7 +91,7 @@ public class Vacante implements Comparable<Vacante> {
             });
             escritor.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de las vacantes.", "Aceptar");
         }
     }
 
@@ -119,6 +123,7 @@ public class Vacante implements Comparable<Vacante> {
             for (Vacante vacante : vacantes) {
                 if (vacante.getId() == _id) {
                     isIn = true;
+                    vacantes.reset();
                     break;
                 }
             }
@@ -130,9 +135,19 @@ public class Vacante implements Comparable<Vacante> {
         return vacantes;
     }
 
-    static void removeAt(int i) {
+    public static void removeAt(int i) {
         if (i >= 0 && i < vacantes.getItemCount()) {
             vacantes.remove(i);
+        }
+    }
+
+    public static void removeByEmpresa(int _id) {
+        int i = 0;
+        for (Vacante vacante : vacantes) {
+            if (vacante.getEmpresa().getId() == _id) {
+                vacantes.remove(vacante.getPos() - i);
+                i++;
+            }
         }
     }
 
@@ -140,7 +155,7 @@ public class Vacante implements Comparable<Vacante> {
         return vacantes.getItemCount();
     }
 
-    static Vacante getVacanteAt(int i) {
+    public static Vacante getVacanteAt(int i) {
         if (i >= 0 && i < vacantes.getItemCount()) {
             return vacantes.get(i);
         }
@@ -151,6 +166,7 @@ public class Vacante implements Comparable<Vacante> {
         int i = 0;
         for (Vacante vacante : vacantes) {
             if (vacante.getNombre().equals(_nombre)) {
+                vacantes.reset();
                 return i;
             }
             i++;
@@ -162,6 +178,7 @@ public class Vacante implements Comparable<Vacante> {
         int i = 0;
         for (Vacante vacante : vacantes) {
             if (vacante.getId() == _id) {
+                vacantes.reset();
                 return i;
             }
             i++;
@@ -257,7 +274,7 @@ public class Vacante implements Comparable<Vacante> {
 
     @Override
     public int compareTo(Vacante vac) {
-        return nombre.compareTo(vac.getNombre());
+        return nombre.toUpperCase().compareTo(vac.getNombre().toUpperCase());
     }
 
     private final int pos;

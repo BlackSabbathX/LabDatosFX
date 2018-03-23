@@ -162,7 +162,7 @@ public class Registro implements Initializable {
             String u = usuario.getText().trim();
             String t = tipo.getValue().toString();
             Usuario.add(u, c, t);
-            Usuario.save();
+            Usuario.save(content);
             cleanForm();
             Dialog.showSimpleDialog(content, "Correcto", "Usuario creado exitosamente.", "Aceptar");
         } else {

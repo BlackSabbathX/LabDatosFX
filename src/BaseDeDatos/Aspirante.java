@@ -2,7 +2,7 @@ package BaseDeDatos;
 
 import Estructura.*;
 import Ventana.Dialog;
-import javafx.application.Platform;
+import javafx.scene.layout.StackPane;
 
 import java.io.*;
 import java.util.Random;
@@ -10,24 +10,28 @@ import java.util.Random;
 public class Aspirante implements Comparable<Aspirante> {
 
     private static Lista<Aspirante> aspirantes;
-    private static final String dbpath = "Aspirante.txt";
-    private static final File dbfile = new File(dbpath);
+    private static final String DBPATH = "Aspirante.txt";
+    private static final File DBFILE = new File(DBPATH);
 
-    public static void init() {
+    public static Lista<Aspirante> getAspirantes() {
+        return aspirantes;
+    }
+
+    public static void init(StackPane content) {
         aspirantes = new Lista<>();
-        if (!dbfile.exists()) {
+        if (!DBFILE.exists()) {
             try {
-                dbfile.createNewFile();
+                DBFILE.createNewFile();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de aspirantes.", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error", "Error al crear el archivo de aspirantes.", "Aceptar");
             }
         }
     }
 
-    public static void load() {
+    public static void load(StackPane content) {
         try {
             aspirantes.clear();
-            BufferedReader lector = new BufferedReader(new FileReader(dbfile));
+            BufferedReader lector = new BufferedReader(new FileReader(DBFILE));
             String linea = lector.readLine().trim();
             int _pos = 0;
             while (linea != null && !linea.equals("")) {
@@ -47,22 +51,22 @@ public class Aspirante implements Comparable<Aspirante> {
             }
             lector.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
         } catch (NullPointerException error) {
             PrintWriter esc;
             try {
-                esc = new PrintWriter(new FileWriter(dbfile));
+                esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
             }
         }
     }
 
-    static void save() {
+    static void save(StackPane content) {
         try {
-            PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
+            PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             aspirantes.forEach(aspirante -> {
                 String titulosAspirante = "";
                 String habilidadesAspirante = "";
@@ -87,7 +91,7 @@ public class Aspirante implements Comparable<Aspirante> {
             });
             escritor.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
         }
     }
 
@@ -115,6 +119,7 @@ public class Aspirante implements Comparable<Aspirante> {
             for (Aspirante aspirante : aspirantes) {
                 if (aspirante.getId() == _id) {
                     isIn = true;
+                    aspirantes.reset();
                     break;
                 }
             }
@@ -143,6 +148,7 @@ public class Aspirante implements Comparable<Aspirante> {
         int i = 0;
         for (Aspirante aspirante : aspirantes) {
             if (aspirante.getNombre().equals(_nombre)) {
+                aspirantes.reset();
                 return i;
             }
             i++;
@@ -154,6 +160,7 @@ public class Aspirante implements Comparable<Aspirante> {
         int i = 0;
         for (Aspirante aspirante : aspirantes) {
             if (aspirante.getId() == _id) {
+                aspirantes.reset();
                 return i;
             }
             i++;

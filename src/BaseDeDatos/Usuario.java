@@ -4,23 +4,23 @@ import Estructura.Lista;
 import Estructura.Separator;
 import Estructura.TipoUsuario;
 import Ventana.Dialog;
-import javafx.application.Platform;
+import javafx.scene.layout.StackPane;
 
 import java.io.*;
 
 public class Usuario implements Comparable<Usuario> {
 
     private static Lista<Usuario> usuarios;
-    private static final String dbpath = "Usuario.txt";
-    private static final File dbfile = new File(dbpath);
+    private static final String DBPATH = "Usuario.txt";
+    private static final File DBFILE = new File(DBPATH);
 
-    public static void init() {
+    public static void init(StackPane content) {
         usuarios = new Lista<>();
-        if (!dbfile.exists()) {
+        if (!DBFILE.exists()) {
             try {
-                dbfile.createNewFile();
+                DBFILE.createNewFile();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al crear el archivo de usuarios.", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error", "Error al crear el archivo de usuarios.", "Aceptar");
             }
         }
     }
@@ -45,10 +45,10 @@ public class Usuario implements Comparable<Usuario> {
         return n;
     }
 
-    public static void load() {
+    public static void load(StackPane content) {
         try {
             usuarios.clear();
-            BufferedReader lector = new BufferedReader(new FileReader(dbfile));
+            BufferedReader lector = new BufferedReader(new FileReader(DBFILE));
             String linea = lector.readLine().trim();
             while (linea != null && !linea.equals("")) {
                 String[] registro = linea.split(Separator.A);
@@ -60,22 +60,22 @@ public class Usuario implements Comparable<Usuario> {
             }
             lector.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
         } catch (NullPointerException error) {
             PrintWriter esc;
             try {
-                esc = new PrintWriter(new FileWriter(dbfile));
+                esc = new PrintWriter(new FileWriter(DBFILE));
                 esc.write(" ");
                 esc.close();
             } catch (IOException ex) {
-                Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar"));
+                Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los usuarios.", "Aceptar");
             }
         }
     }
 
-    public static void save() {
+    public static void save(StackPane content) {
         try {
-            PrintWriter escritor = new PrintWriter(new FileWriter(dbfile));
+            PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             usuarios.forEach(usuario -> escritor.write(usuario.getUsuario() + Separator.A
                     + usuario.getContrasena() + Separator.A
                     + usuario.getTipo().toString() + Separator.A
@@ -83,7 +83,7 @@ public class Usuario implements Comparable<Usuario> {
             );
             escritor.close();
         } catch (IOException error) {
-            Platform.runLater(() -> Dialog.showSimpleDialog(null, "Error", "Error al grabar la base de datos de los usuarios.", "Aceptar"));
+            Dialog.showSimpleDialog(content, "Error", "Error al grabar la base de datos de los usuarios.", "Aceptar");
         }
     }
 
@@ -95,6 +95,7 @@ public class Usuario implements Comparable<Usuario> {
     public static boolean usuarioExists(String _usuario) {
         for (Usuario usuario : usuarios) {
             if (usuario.getUsuario().equals(_usuario)) {
+                usuarios.reset();
                 return true;
             }
         }
@@ -105,8 +106,10 @@ public class Usuario implements Comparable<Usuario> {
         for (Usuario usuario : usuarios) {
             if (usuario.getUsuario().equals(_usuario)) {
                 if (usuario.contrasenaCorrecta(_contrasena)) {
+                    usuarios.reset();
                     return usuario;
                 } else {
+                    usuarios.reset();
                     break;
                 }
             }
