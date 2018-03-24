@@ -8,6 +8,12 @@ public enum Titulo {
             return "Ninguno";
         }
     },
+    Bachillerato("Bachillerato") {
+        @Override
+        public String toString() {
+            return "Bachillerato";
+        }
+    },
     AdministracionDeEmpresas("Administración de Empresas") {
         @Override
         public String toString() {

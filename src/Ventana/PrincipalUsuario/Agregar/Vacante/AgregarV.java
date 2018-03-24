@@ -275,6 +275,19 @@ public class AgregarV implements Initializable {
     public void agregar() {
         if (_titulos.getItemCount() == 0) _titulos.insertar("Ninguno");
         if (_habilidades.getItemCount() == 0) _habilidades.insertar("Ninguna 1");
+        if (_titulos.getItemCount() > 1 || !_titulos.get(0).equals(Titulo.Ninguno.toString())) {
+            boolean okay = false;
+            for (String t : _titulos) {
+                if (t.equals(Titulo.Bachillerato.toString())) {
+                    _titulos.reset();
+                    okay = true;
+                    break;
+                }
+            }
+            if (!okay) {
+                _titulos.insertar(Titulo.Bachillerato.toString());
+            }
+        }
         Vacante.add(Vacante.generateId(), nombre.getText().trim(), descripcion.getText().trim(), Float.parseFloat(minimo.getText()), Float.parseFloat(maximo.getText()), jornada.getSelectionModel().getSelectedItem(), _titulos, _habilidades, Empresa.getEmpresaAt(empresa.getSelectionModel().getSelectedIndex()).getId());
         Vacante.save(content);
         Vacante.load(content);

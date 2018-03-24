@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Emparejador.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.java" />
+      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Emparejador.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Emparejador.java" />
+      <change beforePath="$PROJECT_DIR$/src/Estructura/Titulo.java" afterPath="$PROJECT_DIR$/src/Estructura/Titulo.java" />
+      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java" />
+      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Vacante/AgregarV.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Vacante/AgregarV.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,8 +84,8 @@
       <file leaf-file-name="PrincipalEvaluador.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+            <state relative-caret-position="288">
+              <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
               <folding>
                 <element signature="e#786#787#0" expanded="true" />
                 <element signature="e#808#809#0" expanded="true" />
@@ -99,9 +97,11 @@
       <file leaf-file-name="Emparejador.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Emparejador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="178">
+              <caret line="54" column="73" lean-forward="true" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,44 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AgregarA.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4684">
-              <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Lista.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Estructura/Lista.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="74">
               <caret line="100" column="27" lean-forward="false" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Aspirante.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="68" column="47" lean-forward="false" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
-              <folding>
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#597#598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EliminarA.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="92" column="28" lean-forward="false" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -208,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Ventana/Registro/Login.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/Login/Login.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Agregar.fxml" />
@@ -235,7 +201,6 @@
         <option value="$PROJECT_DIR$/src/Ventana/Registro/Registro.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Empresa/AgregarE.java" />
         <option value="$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.java" />
-        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Vacante/AgregarV.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Editar/Empresa/EditarE.java" />
         <option value="$PROJECT_DIR$/src/Estructura/Lista.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Empresa.java" />
@@ -249,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.fxml" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" />
-        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarV.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
@@ -258,6 +222,9 @@
         <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/Aspirante.txt" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.java" />
+        <option value="$PROJECT_DIR$/src/Estructura/Titulo.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Vacante/AgregarV.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Emparejador.java" />
       </list>
     </option>
@@ -318,6 +285,12 @@
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Estructura" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -326,6 +299,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
               <item name="PrincipalEvaluador" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ventana" type="462c0819:PsiDirectoryNode" />
+              <item name="PrincipalUsuario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ventana" type="462c0819:PsiDirectoryNode" />
+              <item name="PrincipalUsuario" type="462c0819:PsiDirectoryNode" />
+              <item name="Agregar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Ventana" type="462c0819:PsiDirectoryNode" />
+              <item name="PrincipalUsuario" type="462c0819:PsiDirectoryNode" />
+              <item name="Agregar" type="462c0819:PsiDirectoryNode" />
+              <item name="Vacante" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
@@ -552,7 +549,7 @@
       <workItem from="1521131826703" duration="5167000" />
       <workItem from="1521525222135" duration="68000" />
       <workItem from="1521525381165" duration="1368000" />
-      <workItem from="1521734671332" duration="63699000" />
+      <workItem from="1521734671332" duration="67207000" />
     </task>
     <task id="LOCAL-00001" summary="Terminado módulo de inicio de sesión y terminando el de registro">
       <created>1520658816031</created>
@@ -572,7 +569,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75187000" />
+    <option name="totallyTimeSpent" value="78695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1366" height="741" extended-state="6" />
@@ -666,7 +663,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="31" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -675,13 +672,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/Registro/Registro.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -870,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Vacante/AgregarV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="278" column="18" lean-forward="false" selection-start-line="278" selection-start-column="18" selection-end-line="278" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Estructura/Separator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -977,17 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Vacante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="106" column="48" lean-forward="false" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
-          <folding>
-            <element signature="e#8208#8209#0" expanded="true" />
-            <element signature="e#8238#8239#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Estructura/Habilidad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -1000,14 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="100" column="27" lean-forward="false" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4684">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1027,14 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="10" column="80" lean-forward="false" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="276" column="31" lean-forward="false" selection-start-line="276" selection-start-column="31" selection-end-line="276" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1066,6 +1021,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Vacante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="241" column="28" lean-forward="false" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
+          <folding>
+            <element signature="e#8139#8140#0" expanded="true" />
+            <element signature="e#8173#8174#0" expanded="true" />
+            <element signature="e#8208#8209#0" expanded="true" />
+            <element signature="e#8238#8239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Estructura/Titulo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding>
+            <element signature="e#119#120#0" expanded="true" />
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1105#1106#0" expanded="true" />
+            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
+            <element signature="e#1347#1348#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1751#1752#0" expanded="true" />
+            <element signature="e#1794#1795#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1925#1926#0" expanded="true" />
+            <element signature="e#2012#2013#0" expanded="true" />
+            <element signature="e#2053#2054#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2231#2232#0" expanded="true" />
+            <element signature="e#2333#2334#0" expanded="true" />
+            <element signature="e#2382#2383#0" expanded="true" />
+            <element signature="e#2489#2490#0" expanded="true" />
+            <element signature="e#2541#2542#0" expanded="true" />
+            <element signature="e#2654#2655#0" expanded="true" />
+            <element signature="e#2709#2710#0" expanded="true" />
+            <element signature="e#2842#2843#0" expanded="true" />
+            <element signature="e#2907#2908#0" expanded="true" />
+            <element signature="e#3017#3018#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
+            <element signature="e#3184#3185#0" expanded="true" />
+            <element signature="e#3239#3240#0" expanded="true" />
+            <element signature="e#3351#3352#0" expanded="true" />
+            <element signature="e#3405#3406#0" expanded="true" />
+            <element signature="e#3513#3514#0" expanded="true" />
+            <element signature="e#3565#3566#0" expanded="true" />
+            <element signature="e#3671#3672#0" expanded="true" />
+            <element signature="e#3722#3723#0" expanded="true" />
+            <element signature="e#3815#3816#0" expanded="true" />
+            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#3946#3947#0" expanded="true" />
+            <element signature="e#3987#3988#0" expanded="true" />
+            <element signature="e#4070#4071#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+            <element signature="e#4202#4203#0" expanded="true" />
+            <element signature="e#4246#4247#0" expanded="true" />
+            <element signature="e#4352#4353#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4494#4495#0" expanded="true" />
+            <element signature="e#4537#4538#0" expanded="true" />
+            <element signature="e#4642#4643#0" expanded="true" />
+            <element signature="e#4693#4694#0" expanded="true" />
+            <element signature="e#4815#4816#0" expanded="true" />
+            <element signature="e#4874#4875#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="237" column="37" lean-forward="true" selection-start-line="237" selection-start-column="37" selection-end-line="237" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Vacante/AgregarV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="280" column="51" lean-forward="false" selection-start-line="280" selection-start-column="51" selection-end-line="280" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="276" column="31" lean-forward="false" selection-start-line="276" selection-start-column="31" selection-end-line="276" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1076,8 +1141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalEvaluador/PrincipalEvaluador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        <state relative-caret-position="288">
+          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
           <folding>
             <element signature="e#786#787#0" expanded="true" />
             <element signature="e#808#809#0" expanded="true" />
@@ -1087,9 +1152,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Emparejador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="178">
+          <caret line="54" column="73" lean-forward="true" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

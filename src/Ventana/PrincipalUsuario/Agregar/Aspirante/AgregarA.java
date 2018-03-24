@@ -231,6 +231,19 @@ public class AgregarA implements Initializable {
     public void agregar() {
         if (_titulos.getItemCount() == 0) _titulos.insertar("Ninguno");
         if (_habilidades.getItemCount() == 0) _habilidades.insertar("Ninguna 1");
+        if (_titulos.getItemCount() > 1 || !_titulos.get(0).equals(Titulo.Ninguno.toString())) {
+            boolean okay = false;
+            for (String t : _titulos) {
+                if (t.equals(Titulo.Bachillerato.toString())) {
+                    _titulos.reset();
+                    okay = true;
+                    break;
+                }
+            }
+            if (!okay) {
+                _titulos.insertar(Titulo.Bachillerato.toString());
+            }
+        }
         Aspirante.add(Aspirante.generateId(), nombre.getText().trim(), email.getText().trim(), telefono.getText().trim(), Float.parseFloat(minimo.getText()), "vacio", jornada.getSelectionModel().getSelectedItem(), _titulos, _habilidades);
         Aspirante.save(content);
         Aspirante.load(content);
