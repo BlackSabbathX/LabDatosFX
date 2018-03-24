@@ -1,0 +1,15 @@
+.jfx-text-field .text {
+    -fx-text-fill: #2c3e50;
+}
+
+.jfx-combo-box .list-cell {
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-family: "Segoe UI";
+}
+
+.jfx-combo-box .combo-box-button-container .prompt-text {
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-family: "Segoe UI";
+}

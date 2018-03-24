@@ -5,12 +5,12 @@ import BaseDeDatos.Empresa;
 import BaseDeDatos.Vacante;
 import Estructura.Lista;
 import Ventana.Login.Login;
+import Ventana.PrincipalUsuario.Agregar.Aspirante.AgregarA;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
 import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
 import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
 import Ventana.PrincipalUsuario.Eliminar.Vacante.EliminarV;
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -237,7 +237,7 @@ public class PrincipalUsuario implements Initializable {
         nombresA.getChildren().clear();
         emailsA.getChildren().clear();
         telefonosA.getChildren().clear();
-        fotosA.getChildren().clear();
+        jornadasA.getChildren().clear();
         boolean par = true;
         Color color1 = Color.WHITE;
         Color color2 = Color.rgb(190, 190, 255);
@@ -246,7 +246,7 @@ public class PrincipalUsuario implements Initializable {
             Label nombre = new Label(String.valueOf(aspirante.getNombre()));
             Label email = new Label(aspirante.getEmail());
             Label telefono = new Label(aspirante.getTelefono());
-            JFXButton foto = new JFXButton("Foto");
+            Label jornada = new Label(aspirante.getJornada().toString());
             final int pos = aspirante.getPos();
             numero.setOnMouseClicked(e -> {
                 if (e.getButton() == MouseButton.SECONDARY) {
@@ -272,34 +272,37 @@ public class PrincipalUsuario implements Initializable {
                     menuA.show(telefono, e.getScreenX(), e.getScreenY());
                 }
             });
-            foto.setOnAction(event -> {
-                ////////////////////
+            jornada.setOnMouseClicked(e -> {
+                if (e.getButton() == MouseButton.SECONDARY) {
+                    posA = pos;
+                    menuA.show(telefono, e.getScreenX(), e.getScreenY());
+                }
             });
             Font font = new Font("Segoe UI", 15);
             numero.setFont(font);
             nombre.setFont(font);
             email.setFont(font);
             telefono.setFont(font);
-            foto.setFont(font);
+            jornada.setFont(font);
             if (par) {
                 numero.setTextFill(color1);
                 nombre.setTextFill(color1);
                 email.setTextFill(color1);
                 telefono.setTextFill(color1);
-                foto.setTextFill(color1);
+                jornada.setTextFill(color1);
             } else {
                 numero.setTextFill(color2);
                 nombre.setTextFill(color2);
                 email.setTextFill(color2);
                 telefono.setTextFill(color2);
-                foto.setTextFill(color2);
+                jornada.setTextFill(color2);
             }
             par = !par;
             numerosA.getChildren().add(numero);
             nombresA.getChildren().add(nombre);
             emailsA.getChildren().add(email);
             telefonosA.getChildren().add(telefono);
-            fotosA.getChildren().add(foto);
+            jornadasA.getChildren().add(jornada);
         }
     }
 
@@ -324,6 +327,7 @@ public class PrincipalUsuario implements Initializable {
                 AgregarV.toogleVisible();
                 break;
             case 2:
+                AgregarA.toogleVisible();
                 break;
         }
     }
@@ -380,7 +384,7 @@ public class PrincipalUsuario implements Initializable {
     @FXML
     private VBox telefonosA;
     @FXML
-    private VBox fotosA;
+    private VBox jornadasA;
     @FXML
     private JFXTabPane pestanas;
     @FXML

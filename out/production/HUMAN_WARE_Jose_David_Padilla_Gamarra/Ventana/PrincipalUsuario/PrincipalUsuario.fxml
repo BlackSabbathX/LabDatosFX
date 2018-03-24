@@ -1,70 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import java.net.URL?>
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="767.0" styleClass="mainFxmlClass"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Ventana.PrincipalUsuario.PrincipalUsuario">
+
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="767.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana.PrincipalUsuario.PrincipalUsuario">
     <stylesheets>
-        <URL value="@PrincipalUsuario.css"/>
+        <URL value="@PrincipalUsuario.css" />
     </stylesheets>
     <children>
         <StackPane fx:id="content" prefHeight="486.0" prefWidth="767.0">
             <children>
-                <JFXTabPane fx:id="pestanas" prefHeight="478.0" prefWidth="767.0"
-                            style="-fx-background-color: #34495e;">
+                <JFXTabPane fx:id="pestanas" prefHeight="478.0" prefWidth="767.0" style="-fx-background-color: #34495e;">
                     <tabs>
                         <Tab text="Empresas">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <Label layoutX="14.0" layoutY="14.0" text="Listado de empresas registradas"
-                                               textFill="WHITE">
+                                        <Label layoutX="14.0" layoutY="14.0" text="Listado de empresas registradas" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI Bold" size="17.0"/>
+                                                <Font name="Segoe UI Bold" size="17.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="17.0" layoutY="49.0" text="No." textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="83.0" layoutY="49.0" text="Id" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="185.0" layoutY="49.0" text="Nombre" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="504.0" layoutY="49.0" text="Telefono" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <ScrollPane layoutX="14.0" layoutY="77.0" prefHeight="361.0"
-                                                    prefViewportHeight="367.0" prefViewportWidth="742.0"
-                                                    prefWidth="739.0" style="-fx-background-color: #2c3e50;"
-                                                    vbarPolicy="NEVER">
+                                        <ScrollPane layoutX="14.0" layoutY="77.0" prefHeight="361.0" prefViewportHeight="367.0" prefViewportWidth="742.0" prefWidth="739.0" style="-fx-background-color: #2c3e50;" vbarPolicy="NEVER">
                                             <content>
-                                                <Pane layoutX="14.0" layoutY="69.0" maxHeight="1.7976931348623157E308"
-                                                      maxWidth="1.7976931348623157E308" prefHeight="361.0"
-                                                      prefWidth="737.0" style="-fx-background-color: #2c3e50;">
+                                                <Pane layoutX="14.0" layoutY="69.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="361.0" prefWidth="737.0" style="-fx-background-color: #2c3e50;">
                                                     <children>
-                                                        <VBox fx:id="numerosE" layoutX="6.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="48.0"/>
-                                                        <VBox fx:id="idesE" layoutX="66.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="88.0"/>
-                                                        <VBox fx:id="nombresE" layoutX="170.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="308.0"/>
-                                                        <VBox fx:id="telefonosE" layoutX="489.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="231.0"/>
+                                                        <VBox fx:id="numerosE" layoutX="6.0" layoutY="12.0" prefHeight="12.0" prefWidth="48.0" />
+                                                        <VBox fx:id="idesE" layoutX="66.0" layoutY="12.0" prefHeight="12.0" prefWidth="88.0" />
+                                                        <VBox fx:id="nombresE" layoutX="170.0" layoutY="12.0" prefHeight="12.0" prefWidth="308.0" />
+                                                        <VBox fx:id="telefonosE" layoutX="489.0" layoutY="12.0" prefHeight="12.0" prefWidth="231.0" />
                                                     </children>
                                                 </Pane>
                                             </content>
@@ -77,48 +68,39 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <Label layoutX="14.0" layoutY="14.0" text="Listado de vacantes registradas"
-                                               textFill="WHITE">
+                                        <Label layoutX="14.0" layoutY="14.0" text="Listado de vacantes registradas" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI Bold" size="17.0"/>
+                                                <Font name="Segoe UI Bold" size="17.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="19.0" layoutY="49.0" text="No." textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="83.0" layoutY="49.0" text="Nombre" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="293.0" layoutY="49.0" text="Empresa" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="511.0" layoutY="49.0" text="Rango salarial" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <ScrollPane layoutX="14.0" layoutY="77.0" prefHeight="361.0"
-                                                    prefViewportHeight="367.0" prefViewportWidth="742.0"
-                                                    prefWidth="739.0" style="-fx-background-color: #2c3e50;"
-                                                    vbarPolicy="NEVER">
+                                        <ScrollPane layoutX="14.0" layoutY="77.0" prefHeight="361.0" prefViewportHeight="367.0" prefViewportWidth="742.0" prefWidth="739.0" style="-fx-background-color: #2c3e50;" vbarPolicy="NEVER">
                                             <content>
-                                                <Pane layoutX="14.0" layoutY="69.0" prefHeight="361.0" prefWidth="737.0"
-                                                      style="-fx-background-color: #2c3e50;">
+                                                <Pane layoutX="14.0" layoutY="69.0" prefHeight="361.0" prefWidth="737.0" style="-fx-background-color: #2c3e50;">
                                                     <children>
-                                                        <VBox fx:id="numerosV" layoutX="6.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="48.0"/>
-                                                        <VBox fx:id="nombresV" layoutX="66.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="201.0"/>
-                                                        <VBox fx:id="empresasV" layoutX="276.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="202.0"/>
-                                                        <VBox fx:id="rangosV" layoutX="489.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="231.0"/>
+                                                        <VBox fx:id="numerosV" layoutX="6.0" layoutY="12.0" prefHeight="12.0" prefWidth="48.0" />
+                                                        <VBox fx:id="nombresV" layoutX="66.0" layoutY="12.0" prefHeight="12.0" prefWidth="201.0" />
+                                                        <VBox fx:id="empresasV" layoutX="276.0" layoutY="12.0" prefHeight="12.0" prefWidth="202.0" />
+                                                        <VBox fx:id="rangosV" layoutX="489.0" layoutY="12.0" prefHeight="12.0" prefWidth="231.0" />
                                                     </children>
                                                 </Pane>
                                             </content>
@@ -131,52 +113,49 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <Label layoutX="14.0" layoutY="14.0" text="Listado de empresas registradas"
-                                               textFill="WHITE">
+                                        <Label layoutX="14.0" layoutY="14.0" text="Listado de empresas registradas" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI Bold" size="17.0"/>
+                                                <Font name="Segoe UI Bold" size="17.0" />
                                             </font>
                                         </Label>
                                         <Label layoutX="17.0" layoutY="49.0" text="No." textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="83.0" layoutY="49.0" text="Id" textFill="WHITE">
+                                        <Label layoutX="80.0" layoutY="49.0" text="Nombre" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="185.0" layoutY="49.0" text="Nombre" textFill="WHITE">
+                                        <Label layoutX="320.0" layoutY="49.0" text="Email" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="504.0" layoutY="49.0" text="Telefono" textFill="WHITE">
+                                        <Label layoutX="526.0" layoutY="49.0" text="Telefono" textFill="WHITE">
                                             <font>
-                                                <Font name="Segoe UI" size="16.0"/>
+                                                <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <ScrollPane layoutX="14.0" layoutY="77.0" prefHeight="361.0"
-                                                    prefViewportHeight="367.0" prefViewportWidth="742.0"
-                                                    prefWidth="739.0" style="-fx-background-color: #2c3e50;"
-                                                    vbarPolicy="NEVER">
+                                        <ScrollPane layoutX="14.0" layoutY="77.0" prefHeight="361.0" prefViewportHeight="367.0" prefViewportWidth="742.0" prefWidth="739.0" style="-fx-background-color: #2c3e50;" vbarPolicy="NEVER">
                                             <content>
-                                                <Pane layoutX="14.0" layoutY="69.0" prefHeight="361.0" prefWidth="737.0"
-                                                      style="-fx-background-color: #2c3e50;">
+                                                <Pane layoutX="14.0" layoutY="69.0" prefHeight="361.0" prefWidth="737.0" style="-fx-background-color: #2c3e50;">
                                                     <children>
-                                                        <VBox fx:id="numerosA" layoutX="6.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="48.0"/>
-                                                        <VBox fx:id="idesA" layoutX="66.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="88.0"/>
-                                                        <VBox fx:id="nombresA" layoutX="170.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="308.0"/>
-                                                        <VBox fx:id="telefonosA" layoutX="489.0" layoutY="12.0"
-                                                              prefHeight="12.0" prefWidth="231.0"/>
+                                                        <VBox fx:id="numerosA" layoutX="6.0" layoutY="12.0" prefHeight="12.0" prefWidth="48.0" />
+                                                        <VBox fx:id="nombresA" layoutX="64.0" layoutY="12.0" prefHeight="12.0" prefWidth="231.0" />
+                                                        <VBox fx:id="emailsA" layoutX="304.0" layoutY="12.0" prefHeight="12.0" prefWidth="191.0" />
+                                                        <VBox fx:id="telefonosA" layoutX="512.0" layoutY="12.0" prefHeight="12.0" prefWidth="113.0" />
+                                          <VBox fx:id="jornadasA" layoutX="649.0" layoutY="12.0" prefHeight="12.0" prefWidth="75.0" />
                                                     </children>
                                                 </Pane>
                                             </content>
                                         </ScrollPane>
+                              <Label layoutX="664.0" layoutY="49.0" text="Jornada" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
                                     </children>
                                 </AnchorPane>
                             </content>
@@ -189,36 +168,32 @@
             <children>
                 <JFXButton layoutX="14.0" layoutY="5.0" onAction="#cerrarSesion" text="Cerrar Sesión" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI" size="14.0"/>
+                        <Font name="Segoe UI" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="128.0" layoutY="5.0" onAction="#cerrarAplicacion" text="Cerrar Aplicación"
-                           textFill="WHITE">
+                <JFXButton layoutX="128.0" layoutY="5.0" onAction="#cerrarAplicacion" text="Cerrar Aplicación" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI" size="14.0"/>
+                        <Font name="Segoe UI" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="682.0" layoutY="6.0" onAction="#agregarClick" prefHeight="25.0" prefWidth="75.0"
-                           style="-fx-background-color: #27ae60;" text="Agregar" textFill="WHITE">
+                <JFXButton layoutX="682.0" layoutY="6.0" onAction="#agregarClick" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #27ae60;" text="Agregar" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Italic" size="13.0"/>
+                        <Font name="Segoe UI Italic" size="13.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="597.0" layoutY="6.0" onAction="#editarClick" prefHeight="25.0" prefWidth="75.0"
-                           style="-fx-background-color: #2980b9;" text="Editar" textFill="WHITE">
+                <JFXButton layoutX="597.0" layoutY="6.0" onAction="#editarClick" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #2980b9;" text="Editar" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Italic" size="13.0"/>
+                        <Font name="Segoe UI Italic" size="13.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="512.0" layoutY="6.0" onAction="#eliminarClick" prefHeight="25.0" prefWidth="75.0"
-                           style="-fx-background-color: #e74c3c;" text="Eliminar" textFill="WHITE">
+                <JFXButton layoutX="512.0" layoutY="6.0" onAction="#eliminarClick" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #e74c3c;" text="Eliminar" textFill="WHITE">
                     <font>
-                        <Font name="Segoe UI Italic" size="13.0"/>
+                        <Font name="Segoe UI Italic" size="13.0" />
                     </font>
                 </JFXButton>
             </children>
             <effect>
-                <DropShadow color="#00000086" height="40.42" radius="9.605" width="0.0"/>
+                <DropShadow color="#00000086" height="40.42" radius="9.605" width="0.0" />
             </effect>
         </Pane>
     </children>

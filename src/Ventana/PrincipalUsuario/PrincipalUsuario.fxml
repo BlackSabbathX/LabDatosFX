@@ -128,12 +128,12 @@
                                                 <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="348.0" layoutY="49.0" text="Email" textFill="WHITE">
+                                        <Label layoutX="320.0" layoutY="49.0" text="Email" textFill="WHITE">
                                             <font>
                                                 <Font name="Segoe UI" size="16.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="545.0" layoutY="49.0" text="Telefono" textFill="WHITE">
+                                        <Label layoutX="526.0" layoutY="49.0" text="Telefono" textFill="WHITE">
                                             <font>
                                                 <Font name="Segoe UI" size="16.0" />
                                             </font>
@@ -143,14 +143,19 @@
                                                 <Pane layoutX="14.0" layoutY="69.0" prefHeight="361.0" prefWidth="737.0" style="-fx-background-color: #2c3e50;">
                                                     <children>
                                                         <VBox fx:id="numerosA" layoutX="6.0" layoutY="12.0" prefHeight="12.0" prefWidth="48.0" />
-                                                        <VBox fx:id="nombresA" layoutX="66.0" layoutY="12.0" prefHeight="12.0" prefWidth="255.0" />
-                                                        <VBox fx:id="emailsA" layoutX="333.0" layoutY="12.0" prefHeight="12.0" prefWidth="191.0" />
-                                                        <VBox fx:id="telefonosA" layoutX="534.0" layoutY="12.0" prefHeight="12.0" prefWidth="113.0" />
-                                          <VBox fx:id="fotosA" layoutX="656.0" layoutY="12.0" prefHeight="12.0" prefWidth="75.0" />
+                                                        <VBox fx:id="nombresA" layoutX="64.0" layoutY="12.0" prefHeight="12.0" prefWidth="231.0" />
+                                                        <VBox fx:id="emailsA" layoutX="304.0" layoutY="12.0" prefHeight="12.0" prefWidth="191.0" />
+                                                        <VBox fx:id="telefonosA" layoutX="512.0" layoutY="12.0" prefHeight="12.0" prefWidth="113.0" />
+                                          <VBox fx:id="jornadasA" layoutX="649.0" layoutY="12.0" prefHeight="12.0" prefWidth="75.0" />
                                                     </children>
                                                 </Pane>
                                             </content>
                                         </ScrollPane>
+                              <Label layoutX="664.0" layoutY="49.0" text="Jornada" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
                                     </children>
                                 </AnchorPane>
                             </content>

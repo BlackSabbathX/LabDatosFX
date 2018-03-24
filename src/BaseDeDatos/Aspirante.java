@@ -2,6 +2,7 @@ package BaseDeDatos;
 
 import Estructura.*;
 import Ventana.Dialog;
+import Ventana.PrincipalUsuario.PrincipalUsuario;
 import javafx.scene.layout.StackPane;
 
 import java.io.*;
@@ -10,6 +11,7 @@ import java.util.Random;
 public class Aspirante implements Comparable<Aspirante> {
 
     private static Lista<Aspirante> aspirantes;
+    private static int _pos;
     private static final String DBPATH = "Aspirante.txt";
     private static final File DBFILE = new File(DBPATH);
 
@@ -19,6 +21,7 @@ public class Aspirante implements Comparable<Aspirante> {
 
     public static void init(StackPane content) {
         aspirantes = new Lista<>();
+        _pos = 0;
         if (!DBFILE.exists()) {
             try {
                 DBFILE.createNewFile();
@@ -33,7 +36,7 @@ public class Aspirante implements Comparable<Aspirante> {
             aspirantes.clear();
             BufferedReader lector = new BufferedReader(new FileReader(DBFILE));
             String linea = lector.readLine().trim();
-            int _pos = 0;
+            _pos = 0;
             while (linea != null && !linea.equals("")) {
                 String[] registro = linea.split(Separator.A);
                 int _id = Integer.parseInt(registro[0]);
@@ -45,9 +48,8 @@ public class Aspirante implements Comparable<Aspirante> {
                 String _jornada = registro[6];
                 Lista<String> _titulos = new Lista<>(registro[7].split(Separator.B));
                 Lista<String> _habilidades = new Lista<>(registro[8].split(Separator.B));
-                add(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada, _titulos, _habilidades, false);
+                add(_id, _nombre, _email, _telefono, _min, _foto, _jornada, _titulos, _habilidades);
                 linea = lector.readLine();
-                _pos++;
             }
             lector.close();
         } catch (IOException error) {
@@ -62,22 +64,23 @@ public class Aspirante implements Comparable<Aspirante> {
                 Dialog.showSimpleDialog(content, "Error", "Error al cargar la base de datos de los aspirantes.", "Aceptar");
             }
         }
+        PrincipalUsuario.controlador.loadAspirantes();
     }
 
-    static void save(StackPane content) {
+    public static void save(StackPane content) {
         try {
             PrintWriter escritor = new PrintWriter(new FileWriter(DBFILE));
             aspirantes.forEach(aspirante -> {
-                String titulosAspirante = "";
-                String habilidadesAspirante = "";
+                StringBuilder titulosAspirante = new StringBuilder();
+                StringBuilder habilidadesAspirante = new StringBuilder();
                 for (Titulo titulo : aspirante.getTitulos()) {
-                    titulosAspirante = titulosAspirante + titulo.toString() + Separator.B;
+                    titulosAspirante.append(titulo.toString()).append(Separator.B);
                 }
                 for (Habilidad habilidad : aspirante.getHabilidades()) {
-                    habilidadesAspirante += habilidad.toString() + Separator.B;
+                    habilidadesAspirante.append(habilidad.toString()).append(" ").append(habilidad.getNivel()).append(Separator.B);
                 }
-                titulosAspirante = titulosAspirante.substring(0, titulosAspirante.length() - 1);
-                habilidadesAspirante = habilidadesAspirante.substring(0, habilidadesAspirante.length() - 1);
+                titulosAspirante = new StringBuilder(titulosAspirante.substring(0, titulosAspirante.length() - 1));
+                habilidadesAspirante = new StringBuilder(habilidadesAspirante.substring(0, habilidadesAspirante.length() - 1));
                 escritor.write(aspirante.getId() + Separator.A
                         + aspirante.getNombre() + Separator.A
                         + aspirante.getEmail() + Separator.A
@@ -95,7 +98,7 @@ public class Aspirante implements Comparable<Aspirante> {
         }
     }
 
-    public static void add(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, Lista<String> _titulos, Lista<String> _habilidades, boolean ordenado) {
+    public static void add(int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada, Lista<String> _titulos, Lista<String> _habilidades) {
         Aspirante _aspirante = new Aspirante(_pos, _id, _nombre, _email, _telefono, _min, _foto, _jornada);
         for (String _titulo : _titulos) {
             _aspirante.addTitulo(Titulo.fromString(_titulo));
@@ -103,10 +106,8 @@ public class Aspirante implements Comparable<Aspirante> {
         for (String _habilidad : _habilidades) {
             _aspirante.addHabilidad(Habilidad.fromString(_habilidad));
         }
-        if (ordenado)
-            aspirantes.insertarOrdenado(_aspirante);
-        else
-            aspirantes.insertar(_aspirante);
+        aspirantes.insertarOrdenado(_aspirante);
+        _pos++;
     }
 
     public static int generateId() {
@@ -137,7 +138,7 @@ public class Aspirante implements Comparable<Aspirante> {
         return aspirantes.getItemCount();
     }
 
-    static Aspirante getAspiranteAt(int i) {
+    public static Aspirante getAspiranteAt(int i) {
         if (i >= 0 && i < aspirantes.getItemCount()) {
             return aspirantes.get(i);
         }
@@ -170,6 +171,7 @@ public class Aspirante implements Comparable<Aspirante> {
 
     public Aspirante(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada) {
         pos = _pos;
+        jornada = Jornada.fromString(_jornada);
         id = _id;
         nombre = _nombre;
         email = _email;

@@ -105,8 +105,7 @@ public class Vacante implements Comparable<Vacante> {
         }
         for (String _habilidad : _habilidades) {
             if (!_habilidad.trim().equals("")) {
-                Habilidad _h = Habilidad.fromString(_habilidad);
-                _vacante.addHabilidad(_h);
+                _vacante.addHabilidad(Habilidad.fromString(_habilidad));
             }
         }
         vacantes.insertarOrdenado(_vacante);
