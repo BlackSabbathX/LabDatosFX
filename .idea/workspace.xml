@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.fxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Aspirante.txt" afterPath="$PROJECT_DIR$/Aspirante.txt" />
-      <change beforePath="$PROJECT_DIR$/Usuario.txt" afterPath="$PROJECT_DIR$/Usuario.txt" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Aspirante.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Aspirante.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Usuario.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Usuario.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Vacante.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/BaseDeDatos/Vacante.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/MainClass.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/MainClass.class" />
       <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.class" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" afterPath="$PROJECT_DIR$/out/production/HUMAN_WARE_Jose_David_Padilla_Gamarra/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" />
       <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" />
-      <change beforePath="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" afterPath="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" />
       <change beforePath="$PROJECT_DIR$/src/MainClass.java" afterPath="$PROJECT_DIR$/src/MainClass.java" />
-      <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.fxml" />
       <change beforePath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" afterPath="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -84,31 +76,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="90" column="3" lean-forward="false" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
+            <state relative-caret-position="178">
+              <caret line="134" column="22" lean-forward="false" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrincipalUsuario.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrincipalUsuario.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="244" column="35" lean-forward="true" selection-start-line="244" selection-start-column="35" selection-end-line="244" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Aspirante.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Aspirante.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="192">
+              <caret line="276" column="31" lean-forward="false" selection-start-line="276" selection-start-column="31" selection-end-line="276" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -137,12 +119,22 @@
       <file leaf-file-name="Aspirante.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1876">
-              <caret line="140" column="11" lean-forward="false" selection-start-line="140" selection-start-column="11" selection-end-line="140" selection-end-column="11" />
+            <state relative-caret-position="168">
+              <caret line="68" column="47" lean-forward="false" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
               <folding>
-                <element signature="e#502#503#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
+                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#597#598#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EliminarA.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="92" column="28" lean-forward="false" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -172,6 +164,7 @@
       <find>getAspirantes</find>
       <find>_pos</find>
       <find>getAspi</find>
+      <find>remove</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -237,12 +230,15 @@
         <option value="$PROJECT_DIR$/Vacante.txt" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Usuario.java" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.fxml" />
-        <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/src/BaseDeDatos/Vacante.java" />
-        <option value="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" />
-        <option value="$PROJECT_DIR$/Aspirante.txt" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarV.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.fxml" />
         <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java" />
+        <option value="$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java" />
+        <option value="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.java" />
+        <option value="$PROJECT_DIR$/src/MainClass.java" />
+        <option value="$PROJECT_DIR$/Aspirante.txt" />
       </list>
     </option>
   </component>
@@ -317,7 +313,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
               <item name="PrincipalUsuario" type="462c0819:PsiDirectoryNode" />
-              <item name="Agregar" type="462c0819:PsiDirectoryNode" />
+              <item name="Eliminar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HUMAN_WARE_Jose_David_Padilla_Gamarra" type="b2602c69:ProjectViewProjectNode" />
@@ -325,7 +321,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Ventana" type="462c0819:PsiDirectoryNode" />
               <item name="PrincipalUsuario" type="462c0819:PsiDirectoryNode" />
-              <item name="Agregar" type="462c0819:PsiDirectoryNode" />
+              <item name="Eliminar" type="462c0819:PsiDirectoryNode" />
               <item name="Aspirante" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -363,11 +359,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante" />
       <recent name="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante" />
       <recent name="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Vacante" />
       <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\Eliminar" />
       <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\Editar" />
-      <recent name="C:\Users\BlackSabbathX\IdeaProjects\HUMAN_WARE_Jose_David_Padilla_Gamarra\src\Ventana\PrincipalUsuario\EditarE" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Vacante" />
@@ -553,7 +549,7 @@
       <workItem from="1521131826703" duration="5167000" />
       <workItem from="1521525222135" duration="68000" />
       <workItem from="1521525381165" duration="1368000" />
-      <workItem from="1521734671332" duration="58943000" />
+      <workItem from="1521734671332" duration="60767000" />
     </task>
     <task id="LOCAL-00001" summary="Terminado módulo de inicio de sesión y terminando el de registro">
       <created>1520658816031</created>
@@ -573,7 +569,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70431000" />
+    <option name="totallyTimeSpent" value="72255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1366" height="741" extended-state="6" />
@@ -587,7 +583,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3448276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3448276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -676,12 +672,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/img/bckSplash.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Imagen/bckLogin.jpg" />
     <entry file="file://$PROJECT_DIR$/src/Ventana/SplashScreen/SplashScreen.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -956,14 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Empresa.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1012,14 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="90" column="3" lean-forward="false" selection-start-line="90" selection-start-column="3" selection-end-line="90" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Vacante.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -1047,14 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Aspirante.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4684">
@@ -1063,21 +1029,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java">
+    <entry file="file://$PROJECT_DIR$/Empresa.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1876">
-          <caret line="140" column="11" lean-forward="false" selection-start-line="140" selection-start-column="11" selection-end-line="140" selection-end-column="11" />
-          <folding>
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="96">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="10" column="80" lean-forward="false" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/PrincipalUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="244" column="35" lean-forward="true" selection-start-line="244" selection-start-column="35" selection-end-line="244" selection-end-column="35" />
+        <state relative-caret-position="192">
+          <caret line="276" column="31" lean-forward="false" selection-start-line="276" selection-start-column="31" selection-end-line="276" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BaseDeDatos/Aspirante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="68" column="47" lean-forward="false" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+          <folding>
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="92" column="28" lean-forward="false" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Aspirante.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="134" column="22" lean-forward="false" selection-start-line="134" selection-start-column="22" selection-end-line="134" selection-end-column="22" />
           <folding />
         </state>
       </provider>

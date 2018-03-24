@@ -9,6 +9,7 @@ import Ventana.PrincipalUsuario.Agregar.Aspirante.AgregarA;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
 import Ventana.PrincipalUsuario.Editar.Empresa.EditarE;
+import Ventana.PrincipalUsuario.Eliminar.Aspirante.EliminarA;
 import Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE;
 import Ventana.PrincipalUsuario.Eliminar.Vacante.EliminarV;
 import com.jfoenix.controls.JFXTabPane;
@@ -38,7 +39,6 @@ public class PrincipalUsuario implements Initializable {
         if (usuario.isShowing()) {
             usuario.hide();
         } else {
-            controlador.loadEmpresas();
             usuario.show();
         }
     }
@@ -99,7 +99,7 @@ public class PrincipalUsuario implements Initializable {
         });
         elA.setOnAction(e -> {
             eliminarClick();
-            //////////////////////////
+            EliminarA.controlador.setItem(posA);
         });
         menuE.getItems().addAll(edE, elE, agE);
         menuV.getItems().addAll(elV);
@@ -355,6 +355,7 @@ public class PrincipalUsuario implements Initializable {
                 EliminarV.toogleVisible();
                 break;
             case 2:
+                EliminarA.toogleVisible();
                 break;
         }
     }

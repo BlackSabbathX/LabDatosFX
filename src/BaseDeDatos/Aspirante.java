@@ -2,6 +2,7 @@ package BaseDeDatos;
 
 import Estructura.*;
 import Ventana.Dialog;
+import Ventana.PrincipalUsuario.Eliminar.Aspirante.EliminarA;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import javafx.scene.layout.StackPane;
 
@@ -65,6 +66,7 @@ public class Aspirante implements Comparable<Aspirante> {
             }
         }
         PrincipalUsuario.controlador.loadAspirantes();
+        EliminarA.controlador.loadAspirantes();
     }
 
     public static void save(StackPane content) {
@@ -128,13 +130,13 @@ public class Aspirante implements Comparable<Aspirante> {
         return _id;
     }
 
-    static void removeAt(int i) {
+    public static void removeAt(int i) {
         if (i >= 0 && i < aspirantes.getItemCount()) {
             aspirantes.remove(i);
         }
     }
 
-    static int getItemCount() {
+    public static int getItemCount() {
         return aspirantes.getItemCount();
     }
 
