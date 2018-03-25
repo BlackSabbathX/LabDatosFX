@@ -10,9 +10,18 @@ import java.io.*;
 
 public class Usuario implements Comparable<Usuario> {
 
-    private static Lista<Usuario> usuarios;
     private static final String DBPATH = "Usuario.txt";
     private static final File DBFILE = new File(DBPATH);
+    private static Lista<Usuario> usuarios;
+    private final String usuario;
+    private final TipoUsuario tipo;
+    private String contrasena;
+
+    private Usuario(String _usuario, String _contrasena, String _tipo) {
+        usuario = _usuario;
+        contrasena = _contrasena;
+        tipo = TipoUsuario.fromString(_tipo);
+    }
 
     public static void init(StackPane content) {
         usuarios = new Lista<>();
@@ -117,12 +126,6 @@ public class Usuario implements Comparable<Usuario> {
         return null;
     }
 
-    private Usuario(String _usuario, String _contrasena, String _tipo) {
-        usuario = _usuario;
-        contrasena = _contrasena;
-        tipo = TipoUsuario.fromString(_tipo);
-    }
-
     private boolean contrasenaCorrecta(String _contrasena) {
         return (contrasena.equals(_contrasena.trim()));
     }
@@ -144,10 +147,6 @@ public class Usuario implements Comparable<Usuario> {
     private String getContrasena() {
         return contrasena;
     }
-
-    private final String usuario;
-    private String contrasena;
-    private final TipoUsuario tipo;
 
     @Override
     public int compareTo(Usuario o) {

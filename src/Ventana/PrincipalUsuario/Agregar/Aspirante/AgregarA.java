@@ -4,6 +4,7 @@ import BaseDeDatos.Aspirante;
 import Estructura.Habilidad;
 import Estructura.Lista;
 import Estructura.Titulo;
+import Ventana.Dialog;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -23,6 +24,30 @@ public class AgregarA implements Initializable {
 
     public static Stage agregar;
     public static AgregarA controlador;
+    @FXML
+    private JFXTextField nombre;
+    @FXML
+    private JFXTextField email;
+    @FXML
+    private JFXTextField telefono;
+    @FXML
+    private JFXTextField minimo;
+    @FXML
+    private JFXComboBox<String> jornada;
+    @FXML
+    private JFXComboBox<String> titulo;
+    @FXML
+    private JFXComboBox<String> habilidad;
+    @FXML
+    private VBox titulos;
+    @FXML
+    private VBox habilidades;
+    @FXML
+    private StackPane content;
+    private Lista<String> _titulos;
+    private Lista<String> _habilidades;
+    private ContextMenu menu;
+    private Label temp;
 
     public static void toogleVisible() {
         if (agregar.isShowing()) {
@@ -229,6 +254,22 @@ public class AgregarA implements Initializable {
 
     @FXML
     public void agregar() {
+        if (nombre.getText().trim().equals("")) {
+            Dialog.showSimpleDialog(content, "Complete", "Datos incompletos.", "Aceptar");
+            return;
+        }
+        if (email.getText().trim().equals("")) {
+            Dialog.showSimpleDialog(content, "Complete", "Datos incompletos.", "Aceptar");
+            return;
+        }
+        if (telefono.getText().trim().equals("")) {
+            Dialog.showSimpleDialog(content, "Complete", "Datos incompletos.", "Aceptar");
+            return;
+        }
+        if (minimo.getText().trim().equals("")) {
+            Dialog.showSimpleDialog(content, "Complete", "Datos incompletos.", "Aceptar");
+            return;
+        }
         if (_titulos.getItemCount() == 0) _titulos.insertar("Ninguno");
         if (_habilidades.getItemCount() == 0) _habilidades.insertar("Ninguna 1");
         if (_titulos.getItemCount() > 1 || !_titulos.get(0).equals(Titulo.Ninguno.toString())) {
@@ -250,29 +291,4 @@ public class AgregarA implements Initializable {
         clear();
         toogleVisible();
     }
-
-    @FXML
-    private JFXTextField nombre;
-    @FXML
-    private JFXTextField email;
-    @FXML
-    private JFXTextField telefono;
-    @FXML
-    private JFXTextField minimo;
-    @FXML
-    private JFXComboBox<String> jornada;
-    @FXML
-    private JFXComboBox<String> titulo;
-    @FXML
-    private JFXComboBox<String> habilidad;
-    @FXML
-    private VBox titulos;
-    @FXML
-    private VBox habilidades;
-    @FXML
-    private StackPane content;
-    private Lista<String> _titulos;
-    private Lista<String> _habilidades;
-    private ContextMenu menu;
-    private Label temp;
 }

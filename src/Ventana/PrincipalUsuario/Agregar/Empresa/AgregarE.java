@@ -1,6 +1,7 @@
 package Ventana.PrincipalUsuario.Agregar.Empresa;
 
 import BaseDeDatos.Empresa;
+import Ventana.Dialog;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +15,12 @@ public class AgregarE implements Initializable {
 
     public static Stage agregar;
     public static AgregarE controlador;
+    @FXML
+    private JFXTextField telefono;
+    @FXML
+    private JFXTextField nombre;
+    @FXML
+    private StackPane content;
 
     public static void toogleVisible() {
         if (agregar.isShowing()) {
@@ -40,17 +47,18 @@ public class AgregarE implements Initializable {
 
     @FXML
     public void agregar() {
+        if (nombre.getText().trim().equals("")) {
+            Dialog.showSimpleDialog(content, "Complete", "Datos incompletos.", "Aceptar");
+            return;
+        }
+        if (telefono.getText().trim().equals("")) {
+            Dialog.showSimpleDialog(content, "Complete", "Datos incompletos.", "Aceptar");
+            return;
+        }
         Empresa.add(Empresa.generateId(), nombre.getText().trim(), telefono.getText().trim());
         Empresa.save(content);
         Empresa.load(content);
         clear();
         toogleVisible();
     }
-
-    @FXML
-    private JFXTextField telefono;
-    @FXML
-    private JFXTextField nombre;
-    @FXML
-    private StackPane content;
 }

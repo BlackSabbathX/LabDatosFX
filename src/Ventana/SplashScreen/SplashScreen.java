@@ -19,6 +19,8 @@ public class SplashScreen implements Initializable {
 
     public static Stage splashScreen;
     public static SplashScreen controlador;
+    @FXML
+    private StackPane content;
 
     public static void toogleVisible() {
         if (splashScreen.isShowing()) {
@@ -44,7 +46,7 @@ public class SplashScreen implements Initializable {
         PrincipalUsuario.loadAll();
         new Thread(() -> {
             try {
-                Thread.sleep(4);
+                Thread.sleep(5000);
                 Platform.runLater(() -> {
                     Login.toogleVisible();
                     toogleVisible();
@@ -53,8 +55,5 @@ public class SplashScreen implements Initializable {
             }
         }).start();
     }
-
-    @FXML
-    private StackPane content;
 
 }

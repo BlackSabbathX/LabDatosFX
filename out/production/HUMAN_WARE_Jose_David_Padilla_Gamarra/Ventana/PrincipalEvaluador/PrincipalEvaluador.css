@@ -1,7 +1,13 @@
-/*
- * Empty Stylesheet file.
- */
+.jfx-combo-box .list-cell {
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: #fff;
+}
 
-.mainFxmlClass {
-
+.jfx-combo-box .combo-box-button-container .prompt-text {
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: #fff;
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.*?>
 <?import java.net.URL?>
-<AnchorPane prefHeight="137.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="137.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/8"
             fx:controller="Ventana.PrincipalUsuario.Eliminar.Empresa.EliminarE">
     <stylesheets>
         <URL value="@EliminarE.css"/>

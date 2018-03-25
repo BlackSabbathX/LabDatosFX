@@ -1,5 +1,9 @@
 package Estructura;
 
+import BaseDeDatos.Aspirante;
+import BaseDeDatos.Emparejador;
+import BaseDeDatos.Vacante;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -15,6 +19,7 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         count = 0;
     }
 
+
     public Lista(T[] array) {
         ptr = null;
         actual = null;
@@ -22,6 +27,44 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         for (T t : array) {
             insertarOrdenado(t);
         }
+    }
+
+    public static void insertarAspiranteOrdenado(Lista<Aspirante> lista, Aspirante dato, Vacante vacante) {
+        if (lista.ptr == null) {
+            lista.ptr = new Nodo<>(dato);
+        } else if (lista.ptr.link == null) {
+            if (Emparejador.esMejor(dato, lista.ptr.dato, vacante)) {
+                lista.ptr = new Nodo<>(dato, lista.ptr);
+            } else {
+                lista.ptr.link = new Nodo<>(dato);
+            }
+        } else {
+            Nodo<Aspirante> actual = lista.ptr;
+            Nodo<Aspirante> ant = null;
+            if (Emparejador.esMejor(dato, actual.dato, vacante)) {
+                lista.ptr = new Nodo<>(dato, lista.ptr);
+                lista.count++;
+                lista.reset();
+                return;
+            }
+            do {
+                if (Emparejador.esMejor(dato, actual.dato, vacante)) {
+                    ant.link = new Nodo<>(dato, ant.link);
+                    lista.count++;
+                    lista.reset();
+                    return;
+                }
+                ant = actual;
+                actual = actual.link;
+            } while (actual.link != null);
+            if (Emparejador.esMejor(dato, actual.dato, vacante)) {
+                ant.link = new Nodo<>(dato, ant.link);
+            } else {
+                actual.link = new Nodo<>(dato);
+            }
+        }
+        lista.count++;
+        lista.reset();
     }
 
     public int getItemCount() {
@@ -186,18 +229,4 @@ public class Lista<T extends Comparable<T>> implements Iterable<T>, Iterator<T> 
         throw new UnsupportedOperationException();
     }
 
-    private class Nodo<G> {
-        private G dato;
-        private Nodo<G> link;
-
-        private Nodo(G _dato, Nodo<G> _link) {
-            dato = _dato;
-            link = _link;
-        }
-
-        private Nodo(G _dato) {
-            dato = _dato;
-            link = null;
-        }
-    }
 }

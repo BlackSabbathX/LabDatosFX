@@ -1,24 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
 <?import java.net.URL?>
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="764.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="Ventana.PrincipalEvaluador.PrincipalEvaluador">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="535.0" prefWidth="730.0"
+            styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8"
+            fx:controller="Ventana.PrincipalEvaluador.PrincipalEvaluador">
     <stylesheets>
-        <URL value="@PrincipalEvaluador.css" />
+        <URL value="@PrincipalEvaluador.css"/>
     </stylesheets>
-   <children>
-      <AreaChart fx:id="jj" prefHeight="400.0" prefWidth="764.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" fx:id="x" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" tickLabelRotation="-53.1" />
-        </yAxis>
-      </AreaChart>
-   </children>
+    <children>
+        <StackPane prefHeight="535.0" prefWidth="757.0">
+            <children>
+                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ecf0f1;">
+                    <children>
+                        <Pane layoutY="496.0" prefHeight="39.0" prefWidth="757.0"
+                              style="-fx-background-color: #2980b9;">
+                            <children>
+                                <JFXButton layoutX="14.0" layoutY="5.0" onAction="#cerrarSesion" text="Cerrar Sesión"
+                                           textFill="WHITE">
+                                    <font>
+                                        <Font name="Segoe UI" size="14.0"/>
+                                    </font>
+                                </JFXButton>
+                                <JFXButton layoutX="128.0" layoutY="5.0" onAction="#cerrarAplicacion"
+                                           text="Cerrar Aplicación" textFill="WHITE">
+                                    <font>
+                                        <Font name="Segoe UI" size="14.0"/>
+                                    </font>
+                                </JFXButton>
+                                <JFXButton layoutX="583.0" layoutY="6.0" onAction="#reporte" prefHeight="27.0"
+                                           prefWidth="160.0" style="-fx-background-color: #f1c40f;"
+                                           text="Generar reporte escrito">
+                                    <font>
+                                        <Font name="Segoe UI" size="13.0"/>
+                                    </font>
+                                </JFXButton>
+                            </children>
+                            <effect>
+                                <DropShadow color="#00000086" height="40.42" radius="9.605" width="0.0"/>
+                            </effect>
+                        </Pane>
+                        <Pane prefHeight="48.0" prefWidth="757.0" style="-fx-background-color: #2980b9;">
+                            <children>
+                                <Label alignment="CENTER" layoutX="14.0" layoutY="10.0" prefHeight="28.0"
+                                       prefWidth="237.0" text="Generar emparejamientos" textFill="WHITE">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="19.0"/>
+                                    </font>
+                                </Label>
+                                <JFXComboBox fx:id="vacante" focusColor="WHITE" layoutX="392.0" layoutY="11.0"
+                                             prefHeight="27.0" prefWidth="272.0" promptText="Vacante"
+                                             style="-fx-prompt-text-alignment: CENTER;" unFocusColor="WHITE"/>
+                                <JFXButton layoutX="676.0" layoutY="11.0" onAction="#generar" prefHeight="27.0"
+                                           prefWidth="67.0" style="-fx-background-color: #f1c40f;" text="Generar">
+                                    <font>
+                                        <Font name="Segoe UI" size="13.0"/>
+                                    </font>
+                                </JFXButton>
+                            </children>
+                            <effect>
+                                <DropShadow color="#00000076" height="25" radius="9.605" width="0.0"/>
+                            </effect>
+                        </Pane>
+                        <Label layoutX="18.0" layoutY="48.0" prefHeight="48.0" prefWidth="302.0" text="Aspirantes"
+                               textFill="#2c3e50">
+                            <font>
+                                <Font name="Segoe UI Bold" size="19.0"/>
+                            </font>
+                        </Label>
+                        <ScrollPane layoutX="16.0" layoutY="124.0" prefHeight="361.0" prefViewportHeight="367.0"
+                                    prefViewportWidth="742.0" prefWidth="728.0" style="-fx-background-color: #ecf0f1;"
+                                    vbarPolicy="NEVER">
+                            <content>
+                                <Pane layoutX="14.0" layoutY="69.0" maxHeight="1.7976931348623157E308"
+                                      maxWidth="1.7976931348623157E308" prefHeight="361.0" prefWidth="726.0"
+                                      style="-fx-background-color: #ecf0f1;">
+                                    <children>
+                                        <VBox fx:id="numeros" layoutX="4.0" layoutY="12.0" prefHeight="12.0"
+                                              prefWidth="48.0"/>
+                                        <VBox fx:id="ides" layoutX="64.0" layoutY="12.0" prefHeight="12.0"
+                                              prefWidth="54.0"/>
+                                        <VBox fx:id="titulos" layoutX="362.0" layoutY="12.0" prefHeight="12.0"
+                                              prefWidth="203.0"/>
+                                        <VBox fx:id="habilidades" layoutX="579.0" layoutY="12.0" prefHeight="12.0"
+                                              prefWidth="141.0"/>
+                                        <VBox fx:id="nombres" layoutX="125.0" layoutY="12.0" prefHeight="12.0"
+                                              prefWidth="237.0"/>
+                                    </children>
+                                </Pane>
+                            </content>
+                        </ScrollPane>
+                        <Label layoutX="594.0" layoutY="96.0" text="Habilidades">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="379.0" layoutY="96.0" text="Titulos">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="80.0" layoutY="96.0" text="Id">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="96.0" text="No.">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="143.0" layoutY="96.0" text="Nombre">
+                            <font>
+                                <Font name="Segoe UI Bold" size="16.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
 </AnchorPane>

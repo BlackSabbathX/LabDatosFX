@@ -8,8 +8,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.*?>
 <?import java.net.URL?>
-<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="517.0" prefWidth="342.0" style="-fx-background-color: #2D2341;"
-            styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" fx:id="pane" prefHeight="517.0" prefWidth="342.0"
+            style="-fx-background-color: #2D2341;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141"
             fx:controller="Ventana.Registro.Registro">
     <stylesheets>
         <URL value="@Registro.css"/>

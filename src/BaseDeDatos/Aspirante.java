@@ -11,10 +11,33 @@ import java.util.Random;
 
 public class Aspirante implements Comparable<Aspirante> {
 
-    private static Lista<Aspirante> aspirantes;
-    private static int _pos;
     private static final String DBPATH = "Aspirante.txt";
     private static final File DBFILE = new File(DBPATH);
+    private static Lista<Aspirante> aspirantes;
+    private static int _pos;
+    private final int pos;
+    private final int id;
+    private String nombre;
+    private String email;
+    private String telefono;
+    private float salariomin;
+    private String foto;
+    private Jornada jornada;
+    private Lista<Titulo> titulos;
+    private Lista<HabilidadNivel> habilidades;
+
+    public Aspirante(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada) {
+        pos = _pos;
+        jornada = Jornada.fromString(_jornada);
+        id = _id;
+        nombre = _nombre;
+        email = _email;
+        telefono = _telefono;
+        salariomin = _min;
+        foto = _foto;
+        titulos = new Lista<>();
+        habilidades = new Lista<>();
+    }
 
     public static Lista<Aspirante> getAspirantes() {
         return aspirantes;
@@ -78,8 +101,8 @@ public class Aspirante implements Comparable<Aspirante> {
                 for (Titulo titulo : aspirante.getTitulos()) {
                     titulosAspirante.append(titulo.toString()).append(Separator.B);
                 }
-                for (Habilidad habilidad : aspirante.getHabilidades()) {
-                    habilidadesAspirante.append(habilidad.toString()).append(" ").append(habilidad.getNivel()).append(Separator.B);
+                for (HabilidadNivel habilidad : aspirante.getHabilidades()) {
+                    habilidadesAspirante.append(habilidad.habilidad.toString()).append(" ").append(habilidad.getNivel()).append(Separator.B);
                 }
                 titulosAspirante = new StringBuilder(titulosAspirante.substring(0, titulosAspirante.length() - 1));
                 habilidadesAspirante = new StringBuilder(habilidadesAspirante.substring(0, habilidadesAspirante.length() - 1));
@@ -106,7 +129,7 @@ public class Aspirante implements Comparable<Aspirante> {
             _aspirante.addTitulo(Titulo.fromString(_titulo));
         }
         for (String _habilidad : _habilidades) {
-            _aspirante.addHabilidad(Habilidad.fromString(_habilidad));
+            _aspirante.addHabilidad(HabilidadNivel.fromString(_habilidad));
         }
         aspirantes.insertarOrdenado(_aspirante);
         _pos++;
@@ -171,25 +194,12 @@ public class Aspirante implements Comparable<Aspirante> {
         return -1;
     }
 
-    public Aspirante(int _pos, int _id, String _nombre, String _email, String _telefono, float _min, String _foto, String _jornada) {
-        pos = _pos;
-        jornada = Jornada.fromString(_jornada);
-        id = _id;
-        nombre = _nombre;
-        email = _email;
-        telefono = _telefono;
-        salariomin = _min;
-        foto = _foto;
-        titulos = new Lista<>();
-        habilidades = new Lista<>();
-    }
-
     public void addTitulo(Titulo _titulo) {
         titulos.insertar(_titulo);
     }
 
-    public void addHabilidad(Habilidad _habilidad) {
-        habilidades.insertar(_habilidad);
+    public void addHabilidad(HabilidadNivel _habilidad) {
+        habilidades.insertarOrdenado(_habilidad);
     }
 
     public int getId() {
@@ -204,71 +214,60 @@ public class Aspirante implements Comparable<Aspirante> {
         return nombre;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public float getSalariomin() {
-        return salariomin;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public Jornada getJornada() {
-        return jornada;
-    }
-
-    public Lista<Titulo> getTitulos() {
-        return titulos;
-    }
-
-    public Lista<Habilidad> getHabilidades() {
-        return habilidades;
-    }
-
     public void setNombre(String _nombre) {
         nombre = _nombre;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String _email) {
         email = _email;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
+
     public void setTelefono(String _telefono) {
         telefono = _telefono;
+    }
+
+    public float getSalariomin() {
+        return salariomin;
     }
 
     public void setSalariomin(float _salariomin) {
         salariomin = _salariomin;
     }
 
+    public String getFoto() {
+        return foto;
+    }
+
     public void setFoto(String _foto) {
         foto = _foto;
+    }
+
+    public Jornada getJornada() {
+        return jornada;
     }
 
     public void setJornada(Jornada _jornada) {
         jornada = _jornada;
     }
 
-    private final int pos;
-    private final int id;
-    private String nombre;
-    private String email;
-    private String telefono;
-    private float salariomin;
-    private String foto;
-    private Jornada jornada;
-    private Lista<Titulo> titulos;
-    private Lista<Habilidad> habilidades;
+    public Lista<Titulo> getTitulos() {
+        return titulos;
+    }
+
+    public Lista<HabilidadNivel> getHabilidades() {
+        return habilidades;
+    }
 
     @Override
     public int compareTo(Aspirante o) {
-        return nombre.compareTo(o.nombre);
+        return nombre.toUpperCase().compareTo(o.nombre.toUpperCase());
     }
 }

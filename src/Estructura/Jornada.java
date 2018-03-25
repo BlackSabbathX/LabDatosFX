@@ -12,6 +12,15 @@ public enum Jornada {
         text = _text;
     }
 
+    public static Jornada fromString(String _text) {
+        for (Jornada jornada : Jornada.values()) {
+            if (jornada.text.equalsIgnoreCase(_text)) {
+                return jornada;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         if (null == this) {
@@ -24,14 +33,5 @@ public enum Jornada {
             default:
                 return "Ambas";
         }
-    }
-
-    public static Jornada fromString(String _text) {
-        for (Jornada jornada : Jornada.values()) {
-            if (jornada.text.equalsIgnoreCase(_text)) {
-                return jornada;
-            }
-        }
-        return null;
     }
 }

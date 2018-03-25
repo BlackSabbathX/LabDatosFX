@@ -20,6 +20,14 @@ public class Login implements Initializable {
 
     public static Stage login;
     public static Login controlador;
+    @FXML
+    private JFXTextField usuario;
+    @FXML
+    private JFXPasswordField contrasena;
+    @FXML
+    private JFXCheckBox recordar;
+    @FXML
+    private StackPane content;
 
     public static void toogleVisible() {
         if (login.isShowing()) {
@@ -74,14 +82,5 @@ public class Login implements Initializable {
     public void contrasenaEnter() {
         iniciarSesion();
     }
-
-    @FXML
-    private JFXTextField usuario;
-    @FXML
-    private JFXPasswordField contrasena;
-    @FXML
-    private JFXCheckBox recordar;
-    @FXML
-    private StackPane content;
 
 }

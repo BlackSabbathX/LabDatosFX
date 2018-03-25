@@ -19,6 +19,14 @@ public class EliminarE implements Initializable {
 
     public static Stage eliminar;
     public static EliminarE controlador;
+    @FXML
+    private JFXTextField telefono;
+    @FXML
+    private JFXComboBox<String> empresa;
+    @FXML
+    private JFXTextField nombre;
+    @FXML
+    private StackPane content;
 
     public static void toogleVisible() {
         if (eliminar.isShowing()) {
@@ -29,7 +37,6 @@ public class EliminarE implements Initializable {
             eliminar.show();
         }
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -86,13 +93,4 @@ public class EliminarE implements Initializable {
         Vacante.load(content);
         toogleVisible();
     }
-
-    @FXML
-    private JFXTextField telefono;
-    @FXML
-    private JFXComboBox<String> empresa;
-    @FXML
-    private JFXTextField nombre;
-    @FXML
-    private StackPane content;
 }

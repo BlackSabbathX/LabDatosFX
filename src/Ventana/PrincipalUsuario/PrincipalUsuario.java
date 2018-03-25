@@ -34,6 +34,38 @@ public class PrincipalUsuario implements Initializable {
 
     public static Stage usuario;
     public static PrincipalUsuario controlador;
+    @FXML
+    private VBox numerosE;
+    @FXML
+    private VBox nombresE;
+    @FXML
+    private VBox idesE;
+    @FXML
+    private VBox telefonosE;
+    @FXML
+    private VBox numerosV;
+    @FXML
+    private VBox nombresV;
+    @FXML
+    private VBox empresasV;
+    @FXML
+    private VBox rangosV;
+    @FXML
+    private VBox numerosA;
+    @FXML
+    private VBox nombresA;
+    @FXML
+    private VBox emailsA;
+    @FXML
+    private VBox telefonosA;
+    @FXML
+    private VBox jornadasA;
+    @FXML
+    private JFXTabPane pestanas;
+    @FXML
+    private StackPane content;
+    private ContextMenu menuE, menuV, menuA;
+    private int posE, posV, posA;
 
     public static void toogleVisible() {
         if (usuario.isShowing()) {
@@ -359,38 +391,5 @@ public class PrincipalUsuario implements Initializable {
                 break;
         }
     }
-
-    @FXML
-    private VBox numerosE;
-    @FXML
-    private VBox nombresE;
-    @FXML
-    private VBox idesE;
-    @FXML
-    private VBox telefonosE;
-    @FXML
-    private VBox numerosV;
-    @FXML
-    private VBox nombresV;
-    @FXML
-    private VBox empresasV;
-    @FXML
-    private VBox rangosV;
-    @FXML
-    private VBox numerosA;
-    @FXML
-    private VBox nombresA;
-    @FXML
-    private VBox emailsA;
-    @FXML
-    private VBox telefonosA;
-    @FXML
-    private VBox jornadasA;
-    @FXML
-    private JFXTabPane pestanas;
-    @FXML
-    private StackPane content;
-    private ContextMenu menuE, menuV, menuA;
-    private int posE, posV, posA;
 
 }

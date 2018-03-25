@@ -1,6 +1,7 @@
 package Ventana.PrincipalUsuario.Editar.Empresa;
 
 import BaseDeDatos.Empresa;
+import Ventana.Dialog;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -18,6 +19,14 @@ public class EditarE implements Initializable {
 
     public static Stage editar;
     public static EditarE controlador;
+    @FXML
+    private JFXTextField telefono;
+    @FXML
+    private JFXComboBox<String> empresa;
+    @FXML
+    private JFXTextField nombre;
+    @FXML
+    private StackPane content;
 
     public static void toogleVisible() {
         if (editar.isShowing()) {
@@ -28,7 +37,6 @@ public class EditarE implements Initializable {
             editar.show();
         }
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -77,6 +85,10 @@ public class EditarE implements Initializable {
 
     @FXML
     public void editar() {
+        if (telefono.getText().trim().equals("")) {
+            Dialog.showSimpleDialog(content, "Complete", "Datos incompletos.", "Aceptar");
+            return;
+        }
         Empresa edit = Empresa.getEmpresaAt(empresa.getSelectionModel().getSelectedIndex());
         if (edit == null) return;
         edit.setNombre(nombre.getText().trim());
@@ -86,13 +98,4 @@ public class EditarE implements Initializable {
         toogleVisible();
         loadEmpresas();
     }
-
-    @FXML
-    private JFXTextField telefono;
-    @FXML
-    private JFXComboBox<String> empresa;
-    @FXML
-    private JFXTextField nombre;
-    @FXML
-    private StackPane content;
 }

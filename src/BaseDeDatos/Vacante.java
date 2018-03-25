@@ -2,6 +2,7 @@ package BaseDeDatos;
 
 import Estructura.*;
 import Ventana.Dialog;
+import Ventana.PrincipalEvaluador.PrincipalEvaluador;
 import Ventana.PrincipalUsuario.Eliminar.Vacante.EliminarV;
 import Ventana.PrincipalUsuario.PrincipalUsuario;
 import javafx.scene.layout.StackPane;
@@ -11,10 +12,35 @@ import java.util.Random;
 
 public class Vacante implements Comparable<Vacante> {
 
-    private static Lista<Vacante> vacantes;
-    private static int _pos;
     private static final String BDPATH = "Vacante.txt";
     private static final File DBFILE = new File(BDPATH);
+    private static Lista<Vacante> vacantes;
+    private static int _pos;
+    private final int pos;
+    private final int id;
+    private final Empresa empresa;
+    private String nombre;
+    private String descripcion;
+    private float salariomin;
+    private float salariomax;
+    private Jornada jornada;
+    private Lista<Titulo> titulos;
+    private Lista<HabilidadNivel> habilidades;
+    private Lista<Aspirante> emparejados;
+
+    public Vacante(int _pos, int _id, String _nombre, String _descripcion, float _min, float _max, String _jornada, Empresa _empresa) {
+        pos = _pos;
+        id = _id;
+        nombre = _nombre;
+        descripcion = _descripcion;
+        salariomin = _min;
+        salariomax = _max;
+        jornada = Jornada.fromString(_jornada);
+        titulos = new Lista<>();
+        habilidades = new Lista<>();
+        emparejados = new Lista<>();
+        empresa = _empresa;
+    }
 
     public static void init(StackPane content) {
         vacantes = new Lista<>();
@@ -61,6 +87,7 @@ public class Vacante implements Comparable<Vacante> {
             }
         }
         PrincipalUsuario.controlador.loadVacantes();
+        PrincipalEvaluador.controlador.loadVacantes();
         EliminarV.controlador.loadVacantes();
     }
 
@@ -73,8 +100,8 @@ public class Vacante implements Comparable<Vacante> {
                 for (Titulo titulo : vacante.getTitulos()) {
                     titulosVacante.append(titulo.toString()).append(Separator.B);
                 }
-                for (Habilidad habilidad : vacante.getHabilidades()) {
-                    habilidadesVacante.append(habilidad.toString()).append(" ").append(habilidad.getNivel()).append(Separator.B);
+                for (HabilidadNivel habilidad : vacante.getHabilidades()) {
+                    habilidadesVacante.append(habilidad.habilidad.toString()).append(" ").append(habilidad.getNivel()).append(Separator.B);
                 }
                 titulosVacante = new StringBuilder(titulosVacante.substring(0, titulosVacante.length() - 1));
                 habilidadesVacante = new StringBuilder(habilidadesVacante.substring(0, habilidadesVacante.length() - 1));
@@ -105,7 +132,7 @@ public class Vacante implements Comparable<Vacante> {
         }
         for (String _habilidad : _habilidades) {
             if (!_habilidad.trim().equals("")) {
-                _vacante.addHabilidad(Habilidad.fromString(_habilidad));
+                _vacante.addHabilidad(HabilidadNivel.fromString(_habilidad));
             }
         }
         vacantes.insertarOrdenado(_vacante);
@@ -185,25 +212,12 @@ public class Vacante implements Comparable<Vacante> {
         return -1;
     }
 
-    public Vacante(int _pos, int _id, String _nombre, String _descripcion, float _min, float _max, String _jornada, Empresa _empresa) {
-        pos = _pos;
-        id = _id;
-        nombre = _nombre;
-        descripcion = _descripcion;
-        salariomin = _min;
-        salariomax = _max;
-        jornada = Jornada.fromString(_jornada);
-        titulos = new Lista<>();
-        habilidades = new Lista<>();
-        empresa = _empresa;
-    }
-
     public void addTitulo(Titulo _titulo) {
         titulos.insertar(_titulo);
     }
 
-    public void addHabilidad(Habilidad _habilidad) {
-        habilidades.insertar(_habilidad);
+    public void addHabilidad(HabilidadNivel _habilidad) {
+        habilidades.insertarOrdenado(_habilidad);
     }
 
     public int getPos() {
@@ -218,6 +232,10 @@ public class Vacante implements Comparable<Vacante> {
         return nombre;
     }
 
+    public void setNombre(String _nombre) {
+        nombre = _nombre;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -226,65 +244,58 @@ public class Vacante implements Comparable<Vacante> {
         return salariomin;
     }
 
+    public void setMin(float _salariomin) {
+        salariomin = _salariomin;
+    }
+
     public float getMax() {
         return salariomax;
 
-    }
-
-    public Jornada getJornada() {
-        return jornada;
-    }
-
-    public Lista<Titulo> getTitulos() {
-        return titulos;
-    }
-
-    public Lista<Habilidad> getHabilidades() {
-        return habilidades;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setNombre(String _nombre) {
-        nombre = _nombre;
-    }
-
-    public void setDescripción(String _descripcion) {
-        descripcion = _descripcion;
-    }
-
-    public void setMin(float _salariomin) {
-        salariomin = _salariomin;
     }
 
     public void setMax(float _salariomax) {
         salariomax = _salariomax;
     }
 
-    public void setJornada(Jornada _jornada) {
-        jornada = _jornada;
+    public Jornada getJornada() {
+        return jornada;
     }
 
     public void setJornada(String _jornada) {
         jornada = Jornada.fromString(_jornada);
     }
 
+    public Lista<Titulo> getTitulos() {
+        return titulos;
+    }
+
+    public Lista<HabilidadNivel> getHabilidades() {
+        return habilidades;
+    }
+
+    public Lista<Aspirante> getEmparejados() {
+        return emparejados;
+    }
+
+    public void setEmparejados(Lista<Aspirante> _emparejados) {
+        emparejados = _emparejados;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setDescripción(String _descripcion) {
+        descripcion = _descripcion;
+    }
+
+    public void setJornada(Jornada _jornada) {
+        jornada = _jornada;
+    }
+
     @Override
     public int compareTo(Vacante vac) {
         return nombre.toUpperCase().compareTo(vac.getNombre().toUpperCase());
     }
-
-    private final int pos;
-    private final int id;
-    private String nombre;
-    private String descripcion;
-    private float salariomin;
-    private float salariomax;
-    private Jornada jornada;
-    private Lista<Titulo> titulos;
-    private Lista<Habilidad> habilidades;
-    private final Empresa empresa;
 
 }

@@ -82,30 +82,13 @@ public enum Habilidad {
     };
 
     private final String text;
-    private int nivel;
 
     Habilidad(String _text) {
         text = _text;
-        nivel = 1;
     }
 
-    public void setNivel(int _nivel) {
-        nivel = _nivel;
-    }
-
-    public int getNivel() {
-        return nivel;
-    }
-
-    public static Habilidad fromString(String _text_) {
-        String[] _text = _text_.split(" ");
-        for (Habilidad habilidad : Habilidad.values()) {
-            if (habilidad.text.equalsIgnoreCase(_text[0])) {
-                habilidad.setNivel(Integer.parseInt(_text[1]));
-                return habilidad;
-            }
-        }
-        return null;
+    public String getText() {
+        return text;
     }
 
 }

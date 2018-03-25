@@ -23,6 +23,17 @@ public class Registro implements Initializable {
 
     public static Stage registro;
     public static Registro controlador;
+    @FXML
+    private JFXTextField usuario;
+    @FXML
+    private JFXPasswordField contrasena;
+    @FXML
+    private JFXPasswordField contrasena1;
+    @FXML
+    private JFXComboBox tipo;
+    @FXML
+    private StackPane content;
+    private boolean pass, user, type;
 
     public static void toogleVisible() {
         if (registro.isShowing()) {
@@ -137,7 +148,6 @@ public class Registro implements Initializable {
         });
     }
 
-
     @FXML
     public void cambioTipo() {
         type = true;
@@ -178,17 +188,5 @@ public class Registro implements Initializable {
         contrasena.setText("");
         contrasena1.setText("");
     }
-
-    @FXML
-    private JFXTextField usuario;
-    @FXML
-    private JFXPasswordField contrasena;
-    @FXML
-    private JFXPasswordField contrasena1;
-    @FXML
-    private JFXComboBox tipo;
-    @FXML
-    private StackPane content;
-    private boolean pass, user, type;
 
 }

@@ -14,10 +14,21 @@ import java.util.Random;
 
 public class Empresa implements Comparable<Empresa> {
 
-    private static Lista<Empresa> empresas;
-    private static int _pos;
     private static final String DBPATH = "Empresa.txt";
     private static final File DBFILE = new File(DBPATH);
+    private static Lista<Empresa> empresas;
+    private static int _pos;
+    private final int pos;
+    private final int id;
+    private String nombre;
+    private String telefono;
+
+    public Empresa(int _pos, int _id, String _nombre, String _telefono) {
+        pos = _pos;
+        id = _id;
+        nombre = _nombre;
+        telefono = _telefono;
+    }
 
     public static Lista<Empresa> getEmpresas() {
         return empresas;
@@ -155,13 +166,6 @@ public class Empresa implements Comparable<Empresa> {
         return -1;
     }
 
-    public Empresa(int _pos, int _id, String _nombre, String _telefono) {
-        pos = _pos;
-        id = _id;
-        nombre = _nombre;
-        telefono = _telefono;
-    }
-
     public int getPos() {
         return pos;
     }
@@ -170,26 +174,21 @@ public class Empresa implements Comparable<Empresa> {
         return nombre;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public int getId() {
-        return id;
-    }
-
     public void setNombre(String _nombre) {
         nombre = _nombre;
+    }
+
+    public String getTelefono() {
+        return telefono;
     }
 
     public void setTelefono(String _telefono) {
         telefono = _telefono;
     }
 
-    private final int pos;
-    private String nombre;
-    private String telefono;
-    private final int id;
+    public int getId() {
+        return id;
+    }
 
     @Override
     public int compareTo(Empresa emp) {

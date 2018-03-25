@@ -1,5 +1,6 @@
 import Ventana.Login.Login;
 import Ventana.PrincipalEvaluador.PrincipalEvaluador;
+import Ventana.PrincipalEvaluador.Reporte.Reporte;
 import Ventana.PrincipalUsuario.Agregar.Aspirante.AgregarA;
 import Ventana.PrincipalUsuario.Agregar.Empresa.AgregarE;
 import Ventana.PrincipalUsuario.Agregar.Vacante.AgregarV;
@@ -18,6 +19,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class MainClass extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -40,6 +45,7 @@ public class MainClass extends Application {
         FXMLLoader loaderRMV = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Eliminar/Vacante/EliminarV.fxml"));
         FXMLLoader loaderAA = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Agregar/Aspirante/AgregarA.fxml"));
         FXMLLoader loaderRMA = new FXMLLoader(getClass().getResource("/Ventana/PrincipalUsuario/Eliminar/Aspirante/EliminarA.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ventana/PrincipalEvaluador/Reporte/Reporte.fxml"));
 
         Parent rootLG = loaderLG.load();
         Parent rootPU = loaderPU.load();
@@ -52,6 +58,7 @@ public class MainClass extends Application {
         Parent rootRMV = loaderRMV.load();
         Parent rootAA = loaderAA.load();
         Parent rootRMA = loaderRMA.load();
+        Parent root = loader.load();
 
         Scene sceneLG = new Scene(rootLG);
         Scene scenePU = new Scene(rootPU);
@@ -64,6 +71,7 @@ public class MainClass extends Application {
         Scene sceneRMV = new Scene(rootRMV);
         Scene sceneAA = new Scene(rootAA);
         Scene sceneRMA = new Scene(rootRMA);
+        Scene scene = new Scene(root);
 
         Login.login = new Stage(StageStyle.UNDECORATED);
         PrincipalUsuario.usuario = new Stage(StageStyle.UNDECORATED);
@@ -76,6 +84,7 @@ public class MainClass extends Application {
         EliminarV.eliminar = new Stage(StageStyle.UNDECORATED);
         AgregarA.agregar = new Stage(StageStyle.UNDECORATED);
         EliminarA.eliminar = new Stage(StageStyle.UNDECORATED);
+        Reporte.reporte = new Stage(StageStyle.UNDECORATED);
 
         Login.login.setScene(sceneLG);
         PrincipalUsuario.usuario.setScene(scenePU);
@@ -88,6 +97,7 @@ public class MainClass extends Application {
         EliminarV.eliminar.setScene(sceneRMV);
         AgregarA.agregar.setScene(sceneAA);
         EliminarA.eliminar.setScene(sceneRMA);
+        Reporte.reporte.setScene(scene);
 
         Login.controlador = loaderLG.getController();
         PrincipalUsuario.controlador = loaderPU.getController();
@@ -100,6 +110,7 @@ public class MainClass extends Application {
         EliminarV.controlador = loaderRMV.getController();
         AgregarA.controlador = loaderAA.getController();
         EliminarA.controlador = loaderRMA.getController();
+        Reporte.controlador = loader.getController();
 
         PrincipalUsuario.usuario.focusedProperty().addListener((observable, ov, nv) -> {
             if (nv && AgregarA.agregar.isShowing()) {
@@ -136,13 +147,14 @@ public class MainClass extends Application {
                 EliminarA.toogleVisible();
             }
         });
+        Reporte.reporte.focusedProperty().addListener((observable, ov, nv) -> {
+            if (!nv) {
+                Reporte.toogleVisible();
+            }
+        });
 
         SplashScreen.toogleVisible();
         SplashScreen.controlador.startApp();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 
 }
